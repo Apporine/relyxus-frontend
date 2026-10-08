@@ -18,18 +18,19 @@ export const incidentQueryKeys = {
   active: (workspaceSlug: string) => ['workspaces', workspaceSlug, 'incidents', 'active'] as const,
   list: (workspaceSlug: string, filters: IncidentListFilters) =>
     ['workspaces', workspaceSlug, 'incidents', 'list', filters] as const,
-  summary: (workspaceSlug: string) => ['workspaces', workspaceSlug, 'incidents', 'summary'] as const,
+  summary: (workspaceSlug: string) =>
+    ['workspaces', workspaceSlug, 'incidents', 'summary'] as const,
 };
 
-function listQueryParameters(filters: IncidentListFilters): Record<string, string | readonly string[]> {
+function listQueryParameters(
+  filters: IncidentListFilters,
+): Record<string, string | readonly string[]> {
   const sort = filters.status === 'active' ? 'severity' : 'declared-at';
   return {
     status: filters.status,
     sort,
     ...(filters.severities.length > 0 ? { severity: filters.severities } : {}),
-    ...(filters.businessServiceId === null
-      ? {}
-      : { businessServiceId: filters.businessServiceId }),
+    ...(filters.businessServiceId === null ? {} : { businessServiceId: filters.businessServiceId }),
   };
 }
 

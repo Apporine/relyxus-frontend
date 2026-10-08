@@ -12,8 +12,7 @@ import { emptyListResponse } from './fixtures/command-centre-fixtures';
 
 function parseIncidentListQuery(url: URL): IncidentListQuery {
   const statusParam = url.searchParams.get('status');
-  const status =
-    statusParam === 'resolved' || statusParam === 'all' ? statusParam : 'active';
+  const status = statusParam === 'resolved' || statusParam === 'all' ? statusParam : 'active';
 
   const severities = url.searchParams
     .getAll('severity')
@@ -28,7 +27,8 @@ function parseIncidentListQuery(url: URL): IncidentListQuery {
   return {
     status,
     severities,
-    businessServiceId: businessServiceId === null || businessServiceId === '' ? null : businessServiceId,
+    businessServiceId:
+      businessServiceId === null || businessServiceId === '' ? null : businessServiceId,
     sort,
   };
 }

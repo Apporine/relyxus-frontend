@@ -38,7 +38,8 @@ export function incidentListFiltersFromSearchParams(
   return {
     status,
     severities,
-    businessServiceId: businessServiceId === null || businessServiceId === '' ? null : businessServiceId,
+    businessServiceId:
+      businessServiceId === null || businessServiceId === '' ? null : businessServiceId,
   };
 }
 

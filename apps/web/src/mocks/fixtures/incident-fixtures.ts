@@ -29,7 +29,9 @@ export type IncidentListQuery = {
 };
 
 function isActiveIncident(incident: IncidentSummary): boolean {
-  return incident.state !== 'resolved' && incident.state !== 'closed' && incident.state !== 'cancelled';
+  return (
+    incident.state !== 'resolved' && incident.state !== 'closed' && incident.state !== 'cancelled'
+  );
 }
 
 /** Every incident record for the Payments / UK demo workspace. */
@@ -49,7 +51,11 @@ export function incidentRecordsFor(workspaceSlug: string): IncidentSummary[] | n
       businessServiceNames: ['Card payments'],
       ownerTeamName: 'Payments SRE',
       impact: {
-        moneyAtRisk: { amountInMinorUnits: 18_400_000, currencyCode: 'GBP', confidence: 'estimated' },
+        moneyAtRisk: {
+          amountInMinorUnits: 18_400_000,
+          currencyCode: 'GBP',
+          confidence: 'estimated',
+        },
         failedTransactions: 18_400,
         affectedCustomers: null,
       },
@@ -66,7 +72,11 @@ export function incidentRecordsFor(workspaceSlug: string): IncidentSummary[] | n
       businessServiceNames: ['Settlement'],
       ownerTeamName: 'Platform',
       impact: {
-        moneyAtRisk: { amountInMinorUnits: 4_100_000, currencyCode: 'GBP', confidence: 'estimated' },
+        moneyAtRisk: {
+          amountInMinorUnits: 4_100_000,
+          currencyCode: 'GBP',
+          confidence: 'estimated',
+        },
         failedTransactions: 2_100,
         affectedCustomers: null,
       },

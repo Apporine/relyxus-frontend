@@ -18,13 +18,7 @@ export function IncidentSummaryMetrics({ query }: { query: UseQueryResult<Incide
       loadingPlaceholder={
         <div className="grid gap-4 tablet:grid-cols-2 laptop:grid-cols-5">
           {Array.from({ length: 5 }, (_, index) => (
-            <MetricCard
-              key={index}
-              label="…"
-              value={null}
-              noDataLabel="…"
-              isLoading
-            />
+            <MetricCard key={index} label="…" value={null} noDataLabel="…" isLoading />
           ))}
         </div>
       }

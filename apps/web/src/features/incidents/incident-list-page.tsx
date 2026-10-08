@@ -13,7 +13,12 @@ import { IncidentListFilters } from './incident-list-filters';
 import { incidentListFiltersFromSearchParams } from './incident-list-params';
 import { IncidentListTable } from './incident-list-table';
 import { IncidentSummaryMetrics } from './incident-summary-metrics';
-import { incidentListEvents, incidentQueryKeys, useIncidents, useIncidentListSummary } from './queries';
+import {
+  incidentListEvents,
+  incidentQueryKeys,
+  useIncidents,
+  useIncidentListSummary,
+} from './queries';
 import { declareIncidentHref } from './routes';
 
 /** Incident List (UI/UX s. 10.2): summary metrics, filters and the full incident table. */

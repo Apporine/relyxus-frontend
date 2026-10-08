@@ -1,0 +1,14 @@
+{
+  "ui": {
+    "notificationsRegion": "Notifications",
+    "dismissNotification": "Dismiss notification"
+  },
+  "time": {
+    "durationHoursMinutes": "{hours}h {minutes}m",
+    "durationMinutes": "{minutes}m",
+    "durationSeconds": "{seconds}s",
+    "deadlineRemaining": "{remaining} left · due {dueTime}",
+    "showInUtc": "Show times in UTC",
+    "showInLocalZone": "Show times in {timeZone}"
+  }
+}

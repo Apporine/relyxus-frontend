@@ -1,0 +1,12 @@
+# Normalise line endings so Windows and Unix contributors produce identical diffs.
+* text=auto eol=lf
+
+# Binary documents and assets
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary

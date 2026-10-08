@@ -1,11 +1,11 @@
 'use client';
 
-import { cn } from '@relyxus/ui';
+import { cn, timelineActorKinds } from '@relyxus/ui';
 import type { Route } from 'next';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import { timelineActorKinds, timelineEventTypes } from '@/features/war-room/model';
+import { timelineEventTypes } from '@/features/war-room/model';
 import { useTimeDisplay } from '@/lib/format/time-display';
 
 import { incidentTimelineHrefWithFilters, type TimelineFilters } from './timeline-params';

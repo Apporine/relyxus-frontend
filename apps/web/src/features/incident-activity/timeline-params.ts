@@ -1,8 +1,11 @@
 import type { Route } from 'next';
 
+import type { TimelineActorKind } from '@relyxus/ui';
+import { timelineActorKinds } from '@relyxus/ui';
+
 import { incidentTimelineHref } from '@/features/incidents/routes';
-import type { TimelineActorKind, TimelineEventType } from '@/features/war-room/model';
-import { timelineActorKinds, timelineEventTypes } from '@/features/war-room/model';
+import type { TimelineEventType } from '@/features/war-room/model';
+import { timelineEventTypes } from '@/features/war-room/model';
 
 export type TimelineFilters = {
   actorKind: TimelineActorKind | null;

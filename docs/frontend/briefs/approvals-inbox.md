@@ -15,34 +15,34 @@ Decisions made here are the authoritative place for MFA re-confirmation and reje
 
 ## Authoritative sources
 
-| Source                        | Sections                                                                                                      |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Source                        | Sections                                                                                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | UI/UX Master Design Spec v2.0 | 11.1 Action card anatomy, 11.2 Approvals inbox, 8 Live updates and shortcuts, 9 Screen states, 15 Breakpoints, 18 Flow 2 |
-| Master Product Specification  | 10 Actions and approvals; 8A Restricted incidents; 12 Regulator clocks where report approvals appear          |
-| Obsidian design package       | Figma frame 10 (desktop Approvals)                                                                            |
+| Master Product Specification  | 10 Actions and approvals; 8A Restricted incidents; 12 Regulator clocks where report approvals appear                     |
+| Obsidian design package       | Figma frame 10 (desktop Approvals)                                                                                       |
 
 ## Existing building blocks
 
-| Asset | Location | Reuse |
-| ----- | -------- | ----- |
-| Pending approval summary schema | `apps/web/src/features/approvals/model.ts` | List rows, header badges |
-| Pending approvals query | `apps/web/src/features/approvals/queries.ts` | Extend for inbox sections |
-| `approvalHref` | `apps/web/src/features/approvals/routes.ts` | URL selection `?approval=` |
-| `ExpiryCountdown` | `apps/web/src/features/approvals/expiry-countdown.tsx` | Queue rows and detail panel |
-| `ActionCard` | `@relyxus/ui` | Centre detail for production actions |
-| Command Centre decisions panel | `apps/web/src/features/command-centre/decisions-panel.tsx` | Pattern for linking into inbox |
-| War room restart action | `war-room-fixtures.ts` / `approval-restart-payments-api` | Primary demo approval |
+| Asset                           | Location                                                   | Reuse                                |
+| ------------------------------- | ---------------------------------------------------------- | ------------------------------------ |
+| Pending approval summary schema | `apps/web/src/features/approvals/model.ts`                 | List rows, header badges             |
+| Pending approvals query         | `apps/web/src/features/approvals/queries.ts`               | Extend for inbox sections            |
+| `approvalHref`                  | `apps/web/src/features/approvals/routes.ts`                | URL selection `?approval=`           |
+| `ExpiryCountdown`               | `apps/web/src/features/approvals/expiry-countdown.tsx`     | Queue rows and detail panel          |
+| `ActionCard`                    | `@relyxus/ui`                                              | Centre detail for production actions |
+| Command Centre decisions panel  | `apps/web/src/features/command-centre/decisions-panel.tsx` | Pattern for linking into inbox       |
+| War room restart action         | `war-room-fixtures.ts` / `approval-restart-payments-api`   | Primary demo approval                |
 
 ## Layout (Figma 10)
 
 Three columns from 1280 px; below that: queue list → detail → consequence ladder stacked.
 
-| Region | Content |
-| ------ | ------- |
-| Header | Title, subtitle, pending count badge |
-| Left queue | **Urgent** (assigned to me, expiring soon), **Waiting for others** (visible but not actionable by me). Selected row highlighted; selection in `?approval=` |
-| Centre detail | Kind-specific body. Production actions: environment + severity badges, exact command block, expected result, linked evidence rows, effective policy summary with link stub |
-| Right ladder | Numbered consequence steps (Target, Blast radius, Risk, Quorum, Rollback, Verify), quorum notice, primary **Approve**, destructive **Reject with reason**, secondary **Ask a question**, large expiry countdown |
+| Region        | Content                                                                                                                                                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Header        | Title, subtitle, pending count badge                                                                                                                                                                            |
+| Left queue    | **Urgent** (assigned to me, expiring soon), **Waiting for others** (visible but not actionable by me). Selected row highlighted; selection in `?approval=`                                                      |
+| Centre detail | Kind-specific body. Production actions: environment + severity badges, exact command block, expected result, linked evidence rows, effective policy summary with link stub                                      |
+| Right ladder  | Numbered consequence steps (Target, Blast radius, Risk, Quorum, Rollback, Verify), quorum notice, primary **Approve**, destructive **Reject with reason**, secondary **Ask a question**, large expiry countdown |
 
 Breakpoints (UI/UX s. 15): three columns from 1280 px; queue remains reachable when detail is open on tablet.
 
@@ -50,13 +50,13 @@ Breakpoints (UI/UX s. 15): three columns from 1280 px; queue remains reachable w
 
 Base: `/api/v1/workspaces/{workspace}/approvals`
 
-| Endpoint | Purpose |
-| -------- | ------- |
-| `GET ?status=pending&assignee=me&sort=expires-at` | Urgent queue (exists; used by Command Centre) |
-| `GET ?status=pending&assignee=others&sort=expires-at` | Waiting-for-others section |
-| `GET /{approvalId}` | Full detail including action card parts, evidence links, consequence ladder, MFA requirement flag |
-| `POST /{approvalId}/decisions` | Approve or reject (reject requires `reason`); idempotency key required |
-| `POST /{approvalId}/questions` | Ask a question (stub acceptable in first PR if backend contract pending) |
+| Endpoint                                              | Purpose                                                                                           |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `GET ?status=pending&assignee=me&sort=expires-at`     | Urgent queue (exists; used by Command Centre)                                                     |
+| `GET ?status=pending&assignee=others&sort=expires-at` | Waiting-for-others section                                                                        |
+| `GET /{approvalId}`                                   | Full detail including action card parts, evidence links, consequence ladder, MFA requirement flag |
+| `POST /{approvalId}/decisions`                        | Approve or reject (reject requires `reason`); idempotency key required                            |
+| `POST /{approvalId}/questions`                        | Ask a question (stub acceptable in first PR if backend contract pending)                          |
 
 Detail payload extends the list summary with:
 
@@ -86,10 +86,10 @@ room gating); degraded Relyxus; permission denied; Arabic RTL.
 
 ## Delivery split
 
-| Pull request | Scope |
-| ------------ | ----- |
+| Pull request                        | Scope                                                                                                                                                                              |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `feat/approvals-inbox` (this brief) | Route `/w/{workspace}/approvals`, three-column layout, queue sections, detail + consequence ladder, URL selection, MSW fixtures, links from Command Centre and war room, e2e + axe |
-| Follow-up (optional) | Working approve/reject mutations with optimistic UI, ask-question modal, mobile approval frame 38 |
+| Follow-up (optional)                | Working approve/reject mutations with optimistic UI, ask-question modal, mobile approval frame 38                                                                                  |
 
 ## Testing plan
 
@@ -99,8 +99,8 @@ room gating); degraded Relyxus; permission denied; Arabic RTL.
 
 ## Open questions
 
-| ID | Question | Default for first PR |
-| -- | -------- | -------------------- |
-| A1 | Exact MFA interaction (WebAuthn step-up vs redirect) | Show requirement; Approve disabled with help text |
-| A2 | Report and policy approval detail layouts | List + detail for production-action only; other kinds show title + “detail view coming soon” |
-| A3 | Ask a question backend | Disabled button with tooltip |
+| ID  | Question                                             | Default for first PR                                                                         |
+| --- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| A1  | Exact MFA interaction (WebAuthn step-up vs redirect) | Show requirement; Approve disabled with help text                                            |
+| A2  | Report and policy approval detail layouts            | List + detail for production-action only; other kinds show title + “detail view coming soon” |
+| A3  | Ask a question backend                               | Disabled button with tooltip                                                                 |

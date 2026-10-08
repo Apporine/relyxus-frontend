@@ -88,3 +88,63 @@ export {
   type ToastTone,
 } from './primitives/toast/toast';
 export { Tooltip, type TooltipProps } from './primitives/tooltip/tooltip';
+
+export * from './relyxus/vocabulary';
+export {
+  ActionCard,
+  actionCardFactKeys,
+  missingActionCardFacts,
+  type ActionCardFactKey,
+  type ActionCardFacts,
+  type ActionCardProps,
+} from './relyxus/action-card/action-card';
+export { AiMarker, type AiMarkerProps } from './relyxus/ai-marker/ai-marker';
+export {
+  ConnectorHealthBadge,
+  EnvironmentBadge,
+  StateBadge,
+  VisibilityBadge,
+} from './relyxus/badges/incident-badges';
+export { SeverityBadge, type SeverityBadgeProps } from './relyxus/badges/severity-badge';
+export {
+  clockPhaseAt,
+  clockPhases,
+  formatCountdown,
+  type ClockPhase,
+} from './relyxus/clock/clock-phase';
+export { ClockWidget, type ClockWidgetProps } from './relyxus/clock/clock-widget';
+export {
+  confidenceBandFor,
+  confidenceBands,
+  type ConfidenceBand,
+} from './relyxus/confidence/confidence-band';
+export {
+  ConfidenceIndicator,
+  type ConfidenceIndicatorProps,
+} from './relyxus/confidence/confidence-indicator';
+export {
+  EvidenceItem,
+  evidenceFreshnessStates,
+  evidenceIntegrityStates,
+  type EvidenceFreshness,
+  type EvidenceIntegrity,
+  type EvidenceItemProps,
+} from './relyxus/evidence-item/evidence-item';
+export {
+  HypothesisCard,
+  hypothesisStatuses,
+  type HypothesisCardProps,
+  type HypothesisStatus,
+} from './relyxus/hypothesis-card/hypothesis-card';
+export {
+  MetricCard,
+  type MetricCardProps,
+  type MetricCardTone,
+} from './relyxus/metric-card/metric-card';
+export { OwnerChip, type OwnerChipProps, type OwnerKind } from './relyxus/owner-chip/owner-chip';
+export {
+  RestrictedPlaceholder,
+  type RestrictedPlaceholderProps,
+} from './relyxus/restricted-placeholder/restricted-placeholder';
+export { TaskItem, type TaskItemProps } from './relyxus/task-item/task-item';
+export { TimelineEvent, type TimelineEventProps } from './relyxus/timeline-event/timeline-event';

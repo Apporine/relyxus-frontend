@@ -13,7 +13,9 @@ alwaysApply: true
 git log -1 --format=%B
 ```
 
-If the body contains `Co-authored-by: Cursor`, rewrite it before pushing:
+If the body contains a `Co-authored-by: Cursor` **trailer line** (not merely mentioned in prose), rewrite it before pushing:
+
+- Prefer `scripts/git/commit.ps1` for agent commits; it writes the message from a file and rejects Cursor co-author trailers.
 
 ```powershell
 @'

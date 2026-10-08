@@ -27,7 +27,7 @@ if ($Amend) {
 Remove-Item $messagePath -ErrorAction SilentlyContinue
 
 $lastMessage = git -C $repoRoot log -1 --format=%B
-if ($lastMessage -match 'Co-authored-by:\s*Cursor') {
+if ($lastMessage -match '(?m)^Co-authored-by:\s*Cursor\b') {
   Write-Error 'Commit still contains a Cursor co-author trailer. Amend manually before pushing.'
   exit 1
 }

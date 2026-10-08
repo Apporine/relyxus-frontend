@@ -475,7 +475,9 @@
       },
       "unassigned": "Unassigned",
       "overdue": "Overdue",
-      "due": "Due {time}"
+      "due": "Due {time}",
+      "viewFullTimeline": "View full timeline",
+      "viewAllTasks": "View all tasks"
     },
     "noAccess": {
       "title": "You don't have access to this item",
@@ -529,6 +531,45 @@
       "redaction": "Redaction: {notice}",
       "openInSource": "Open in source",
       "aiSeparationNotice": "AI interpretation is kept separate from raw source evidence."
+    }
+  },
+  "incidentTasks": {
+    "title": "Incident tasks",
+    "documentTitle": "{reference} tasks",
+    "createTask": "Create task",
+    "createTaskUnavailable": "Task creation arrives with war room controls",
+    "emptyColumn": "No tasks",
+    "columns": {
+      "open": "Open",
+      "in-progress": "In progress",
+      "blocked": "Blocked",
+      "done": "Done"
+    }
+  },
+  "incidentTimeline": {
+    "title": "Incident timeline",
+    "documentTitle": "{reference} timeline",
+    "subtitle": "Complete operational record",
+    "live": "Live",
+    "addNote": "Add note",
+    "addNoteUnavailable": "Add note arrives with war room controls",
+    "noFilteredEvents": "No events match these filters.",
+    "filters": {
+      "toolbarLabel": "Timeline filters",
+      "eventsAll": "All events",
+      "actorAll": "Actor: All",
+      "actorLabel": "Actor: {actor}",
+      "typeAll": "Type: All",
+      "typeLabel": "Type: {type}",
+      "eventTypes": {
+        "approval": "Approval",
+        "investigation": "Investigation",
+        "role": "Role",
+        "change": "Change",
+        "alert": "Alert",
+        "note": "Note",
+        "task": "Task"
+      }
     }
   }
 }

@@ -245,9 +245,9 @@ in [briefs](briefs) before coding.
 | 11    | Command Centre                           | Merged                                                                              | #12           |
 | 12    | Incident List                            | Merged                                                                              | #13           |
 | 13    | Incident Declaration                     | Merged                                                                              | #14           |
-| 14    | Incident War Room                        | In progress, see [brief](briefs/incident-war-room.md); split into two pull requests | —             |
-| 15    | Evidence Explorer                        | Next after the war room                                                             | —             |
-| 16    | Incident Tasks and Timeline (full views) | Planned                                                                             | —             |
+| 14    | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)                                    | #16           |
+| 15    | Evidence Explorer                        | Merged                                                                              | #17           |
+| 16    | Incident Tasks and Timeline (full views) | In progress                                                                         | —             |
 | 17    | Approval Governance Inbox                | Planned                                                                             | —             |
 | 18–44 | Remaining capabilities                   | Planned in the order of section 5                                                   | —             |
 

@@ -9,14 +9,14 @@ The Technology Stack Decision requires supported LTS lines, pinned patches and c
 upgrades: "Latest must never be a production versioning strategy". On 8 October 2026
 several locked libraries had very recent new major versions:
 
-| Library | Newest major (release date) | Established line |
-| --- | --- | --- |
-| TypeScript | 7.0 native compiler (8 July 2026) | 5.9 |
-| TanStack Table | 9.0 (4 August 2026) | 8.21 |
-| Vitest | 5.0 (3 September 2026) | 4.1 |
-| Mock Service Worker | 3.0 (28 September 2026) | 2.15 |
-| ESLint | 10.0 (6 February 2026) | 9.x |
-| Next.js | 16.4.0 (6 October 2026) | 16.3 patch line |
+| Library             | Newest major (release date)       | Established line |
+| ------------------- | --------------------------------- | ---------------- |
+| TypeScript          | 7.0 native compiler (8 July 2026) | 5.9              |
+| TanStack Table      | 9.0 (4 August 2026)               | 8.21             |
+| Vitest              | 5.0 (3 September 2026)            | 4.1              |
+| Mock Service Worker | 3.0 (28 September 2026)           | 2.15             |
+| ESLint              | 10.0 (6 February 2026)            | 9.x              |
+| Next.js             | 16.4.0 (6 October 2026)           | 16.3 patch line  |
 
 ## Decision
 

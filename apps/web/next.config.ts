@@ -1,0 +1,23 @@
+import type { NextConfig } from 'next';
+
+// Applied to every response. Referrer is suppressed entirely because console URLs carry
+// workspace and incident identifiers that must never reach another origin.
+const securityHeaders = [
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'no-referrer' },
+  { key: 'X-Frame-Options', value: 'DENY' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+];
+
+const nextConfig: NextConfig = {
+  // Self-hosted and air-gapped deployments run the console from a container image.
+  output: 'standalone',
+  poweredByHeader: false,
+  reactStrictMode: true,
+  typedRoutes: true,
+  async headers() {
+    return [{ source: '/:path*', headers: securityHeaders }];
+  },
+};
+
+export default nextConfig;

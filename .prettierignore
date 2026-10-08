@@ -1,0 +1,7 @@
+pnpm-lock.yaml
+New folder/
+**/.next/
+**/storybook-static/
+**/coverage/
+**/playwright-report/
+**/test-results/

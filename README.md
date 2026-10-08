@@ -51,7 +51,7 @@ Run these from the repository root.
 | `pnpm typecheck`                            | TypeScript strict type check                              |
 | `pnpm format` / `pnpm format:check`         | Apply or verify Prettier formatting                       |
 | `pnpm verify:quick`                         | Prettier, ESLint and TypeScript (pre-commit)              |
-| `pnpm verify:push`                          | Pre-commit checks plus build and Storybook (pre-push)     |
+| `pnpm verify:push`                          | Pre-commit checks plus production build (pre-push)        |
 | `pnpm verify`                               | Full CI verify job except e2e                             |
 | `pnpm --filter @relyxus/ui storybook`       | Component workshop at http://localhost:6006               |
 | `pnpm --filter @relyxus/ui build-storybook` | Static Storybook build                                    |

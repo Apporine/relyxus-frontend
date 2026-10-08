@@ -343,6 +343,29 @@
       "closeDialog": "Close"
     }
   },
+  "onCall": {
+    "title": "On-call and escalation",
+    "description": "Who is responsible now, coverage gaps and overrides",
+    "schedules": "Schedules",
+    "scheduleDetail": "Schedule detail",
+    "escalationChain": "Escalation chain",
+    "emptySchedules": "No on-call schedules are configured for this workspace.",
+    "emptyEscalation": "No escalation chain is configured for this schedule.",
+    "noSelectionTitle": "No schedule selected",
+    "noSelectionDescription": "Choose a schedule to review coverage, overrides and escalation.",
+    "addOverride": "Add override",
+    "addOverrideUnavailable": "Schedule overrides arrive with the on-call service integration.",
+    "none": "None",
+    "swapRequestsPending": "{count, plural, =0 {None pending} one {# pending} other {# pending}}",
+    "sections": {
+      "current": "Current",
+      "next": "Next",
+      "coverageGap": "Coverage gap",
+      "override": "Override",
+      "swapRequests": "Swap requests",
+      "dstCheck": "DST check"
+    }
+  },
   "incidents": {
     "impact": {
       "failedTransactions": "{count, plural, one {# failed transaction} other {# failed transactions}}",

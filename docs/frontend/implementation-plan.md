@@ -248,8 +248,9 @@ in [briefs](briefs) before coding.
 | 14    | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)                 | #16           |
 | 15    | Evidence Explorer                        | Merged                                                           | #17           |
 | 16    | Incident Tasks and Timeline (full views) | Merged                                                           | #18           |
-| 17    | Approval Governance Inbox                | Next; see [brief](briefs/approvals-inbox.md)                     | —             |
-| 18–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 17    | Approval Governance Inbox                | Merged                                                           | #20           |
+| 18    | On-call and Escalation                   | Next; in progress on `feat/on-call-schedules`                    | —             |
+| 19–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

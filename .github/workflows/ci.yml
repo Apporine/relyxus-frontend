@@ -47,3 +47,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Build component workshop
+        run: pnpm --filter @relyxus/ui build-storybook --quiet

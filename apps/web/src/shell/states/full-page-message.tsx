@@ -1,5 +1,6 @@
-import { RelyxusWordmarkLoader } from '@relyxus/ui';
 import type { ReactNode } from 'react';
+
+import { FullPageBusyState } from './full-page-busy-state';
 
 type FullPageMessageProps = {
   title?: string;
@@ -19,15 +20,7 @@ export function FullPageMessage({
   isBusy = false,
 }: FullPageMessageProps) {
   if (isBusy) {
-    return (
-      <main
-        id="main-content"
-        aria-busy="true"
-        className="flex min-h-dvh items-center justify-center bg-canvas p-6"
-      >
-        <RelyxusWordmarkLoader label={title} />
-      </main>
-    );
+    return <FullPageBusyState label={title} />;
   }
 
   if (title === undefined) {
@@ -35,10 +28,7 @@ export function FullPageMessage({
   }
 
   return (
-    <main
-      id="main-content"
-      className="flex min-h-dvh items-center justify-center bg-canvas p-6"
-    >
+    <main id="main-content" className="flex min-h-dvh items-center justify-center bg-canvas p-6">
       <div className="flex w-full max-w-lg flex-col items-center gap-3 rounded-panel border border-control bg-surface-1 px-8 py-10 text-center">
         {icon}
         <h1 className="text-section-title font-semibold text-fg-primary">{title}</h1>

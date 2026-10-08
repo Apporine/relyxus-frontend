@@ -12,7 +12,7 @@ describe('CodeBlock', () => {
         direction: 'rtl',
       },
     );
-    expect(screen.getByRole('figure', { name: 'Command' })).toHaveAttribute('dir', 'ltr');
+    expect(screen.getByRole('region', { name: 'Command' })).toHaveAttribute('dir', 'ltr');
   });
 
   it('omits line numbers for short blocks', () => {

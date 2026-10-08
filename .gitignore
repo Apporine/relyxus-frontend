@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+next-env.d.ts
+
+# Generic build output
+dist/
+build/
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Test output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Environment files. Only the committed example file may hold variable names; never values.
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors and operating systems
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tooling caches
+.eslintcache
+.turbo/
+.vercel/
+
+# Local secrets and certificates must never be committed
+*.pem
+*.key
+*.p12
+*.pfx

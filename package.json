@@ -1,0 +1,21 @@
+{
+  "name": "relyxus-frontend",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @relyxus/web dev",
+    "build": "pnpm --recursive --if-present build",
+    "lint": "pnpm --recursive --if-present lint",
+    "typecheck": "pnpm --recursive --if-present typecheck",
+    "test": "pnpm --recursive --if-present test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "3.9.9",
+    "prettier-plugin-tailwindcss": "0.8.1"
+  }
+}

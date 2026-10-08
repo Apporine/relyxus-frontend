@@ -186,6 +186,11 @@
       "measured": "مقيس",
       "estimated": "تقديري",
       "assumed": "مفترض"
+    },
+    "confidenceBands": {
+      "high": "مرتفعة",
+      "medium": "متوسطة",
+      "low": "منخفضة"
     }
   },
   "commandCentre": {
@@ -368,11 +373,113 @@
         "productionChangesBlocked": "تبقى تغييرات الإنتاج غير المعتمدة محظورة.",
         "affectedServices": "الخدمات المتأثرة"
       }
+    }
+  },
+  "warRoom": {
+    "documentTitle": "غرفة عمليات {reference}",
+    "header": {
+      "moneyAtRisk": "أموال معرّضة للخطر",
+      "failedTransactions": "معاملات فاشلة",
+      "incidentAge": "مدة الحادثة",
+      "commander": "قائد الحادثة {name}",
+      "noCommander": "لم يُعيَّن قائد للحادثة",
+      "acknowledge": "تأكيد الاستلام",
+      "acknowledged": "أكّد الاستلام {name} في {time}",
+      "acknowledgedToast": "تم تأكيد استلام الحادثة",
+      "acknowledgeFailed": "لم يُسجَّل تأكيد الاستلام",
+      "acknowledgeFailedDetail": "المرجع {reference}. حاول مرة أخرى.",
+      "noClock": "لا يوجد مؤقت تنظيمي قيد التشغيل"
     },
-    "warRoom": {
-      "title": "غرفة عمليات {reference}",
-      "description": "نسّق الاستجابة والأدلة والموافقات في مكان واحد",
-      "placeholder": "تجربة غرفة العمليات الكاملة قادمة في القدرة التالية."
+    "panels": {
+      "tabsLabel": "لوحات غرفة العمليات",
+      "investigation": "التحقيق",
+      "decisions": "القرارات",
+      "activity": "الخط الزمني والمهام"
+    },
+    "investigation": {
+      "aiGenerated": "مُنشأ بالذكاء الاصطناعي",
+      "provenance": "{model} · أُنشئ {time} · {count, plural, zero {لا توجد أدلة} one {دليل واحد} two {دليلان} few {# أدلة} many {# دليلًا} other {# دليل}}",
+      "currentAssessment": "التقييم الحالي",
+      "rankedHypotheses": "الفرضيات المرتبة",
+      "investigating": "جارٍ التحقيق. تصل الفرضية الأولى عادةً خلال 3 دقائق.",
+      "paused": "استدلال الذكاء الاصطناعي متوقف: مزوّد النموذج غير متاح. يستمر جمع الأدلة.",
+      "supportingEvidence": "أدلة داعمة",
+      "refutingEvidence": "أدلة معارضة",
+      "whatWasChecked": "ما تم فحصه",
+      "openEvidence": "فتح الأدلة",
+      "hypothesisStatuses": {
+        "under-test": "قيد الاختبار",
+        "confirmed": "مؤكدة",
+        "ruled-out": "مستبعدة"
+      },
+      "degradedSource": "الموصل {connector} متدهور منذ {time}. قد تكون أدلته قديمة.",
+      "noHypotheses": "لا توجد فرضيات بعد."
+    },
+    "decisions": {
+      "pendingDecision": "قرار معلّق",
+      "actionEyebrow": "إجراء في {environment}",
+      "command": "الأمر",
+      "copyCommand": "نسخ الأمر",
+      "commandCopied": "تم نسخ الأمر",
+      "copyFailed": "تعذّر النسخ",
+      "factLabels": {
+        "target": "الهدف",
+        "rationale": "السبب",
+        "policy": "السياسة",
+        "approvers": "الموافقون",
+        "dryRun": "التشغيل التجريبي",
+        "verification": "التحقق",
+        "expiry": "الانتهاء"
+      },
+      "missingFact": "غير متاح",
+      "incompleteNotice": "لا يمكن الموافقة على هذا الإجراء حتى تتوفر جميع أجزاء البطاقة.",
+      "openApproval": "فتح طلب الموافقة",
+      "noPendingActions": "لا توجد إجراءات بانتظار قرار.",
+      "actionStates": {
+        "proposed": "مقترح",
+        "waiting-for-approval": "بانتظار الموافقة",
+        "approved": "تمت الموافقة",
+        "executing": "قيد التنفيذ",
+        "verifying": "قيد التحقق",
+        "succeeded": "نجح",
+        "rolled-back": "تم التراجع",
+        "blocked": "محظور",
+        "expired": "منتهي الصلاحية"
+      },
+      "clocks": "المؤقتات",
+      "noClocks": "لا توجد مؤقتات تنظيمية أو مؤقتات تحمّل قيد التشغيل لهذه الحادثة.",
+      "communications": "الاتصالات",
+      "nextUpdateDue": "التحديث التالي لأصحاب المصلحة مستحق {time}",
+      "noUpdateScheduled": "لا يوجد تحديث مجدول لأصحاب المصلحة.",
+      "draftsWaiting": "{count, plural, =0 {لا توجد مسودات بانتظار الموافقة} zero {لا توجد مسودات بانتظار الموافقة} one {مسودة واحدة بانتظار الموافقة} two {مسودتان بانتظار الموافقة} few {# مسودات بانتظار الموافقة} many {# مسودة بانتظار الموافقة} other {# مسودة بانتظار الموافقة}}",
+      "pendingDecisionsNotice": "{count, plural, zero {لا توجد قرارات بانتظارك} one {قرار واحد بانتظارك} two {قراران بانتظارك} few {# قرارات بانتظارك} many {# قرارًا بانتظارك} other {# قرار بانتظارك}}",
+      "viewDecisions": "عرض القرارات"
+    },
+    "activity": {
+      "timeline": "الخط الزمني",
+      "tasks": "المهام",
+      "actorKinds": {
+        "person": "شخص",
+        "ai": "ذكاء اصطناعي",
+        "system": "النظام",
+        "external": "أداة خارجية"
+      },
+      "noTimeline": "لا توجد أحداث في الخط الزمني بعد.",
+      "noTasks": "لا توجد مهام بعد. يمكن لقائد الحادثة إنشاء مهام للعمل المتوازي.",
+      "taskStatuses": {
+        "open": "مفتوحة",
+        "in-progress": "قيد التنفيذ",
+        "blocked": "متعثرة",
+        "done": "منجزة",
+        "cancelled": "ملغاة"
+      },
+      "unassigned": "غير مُسندة",
+      "overdue": "متأخرة",
+      "due": "مستحقة {time}"
+    },
+    "noAccess": {
+      "title": "ليس لديك صلاحية الوصول إلى هذا العنصر",
+      "description": "قد لا يكون موجودًا، أو أنه مقيّد بأشخاص محددين. اطلب الوصول من قائد الحادثة إذا احتجت إليه."
     }
   }
 }

@@ -2,7 +2,8 @@ import { vi } from 'vitest';
 
 /**
  * Stand-in for next/navigation in component tests. Use with
- * `vi.mock('next/navigation', () => nextNavigationMock)` and set `currentPathname`.
+ * `vi.mock('next/navigation', () => nextNavigationMock)` and set `currentPathname` or
+ * `currentSearchParams`.
  */
 export const routerMock = {
   push: vi.fn(),
@@ -13,9 +14,13 @@ export const routerMock = {
   prefetch: vi.fn(),
 };
 
-export const navigationState = { currentPathname: '/w/payments-uk/home' };
+export const navigationState = {
+  currentPathname: '/w/payments-uk/home',
+  currentSearchParams: new URLSearchParams(),
+};
 
 export const nextNavigationMock = {
   useRouter: () => routerMock,
   usePathname: () => navigationState.currentPathname,
+  useSearchParams: () => navigationState.currentSearchParams,
 };

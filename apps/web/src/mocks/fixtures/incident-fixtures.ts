@@ -2,16 +2,15 @@ import type { IncidentListSummary } from '@/features/incidents/model';
 import type { IncidentSummary } from '@/features/incidents/model';
 import type { SeverityLevel } from '@relyxus/ui';
 
+import { incidentListBusinessServices } from '@/features/incidents/incident-list-services';
+
 /*
  * DEVELOPMENT FIXTURE. Shared incident records for the Command Centre and Incident List
  * (Figma frames 03 and 04). Times are relative so ages stay plausible during `next dev`.
  */
 
 const MILLISECONDS_PER_MINUTE = 60_000;
-const MILLISECONDS_PER_SECOND = 1_000;
 const MILLISECONDS_PER_HOUR = 60 * MILLISECONDS_PER_MINUTE;
-
-import { incidentListBusinessServices } from '@/features/incidents/incident-list-services';
 
 const businessServiceNameById = Object.fromEntries(
   incidentListBusinessServices.map((service) => [service.id, service.name]),

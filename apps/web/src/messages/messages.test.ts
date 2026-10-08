@@ -20,8 +20,9 @@ function flattenMessages(messages: MessageTree, prefix = ''): Map<string, string
   return flattened;
 }
 
+/** ICU argument names: `{name}` or `{name, plural, …}`, not words inside plural branches. */
 function placeholdersIn(message: string): string[] {
-  return [...message.matchAll(/\{(\w+)/g)].map((match) => match[1] ?? '').sort();
+  return [...message.matchAll(/\{\s*(\w+)\s*[,}]/g)].map((match) => match[1] ?? '').sort();
 }
 
 const englishCatalogue = flattenMessages(englishMessages);

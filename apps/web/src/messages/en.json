@@ -186,6 +186,11 @@
       "measured": "Measured",
       "estimated": "Estimated",
       "assumed": "Assumed"
+    },
+    "confidenceBands": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
     }
   },
   "commandCentre": {
@@ -368,11 +373,113 @@
         "productionChangesBlocked": "Unapproved production changes stay blocked.",
         "affectedServices": "Affected services"
       }
+    }
+  },
+  "warRoom": {
+    "documentTitle": "{reference} war room",
+    "header": {
+      "moneyAtRisk": "money at risk",
+      "failedTransactions": "failed transactions",
+      "incidentAge": "incident age",
+      "commander": "Commander {name}",
+      "noCommander": "No commander assigned",
+      "acknowledge": "Acknowledge",
+      "acknowledged": "Acknowledged by {name} at {time}",
+      "acknowledgedToast": "Incident acknowledged",
+      "acknowledgeFailed": "Acknowledgement was not recorded",
+      "acknowledgeFailedDetail": "Reference {reference}. Try again.",
+      "noClock": "No regulator clock running"
     },
-    "warRoom": {
-      "title": "{reference} war room",
-      "description": "Coordinate response, evidence and approvals in one place",
-      "placeholder": "The full war room experience is coming in the next capability."
+    "panels": {
+      "tabsLabel": "War room panels",
+      "investigation": "Investigation",
+      "decisions": "Decisions",
+      "activity": "Timeline and tasks"
+    },
+    "investigation": {
+      "aiGenerated": "AI generated",
+      "provenance": "{model} · generated {time} · {count, plural, one {# evidence item} other {# evidence items}}",
+      "currentAssessment": "Current assessment",
+      "rankedHypotheses": "Ranked hypotheses",
+      "investigating": "Investigating. The first hypothesis usually arrives within 3 minutes.",
+      "paused": "AI reasoning paused: the model provider is unavailable. Evidence collection continues.",
+      "supportingEvidence": "Supporting evidence",
+      "refutingEvidence": "Refuting evidence",
+      "whatWasChecked": "What was checked",
+      "openEvidence": "Open evidence",
+      "hypothesisStatuses": {
+        "under-test": "Under test",
+        "confirmed": "Confirmed",
+        "ruled-out": "Ruled out"
+      },
+      "degradedSource": "{connector} is degraded since {time}. Evidence from it may be stale.",
+      "noHypotheses": "No hypotheses yet."
+    },
+    "decisions": {
+      "pendingDecision": "Pending decision",
+      "actionEyebrow": "{environment} action",
+      "command": "Command",
+      "copyCommand": "Copy command",
+      "commandCopied": "Command copied",
+      "copyFailed": "Copy failed",
+      "factLabels": {
+        "target": "Target",
+        "rationale": "Because",
+        "policy": "Policy",
+        "approvers": "Approvers",
+        "dryRun": "Dry run",
+        "verification": "Verify",
+        "expiry": "Expiry"
+      },
+      "missingFact": "Not available",
+      "incompleteNotice": "This action cannot be approved until every part of the card is available.",
+      "openApproval": "Open approval",
+      "noPendingActions": "No actions are waiting for a decision.",
+      "actionStates": {
+        "proposed": "Proposed",
+        "waiting-for-approval": "Waiting for approval",
+        "approved": "Approved",
+        "executing": "Executing",
+        "verifying": "Verifying",
+        "succeeded": "Succeeded",
+        "rolled-back": "Rolled back",
+        "blocked": "Blocked",
+        "expired": "Expired"
+      },
+      "clocks": "Clocks",
+      "noClocks": "No regulator or tolerance clocks are running for this incident.",
+      "communications": "Communications",
+      "nextUpdateDue": "Next stakeholder update due {time}",
+      "noUpdateScheduled": "No stakeholder update is scheduled.",
+      "draftsWaiting": "{count, plural, =0 {No drafts waiting for approval} one {# draft waiting for approval} other {# drafts waiting for approval}}",
+      "pendingDecisionsNotice": "{count, plural, one {# decision is waiting} other {# decisions are waiting}}",
+      "viewDecisions": "View decisions"
+    },
+    "activity": {
+      "timeline": "Timeline",
+      "tasks": "Tasks",
+      "actorKinds": {
+        "person": "Person",
+        "ai": "AI",
+        "system": "System",
+        "external": "External tool"
+      },
+      "noTimeline": "No timeline events yet.",
+      "noTasks": "No tasks yet. The commander can create tasks for parallel work.",
+      "taskStatuses": {
+        "open": "Open",
+        "in-progress": "In progress",
+        "blocked": "Blocked",
+        "done": "Done",
+        "cancelled": "Cancelled"
+      },
+      "unassigned": "Unassigned",
+      "overdue": "Overdue",
+      "due": "Due {time}"
+    },
+    "noAccess": {
+      "title": "You don't have access to this item",
+      "description": "It may not exist, or it is restricted to named people. Ask the incident commander if you need access."
     }
   }
 }

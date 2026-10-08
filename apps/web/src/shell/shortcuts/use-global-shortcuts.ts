@@ -2,6 +2,8 @@
 
 import { useEffect, useEffectEvent, useRef } from 'react';
 
+import { isTypingTarget } from '@/lib/ui/keyboard-shortcut-guard';
+
 import type { NavigationAreaId } from '../navigation/navigation-model';
 
 /*
@@ -25,19 +27,6 @@ export type GlobalShortcutHandlers = {
   onShowShortcuts: () => void;
   onGoToArea: (areaId: NavigationAreaId) => void;
 };
-
-function isTypingTarget(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) {
-    return false;
-  }
-  return (
-    target.isContentEditable ||
-    target instanceof HTMLInputElement ||
-    target instanceof HTMLTextAreaElement ||
-    target instanceof HTMLSelectElement ||
-    target.getAttribute('role') === 'combobox'
-  );
-}
 
 export function useGlobalShortcuts(handlers: GlobalShortcutHandlers): void {
   const goSequenceStartedAt = useRef<number | null>(null);

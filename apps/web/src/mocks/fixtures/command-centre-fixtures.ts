@@ -43,7 +43,10 @@ export function commandCentreFixturesFor(workspaceSlug: string): {
       41 * MILLISECONDS_PER_MINUTE +
       22 * MILLISECONDS_PER_SECOND,
   );
-  const regulatorStartedAt = isoInstantFromNow(-20 * 60 * MILLISECONDS_PER_MINUTE);
+  // DORA initial notice: four hours from classification (Product s. 12).
+  const regulatorStartedAt = new Date(
+    Date.parse(regulatorDeadlineAt) - 4 * 60 * MILLISECONDS_PER_MINUTE,
+  ).toISOString();
 
   const allIncidents = incidentRecordsFor(workspaceSlug);
   if (allIncidents === null) {

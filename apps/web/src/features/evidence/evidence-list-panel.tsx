@@ -46,7 +46,7 @@ function EvidenceListItem({
       <div className="flex items-center gap-2">
         <span aria-hidden className={cn('size-2 rounded-full', connectorTone)} />
         <span className="text-meta font-semibold text-fg-secondary">{item.sourceName}</span>
-        <span className="ms-auto text-meta font-semibold uppercase text-healthy">
+        <span className="ms-auto text-meta font-semibold text-healthy uppercase">
           {translateIntegrity(item.integrity)}
         </span>
       </div>

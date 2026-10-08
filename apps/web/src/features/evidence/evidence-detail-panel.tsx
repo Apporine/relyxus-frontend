@@ -32,7 +32,7 @@ function EvidenceDetailContent({ detail }: { detail: EvidenceDetail }) {
           </h2>
           <p className="text-meta text-fg-tertiary">{capturedAtText}</p>
         </div>
-        <span className="text-meta font-semibold uppercase text-healthy">
+        <span className="text-meta font-semibold text-healthy uppercase">
           {translateIntegrity(detail.integrity)}
         </span>
       </header>

@@ -253,6 +253,52 @@
       "failedTransactions": "{count, plural, one {# failed transaction} other {# failed transactions}}",
       "affectedCustomers": "{count, plural, one {# customer affected} other {# customers affected}}",
       "notMeasured": "Not measured"
+    },
+    "list": {
+      "title": "Incidents",
+      "description": "Active and historical incident records",
+      "declareIncident": "Declare incident",
+      "tableSectionName": "Incident list",
+      "emptyTitle": "No incidents match these filters in {workspace}",
+      "emptyDescription": "Try a different view or clear the severity and service filters.",
+      "noBusinessService": "Not linked",
+      "noOwner": "Unassigned",
+      "impactLow": "Low",
+      "impactUsers": "{count, plural, one {# user} other {# users}}",
+      "columns": {
+        "idTitle": "ID / title",
+        "severity": "Severity",
+        "state": "State",
+        "businessService": "Business service",
+        "owner": "Owner",
+        "impact": "Impact",
+        "opened": "Opened",
+        "age": "Age"
+      },
+      "filters": {
+        "toolbarLabel": "Incident list filters",
+        "viewLabel": "View: {view}",
+        "viewActive": "Active",
+        "viewResolved": "Resolved",
+        "viewAll": "All",
+        "severityLabel": "Severity: {severity}",
+        "severityAll": "All",
+        "serviceLabel": "Service: {service}",
+        "serviceAll": "All"
+      },
+      "metrics": {
+        "sectionName": "Incident summary",
+        "sev1": "SEV1",
+        "sev2": "SEV2",
+        "investigating": "Investigating",
+        "monitoring": "Monitoring",
+        "resolved24h": "Resolved 24h",
+        "activeNow": "active now",
+        "allSeverity": "all severity",
+        "waitingForStability": "waiting for stability",
+        "last24Hours": "last 24 hours",
+        "noData": "No data yet"
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { textDirectionFor } from '@/lib/i18n/locales';
+import { ApiMockingBoundary } from '@/mocks/api-mocking-boundary';
 
 import { AppProviders } from './app-providers';
 import './globals.css';
@@ -29,7 +30,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang={locale} dir={direction}>
       <body>
         <NextIntlClientProvider>
-          <AppProviders direction={direction}>{children}</AppProviders>
+          <AppProviders direction={direction}>
+            <ApiMockingBoundary>{children}</ApiMockingBoundary>
+          </AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>

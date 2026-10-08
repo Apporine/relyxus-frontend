@@ -13,5 +13,126 @@
   },
   "live": {
     "newUpdates": "{count, plural, zero {لا توجد تحديثات جديدة} one {تحديث جديد واحد} two {تحديثان جديدان} few {# تحديثات جديدة} many {# تحديثًا جديدًا} other {# تحديث جديد}}"
+  },
+  "shell": {
+    "skipToContent": "تخطَّ إلى المحتوى الرئيسي",
+    "productName": "Relyxus",
+    "navigation": {
+      "label": "التنقل الرئيسي",
+      "groups": {
+        "operate": "التشغيل",
+        "understand": "الفهم",
+        "govern": "الحوكمة",
+        "configure": "الإعداد"
+      },
+      "areas": {
+        "command-centre": "مركز القيادة",
+        "incidents": "الحوادث",
+        "approvals": "الموافقات",
+        "on-call": "المناوبة",
+        "services": "الخدمات",
+        "ai-quality": "جودة الذكاء",
+        "analytics": "التحليلات",
+        "policies": "السياسات",
+        "runbooks": "أدلة التشغيل",
+        "compliance": "الامتثال",
+        "audit": "التدقيق",
+        "integrations": "التكاملات",
+        "admin": "الإدارة"
+      },
+      "collapse": "طيّ قائمة التنقل",
+      "expand": "توسيع قائمة التنقل",
+      "mobileLabel": "الرئيسية"
+    },
+    "workspace": {
+      "label": "مساحة العمل",
+      "switcherLabel": "تبديل مساحة العمل، الحالية: {workspace}"
+    },
+    "topBar": {
+      "searchPlaceholder": "البحث أو تشغيل أمر",
+      "help": "المساعدة",
+      "dataLocation": "{region} · {deploymentMode}",
+      "dataLocationTitle": "مكان تخزين بيانات مساحة العمل هذه",
+      "dataLocationSummary": "تُخزَّن السجلات والأدلة والنسخ الاحتياطية لمساحة العمل {workspace} وتُعالَج في {region}.",
+      "deploymentModeSummary": "نمط النشر: {deploymentMode}.",
+      "deploymentModes": {
+        "saas": "سحابي مشترك",
+        "dedicated": "مخصص",
+        "self-hosted": "استضافة ذاتية",
+        "air-gapped": "معزول عن الشبكة"
+      },
+      "platformHealth": {
+        "healthy": "سليم",
+        "degraded": "متدهور",
+        "down": "متوقف"
+      },
+      "platformHealthLabel": "حالة Relyxus: {health}",
+      "accountMenu": "قائمة حساب {name}",
+      "keyboardShortcuts": "اختصارات لوحة المفاتيح",
+      "language": "اللغة"
+    },
+    "banners": {
+      "relyxusDown": "Relyxus متوقف",
+      "relyxusDegraded": "أداء Relyxus متدهور",
+      "capabilitySummary": "ما زال يعمل: {working}. المتأثر: {affected}.",
+      "capabilities": {
+        "alert-intake": "استقبال التنبيهات",
+        "investigations": "التحقيقات",
+        "ai-reasoning": "استدلال الذكاء الاصطناعي",
+        "approvals": "الموافقات",
+        "notifications": "الإشعارات",
+        "integrations": "التكاملات"
+      },
+      "noCapabilities": "لا شيء",
+      "liveReconnecting": "جارٍ إعادة الاتصال · آخر تحديث {time}",
+      "liveReconnectingBeforeFirstUpdate": "جارٍ إعادة الاتصال بالتحديثات المباشرة",
+      "liveOffline": "أنت غير متصل · آخر تحديث {time}",
+      "liveOfflineBeforeFirstUpdate": "أنت غير متصل",
+      "stateChangesPaused": "الإجراءات التي تغيّر الحالة متوقفة حتى يعود الاتصال.",
+      "licenceGrace": "تنتهي فترة السماح للترخيص في {date}",
+      "licenceGraceDetail": "يستمر استقبال التنبيهات والتحقيقات. ستُحظر تغييرات الإعداد والترقيات بعد ذلك التاريخ.",
+      "plannedMaintenance": "صيانة مجدولة من {start} إلى {end}"
+    },
+    "commandPalette": {
+      "title": "لوحة الأوامر",
+      "inputLabel": "البحث في الأوامر والوجهات",
+      "groups": {
+        "actions": "الإجراءات",
+        "navigate": "انتقال إلى"
+      },
+      "declareIncident": "إعلان حادثة",
+      "noResults": "لا توجد أوامر مطابقة لـ «{query}»"
+    },
+    "shortcuts": {
+      "title": "اختصارات لوحة المفاتيح",
+      "then": "ثم",
+      "commandPalette": "فتح لوحة الأوامر",
+      "goHome": "الانتقال إلى مركز القيادة",
+      "goIncidents": "الانتقال إلى الحوادث",
+      "goApprovals": "الانتقال إلى الموافقات",
+      "showShortcuts": "عرض جميع الاختصارات",
+      "closeOverlay": "إغلاق اللوحة الجانبية أو مربع الحوار أو لوحة الأوامر",
+      "closeDialog": "إغلاق"
+    },
+    "states": {
+      "loadingWorkspace": "جارٍ تحميل مساحة العمل",
+      "sessionUnavailableTitle": "تعذّر تحميل جلستك",
+      "sessionUnavailableDescription": "لم يتمكن Relyxus من التحقق من هويتك أو مساحات العمل المتاحة لك. حاول مرة أخرى؛ وإذا استمر الخطأ فتواصل مع المسؤول وأرسل المرجع {reference}.",
+      "workspaceUnavailableTitle": "ليس لديك صلاحية الوصول إلى مساحة العمل هذه",
+      "workspaceUnavailableDescription": "قد لا تكون موجودة، أو أن دورك لا يشملها. اطلب الوصول من مسؤول مساحة العمل إذا احتجت إليه.",
+      "noWorkspacesTitle": "ليس لديك وصول إلى أي مساحة عمل بعد",
+      "noWorkspacesDescription": "اطلب من المسؤول إضافتك إلى مساحة عمل.",
+      "retry": "حاول مرة أخرى",
+      "notReported": "غير مُبلَّغ"
+    },
+    "notFound": {
+      "title": "هذه الصفحة غير موجودة",
+      "description": "قد يكون الرابط مكتوبًا بشكل خاطئ، أو أن الصفحة غير متاحة في هذا الإصدار من Relyxus.",
+      "backToConsole": "العودة إلى وحدة التحكم"
+    },
+    "commandCentre": {
+      "title": "مركز القيادة",
+      "description": "مساحة عمل {workspace}"
+    }
   }
 }

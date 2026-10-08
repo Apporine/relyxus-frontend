@@ -22,6 +22,11 @@
     font-family: var(--font-mono);
   }
 
+  /* Lucide icons use a 1.5 px stroke throughout the product (UI/UX s. 1). */
+  svg.lucide {
+    stroke-width: 1.5;
+  }
+
   ::selection {
     background-color: var(--color-selected);
     color: var(--color-fg-primary);

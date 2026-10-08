@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "verify:quick": "pnpm format:check && pnpm lint && pnpm typecheck",
+    "verify:push": "pnpm verify:quick && pnpm build && pnpm --filter @relyxus/ui build-storybook --quiet",
     "verify": "pnpm verify:quick && pnpm test && pnpm build && pnpm --filter @relyxus/ui build-storybook --quiet",
     "prepare": "husky"
   },

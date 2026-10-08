@@ -51,7 +51,8 @@ Run these from the repository root.
 | `pnpm typecheck`                            | TypeScript strict type check                              |
 | `pnpm format` / `pnpm format:check`         | Apply or verify Prettier formatting                       |
 | `pnpm verify:quick`                         | Prettier, ESLint and TypeScript (pre-commit)              |
-| `pnpm verify`                               | Full CI verify job except e2e (pre-push)                  |
+| `pnpm verify:push`                          | Pre-commit checks plus build and Storybook (pre-push)     |
+| `pnpm verify`                               | Full CI verify job except e2e                             |
 | `pnpm --filter @relyxus/ui storybook`       | Component workshop at http://localhost:6006               |
 | `pnpm --filter @relyxus/ui build-storybook` | Static Storybook build                                    |
 
@@ -74,10 +75,11 @@ Git hooks run automatically after `pnpm install` (via Husky):
 | Hook         | Command                                 | Purpose                                                                                     |
 | ------------ | --------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `pre-commit` | `lint-staged`, then `pnpm verify:quick` | Format and ESLint staged files; verify Prettier, ESLint and TypeScript across the workspace |
-| `pre-push`   | `pnpm verify`                           | Same checks as CI verify (unit tests, production build, Storybook build)                    |
+| `pre-push`   | `pnpm verify:push`                      | Prettier, ESLint, TypeScript, production build and Storybook build (Vercel-aligned)         |
 | `commit-msg` | —                                       | Rejects `Co-authored-by: Cursor` trailers                                                   |
 
-Run the full verify job manually with `pnpm verify`. Skip hooks once with `HUSKY=0` (for example
+Run the full CI verify job manually with `pnpm verify` (includes unit tests). Skip hooks once with
+`HUSKY=0` (for example
 `HUSKY=0 git commit …`) only when you intentionally need to bypass them.
 
 End-to-end tests are not run on every push; run

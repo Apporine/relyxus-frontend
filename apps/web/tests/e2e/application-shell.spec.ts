@@ -37,7 +37,7 @@ test.describe('application shell', () => {
     page,
   }) => {
     await page.goto('/w/payments-uk/home');
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2, name: 'Active incidents' })).toBeVisible();
 
     await page.keyboard.press('Control+k');
     const palette = page.getByRole('combobox', { name: 'Search commands and destinations' });

@@ -114,9 +114,21 @@ export function useCanChangeState(): boolean {
   return useLiveConnectionStatus().state === 'open';
 }
 
-/** Runs the handler for every live event of the given type, for example "incident.updated.v1". */
-export function useLiveEvent(eventType: string, onEvent: LiveEventHandler): void {
+/** Runs the handler for every live event of the given types, for example "incident.updated.v1". */
+export function useLiveEvents(eventTypes: readonly string[], onEvent: LiveEventHandler): void {
   const { subscribe } = useLiveUpdatesContext();
   const handleEvent = useEffectEvent(onEvent);
-  useEffect(() => subscribe(eventType, (event) => handleEvent(event)), [subscribe, eventType]);
+  const eventTypesKey = eventTypes.join('|');
+
+  useEffect(() => {
+    const unsubscribers = eventTypesKey
+      .split('|')
+      .map((eventType) => subscribe(eventType, (event) => handleEvent(event)));
+    return () => unsubscribers.forEach((unsubscribe) => unsubscribe());
+  }, [subscribe, eventTypesKey]);
+}
+
+/** Runs the handler for every live event of one type. */
+export function useLiveEvent(eventType: string, onEvent: LiveEventHandler): void {
+  useLiveEvents([eventType], onEvent);
 }

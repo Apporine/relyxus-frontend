@@ -9,7 +9,8 @@
     "durationSeconds": "{seconds}s",
     "deadlineRemaining": "{remaining} left · due {dueTime}",
     "showInUtc": "Show times in UTC",
-    "showInLocalZone": "Show times in {timeZone}"
+    "showInLocalZone": "Show times in {timeZone}",
+    "durationMinutesSeconds": "{minutes}m {seconds}s"
   },
   "live": {
     "newUpdates": "{count, plural, one {# new update} other {# new updates}}"
@@ -129,10 +130,129 @@
       "title": "This page doesn't exist",
       "description": "The link may be mistyped, or the page is not available in this version of Relyxus.",
       "backToConsole": "Back to the console"
+    }
+  },
+  "common": {
+    "sectionLoadFailed": "{section} could not be loaded.",
+    "sectionLoadFailedReference": "Reference {reference}. Try again; if it keeps failing, contact your administrator.",
+    "sectionForbidden": "You don't have access to {section}. Ask a workspace administrator if you need it.",
+    "retry": "Try again",
+    "notReported": "not reported",
+    "loading": "Loading {section}"
+  },
+  "domain": {
+    "incidentStates": {
+      "triage": "Triage",
+      "investigating": "Investigating",
+      "mitigating": "Mitigating",
+      "monitoring": "Monitoring",
+      "resolved": "Resolved",
+      "closed": "Closed",
+      "cancelled": "Cancelled",
+      "merged": "Merged"
     },
-    "commandCentre": {
-      "title": "Command Centre",
-      "description": "{workspace} workspace"
+    "environments": {
+      "production": "PROD",
+      "staging": "STAGING",
+      "development": "DEV"
+    },
+    "visibilities": {
+      "workspace": "Workspace",
+      "restricted-group": "Restricted",
+      "invite-only": "Invite only",
+      "confidential": "Confidential"
+    },
+    "connectorHealth": {
+      "connected": "Connected",
+      "degraded": "Degraded",
+      "disabled": "Disabled",
+      "unavailable": "Unavailable"
+    },
+    "businessServiceHealth": {
+      "at-risk": "At risk",
+      "degraded": "Degraded",
+      "monitoring": "Monitoring"
+    },
+    "clockPhases": {
+      "normal": "On track",
+      "past-half": "Past 50% of the window",
+      "past-three-quarters": "Past 75% of the window",
+      "past-ninety-percent": "Past 90% of the window",
+      "breached": "Deadline missed",
+      "submitted": "Submitted"
+    },
+    "impactConfidence": {
+      "measured": "Measured",
+      "estimated": "Estimated",
+      "assumed": "Assumed"
+    }
+  },
+  "commandCentre": {
+    "title": "Command Centre",
+    "description": "{workspace} · {dateTime}",
+    "declareIncident": "Declare incident",
+    "attention": {
+      "heading": "Needs your attention",
+      "moneyAtRisk": "{amount} at risk",
+      "approval": "Approval",
+      "timeLeft": "{time} left",
+      "nothing": "Nothing needs your decision right now."
+    },
+    "activeIncidents": {
+      "heading": "Active incidents",
+      "viewAll": "View all incidents",
+      "columns": {
+        "incident": "Incident",
+        "severity": "Severity",
+        "state": "State",
+        "impact": "Impact",
+        "age": "Age"
+      },
+      "allClearTitle": "No active incidents in {workspace}",
+      "allClearDescription": "Every incident is resolved. New incidents appear here within a second."
+    },
+    "decisions": {
+      "heading": "Decisions",
+      "productionApproval": "Production approval",
+      "target": "Target",
+      "blastRadius": "Blast radius",
+      "quorum": "Quorum",
+      "quorumProgress": "{approved} of {required} approved",
+      "expiresIn": "Expires in",
+      "review": "Review",
+      "noneWaiting": "No approvals are waiting for you."
+    },
+    "clocks": {
+      "heading": "Regulator clocks",
+      "deadline": "Deadline · {time}",
+      "ownerAndPackage": "Owner {owner} · {rulePackage}",
+      "noneRunning": "No regulator clocks are running."
+    },
+    "health": {
+      "heading": "Operational health",
+      "servicesAtRisk": "Services at risk",
+      "businessServicesAtRisk": "{count, plural, one {# business service at risk} other {# business services at risk}}",
+      "noServicesAtRisk": "All business services are within tolerance.",
+      "connectors": "Connectors",
+      "connectorsHealthy": "{healthy} of {total} healthy",
+      "noConnectors": "No connectors are set up yet.",
+      "lastDay": "Last 24 hours",
+      "incidentCount": "{count, plural, one {# incident} other {# incidents}}",
+      "medianTimeToFirstHypothesis": "Median time to first hypothesis",
+      "noHypothesisYet": "No hypotheses yet",
+      "resolvedWithoutRollback": "{count} resolved without rollback",
+      "unapprovedProductionChanges": "{count, plural, one {# unapproved production change} other {# unapproved production changes}}"
+    }
+  },
+  "approvals": {
+    "expired": "Expired",
+    "timeLeft": "{time} left"
+  },
+  "incidents": {
+    "impact": {
+      "failedTransactions": "{count, plural, one {# failed transaction} other {# failed transactions}}",
+      "affectedCustomers": "{count, plural, one {# customer affected} other {# customers affected}}",
+      "notMeasured": "Not measured"
     }
   }
 }

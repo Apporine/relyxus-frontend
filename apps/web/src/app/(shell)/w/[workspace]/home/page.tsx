@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { CommandCentrePage } from '@/features/command-centre/command-centre-page';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const translateCommandCentre = await getTranslations('shell.commandCentre');
+  const translateCommandCentre = await getTranslations('commandCentre');
   return { title: translateCommandCentre('title') };
 }
 

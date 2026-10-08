@@ -18,6 +18,9 @@ order of authority:
 4. Relyxus Obsidian design package (visual styling only)
 5. Relyxus Git and GitHub engineering contract (branches, commits, pull requests)
 
+The frontend implementation plan and the open questions log live in
+[docs/frontend](docs/frontend); architecture decisions live in [docs/adr](docs/adr).
+
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a branch.

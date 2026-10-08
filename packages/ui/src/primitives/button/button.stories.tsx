@@ -56,6 +56,14 @@ export const Disabled: Story = {
   args: { disabled: true, children: 'Change state' },
 };
 
+export const DisabledPrimary: Story = {
+  args: {
+    variant: 'primary',
+    disabled: true,
+    children: 'Approve Restart payments-api in PROD',
+  },
+};
+
 export const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-3">

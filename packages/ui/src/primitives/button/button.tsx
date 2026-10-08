@@ -11,21 +11,22 @@ export const buttonVariants = cva(
     '[&_svg]:size-4 [&_svg]:shrink-0',
     'rounded-button border font-semibold select-none',
     'transition-colors duration-(--rx-duration-hover) ease-standard',
-    'disabled:cursor-not-allowed disabled:opacity-50',
+    'disabled:cursor-not-allowed',
     'aria-busy:cursor-progress',
   ],
   {
     variants: {
       variant: {
         primary:
-          'border-action bg-action text-action-fg hover:border-fg-secondary hover:bg-fg-secondary',
-        secondary: 'border-control bg-surface-2 text-fg-primary hover:bg-raised active:bg-selected',
+          'border-action bg-action text-action-fg hover:border-fg-secondary hover:bg-fg-secondary disabled:border-control disabled:bg-surface-2 disabled:text-fg-tertiary disabled:hover:border-control disabled:hover:bg-surface-2',
+        secondary:
+          'border-control bg-surface-2 text-fg-primary hover:bg-raised active:bg-selected disabled:opacity-50',
         tertiary:
-          'border-control bg-transparent text-fg-primary hover:bg-surface-2 active:bg-raised',
+          'border-control bg-transparent text-fg-primary hover:bg-surface-2 active:bg-raised disabled:opacity-50',
         danger:
-          'border-critical bg-transparent text-critical hover:bg-critical-subtle active:bg-critical-subtle',
+          'border-critical bg-transparent text-critical hover:bg-critical-subtle active:bg-critical-subtle disabled:border-control disabled:bg-transparent disabled:text-fg-tertiary disabled:hover:bg-transparent',
         ghost:
-          'border-transparent bg-transparent text-fg-secondary hover:bg-surface-2 hover:text-fg-primary active:bg-raised',
+          'border-transparent bg-transparent text-fg-secondary hover:bg-surface-2 hover:text-fg-primary active:bg-raised disabled:opacity-50',
       },
       size: {
         small: 'h-8 px-3 text-table',

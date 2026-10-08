@@ -77,6 +77,8 @@
 
   --ease-standard: var(--rx-ease-standard);
 
+  --animate-relyxus-wordmark: relyxus-wordmark-pulse 1.4s var(--ease-standard) infinite;
+
   /* UI/UX s. 15: mobile 360 to 767 is the unprefixed default */
   --breakpoint-tablet: 48rem;
   --breakpoint-laptop: 64rem;

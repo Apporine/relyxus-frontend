@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 
 import { useRefreshOnLiveEvents } from '@/lib/live/use-refresh-on-live-events';
 import { useCanChangeState } from '@/lib/live/live-updates-provider';
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { isHiddenOrMissing, NoAccessState, PageLoadFailedState } from '@/lib/ui/page-states';
 import { useMediaQuery } from '@/lib/ui/use-media-query';
 import { PageHeader } from '@/shell/page-header';
@@ -25,15 +26,6 @@ import {
 } from './queries';
 
 const THREE_COLUMN_MEDIA_QUERY = '(min-width: 90rem)';
-
-function InboxLoadingState() {
-  return (
-    <div aria-busy="true" className="flex flex-col gap-6">
-      <Skeleton className="h-20 w-full" />
-      <Skeleton className="h-[40rem] w-full" />
-    </div>
-  );
-}
 
 function NoSelectionState() {
   const translateInbox = useTranslations('approvals.inbox');
@@ -94,7 +86,7 @@ export function ApprovalsInboxPage() {
   }
 
   if (waitingForMeQuery.isPending || waitingForOthersQuery.isPending) {
-    return <InboxLoadingState />;
+    return <PageLoadingState />;
   }
 
   if (waitingForMeQuery.isError && waitingForOthersQuery.isError) {

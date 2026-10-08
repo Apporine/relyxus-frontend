@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import { declareIncidentHref } from '@/features/incidents/routes';
 import { useRelyxusFormat } from '@/lib/format/use-relyxus-format';
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { PageHeader } from '@/shell/page-header';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
@@ -40,6 +41,18 @@ export function CommandCentrePage() {
           workspace: workspace.name,
           dateTime: format.dateAndTime(currentTime),
         });
+
+  const isInitialLoad =
+    activeIncidentsQuery.isPending &&
+    pendingApprovalsQuery.isPending &&
+    regulatorClocksQuery.isPending &&
+    servicesAtRiskQuery.isPending &&
+    connectorsQuery.isPending &&
+    lastDayQuery.isPending;
+
+  if (isInitialLoad) {
+    return <PageLoadingState />;
+  }
 
   return (
     <div className="flex flex-col gap-6">

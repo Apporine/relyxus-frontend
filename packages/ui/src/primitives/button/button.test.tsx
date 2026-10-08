@@ -41,6 +41,19 @@ describe('Button', () => {
     );
   });
 
+  it('keeps primary actions readable when disabled', () => {
+    renderWithProviders(
+      <Button variant="primary" disabled>
+        Approve Restart payments-api in PROD
+      </Button>,
+    );
+
+    const button = screen.getByRole('button', { name: 'Approve Restart payments-api in PROD' });
+    expect(button).toBeDisabled();
+    expect(button.className).toContain('disabled:bg-surface-2');
+    expect(button.className).toContain('disabled:text-fg-tertiary');
+  });
+
   it('has no accessibility violations in each variant', async () => {
     const { container } = renderWithProviders(
       <div>

@@ -1,11 +1,12 @@
 'use client';
 
-import { Button, Skeleton } from '@relyxus/ui';
+import { Button } from '@relyxus/ui';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { isHiddenOrMissing, NoAccessState, PageLoadFailedState } from '@/lib/ui/page-states';
 import { incidentWarRoomHref } from '@/features/incidents/routes';
 import { useLiveConnectionStatus } from '@/lib/live/live-updates-provider';
@@ -103,12 +104,7 @@ export function EvidenceExplorerPage({ incidentReference }: { incidentReference:
     activeHypothesis === undefined ? null : String(activeHypothesis.rank).padStart(2, '0');
 
   if (incidentQuery.isPending) {
-    return (
-      <div className="flex flex-col gap-6" aria-busy="true">
-        <Skeleton className="h-20 w-full" />
-        <Skeleton className="h-[40rem] w-full" />
-      </div>
-    );
+    return <PageLoadingState />;
   }
 
   if (incidentQuery.isError) {

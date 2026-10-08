@@ -1,7 +1,8 @@
+import { RelyxusWordmarkLoader } from '@relyxus/ui';
 import type { ReactNode } from 'react';
 
 type FullPageMessageProps = {
-  title: string;
+  title?: string;
   description?: ReactNode;
   /** The one next valid action, for example "Try again". */
   action?: ReactNode;
@@ -17,10 +18,25 @@ export function FullPageMessage({
   icon,
   isBusy = false,
 }: FullPageMessageProps) {
+  if (isBusy) {
+    return (
+      <main
+        id="main-content"
+        aria-busy="true"
+        className="flex min-h-dvh items-center justify-center bg-canvas p-6"
+      >
+        <RelyxusWordmarkLoader label={title} />
+      </main>
+    );
+  }
+
+  if (title === undefined) {
+    throw new Error('FullPageMessage requires a title unless isBusy is set.');
+  }
+
   return (
     <main
       id="main-content"
-      aria-busy={isBusy || undefined}
       className="flex min-h-dvh items-center justify-center bg-canvas p-6"
     >
       <div className="flex w-full max-w-lg flex-col items-center gap-3 rounded-panel border border-control bg-surface-1 px-8 py-10 text-center">

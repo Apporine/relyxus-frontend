@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { useRefreshOnLiveEvents } from '@/lib/live/use-refresh-on-live-events';
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { PageHeader } from '@/shell/page-header';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
@@ -33,6 +34,10 @@ export function IncidentListPage() {
 
   useRefreshOnLiveEvents(incidentListEvents, incidentQueryKeys.list(workspace.slug, filters));
   useRefreshOnLiveEvents(incidentListEvents, incidentQueryKeys.summary(workspace.slug));
+
+  if (incidentsQuery.isPending && summaryQuery.isPending) {
+    return <PageLoadingState />;
+  }
 
   return (
     <div className="flex flex-col gap-6">

@@ -4,6 +4,7 @@ import { Button, Skeleton } from '@relyxus/ui';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { isHiddenOrMissing, NoAccessState, PageLoadFailedState } from '@/lib/ui/page-states';
 import { incidentWarRoomHref } from '@/features/incidents/routes';
 import { QuerySection } from '@/lib/ui/query-section';
@@ -25,12 +26,7 @@ export function IncidentTasksPage({ incidentReference }: { incidentReference: st
   const tasksQuery = useIncidentTasksList(workspace.slug, incidentReference);
 
   if (incidentQuery.isPending) {
-    return (
-      <div className="flex flex-col gap-6" aria-busy="true">
-        <Skeleton className="h-20 w-full" />
-        <TasksPlaceholder />
-      </div>
-    );
+    return <PageLoadingState />;
   }
 
   if (incidentQuery.isError) {

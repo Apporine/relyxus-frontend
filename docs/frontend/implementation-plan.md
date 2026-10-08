@@ -88,7 +88,7 @@ relyxus-frontend/
           analytics/ policies/ runbooks/ compliance/ audit/ integrations/ admin/ settings/
         shell/               Top bar, sidebar, banners, context drawer, command palette, toasts
         lib/
-          domain/            Shared product vocabulary: severity, incident state, visibility, environment
+          domain/            Zod schemas for the product vocabulary exported by @relyxus/ui
           api/               HTTP client, RFC 9457 problem details, idempotency and ETag handling
           live/              WebSocket client, SSE fallback, update buffering
           format/            Dates, durations, money, counts (locale aware, UTC toggle)
@@ -121,8 +121,9 @@ app/ routes  ->  features/*  ->  shell/, lib/*  ->  @relyxus/ui
 ```
 
 - Routes stay thin: read params, check access, render a feature screen.
-- A feature never imports another feature's internals. Shared domain vocabulary
-  (severity, incident state, visibility, environment) lives in `lib/domain`.
+- A feature never imports another feature's internals. The product vocabulary (severity,
+  incident state, visibility, environment, action state) is defined once in `@relyxus/ui`
+  because its components render it; `lib/domain` builds the API schemas from those values.
 - `@relyxus/ui` knows nothing about the API, routing or the product data model beyond the
   presentational props it is given.
 

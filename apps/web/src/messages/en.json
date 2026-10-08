@@ -231,7 +231,7 @@
     "health": {
       "heading": "Operational health",
       "servicesAtRisk": "Services at risk",
-      "businessServicesAtRisk": "{count, plural, one {business service at risk} other {business services at risk}}",
+      "businessServicesAtRisk": "{count, plural, one {# business service at risk} other {# business services at risk}}",
       "noServicesAtRisk": "All business services are within tolerance.",
       "connectors": "Connectors",
       "connectorsHealthy": "{healthy} of {total} healthy",

@@ -10,5 +10,8 @@
     "deadlineRemaining": "{remaining} left · due {dueTime}",
     "showInUtc": "Show times in UTC",
     "showInLocalZone": "Show times in {timeZone}"
+  },
+  "live": {
+    "newUpdates": "{count, plural, one {# new update} other {# new updates}}"
   }
 }

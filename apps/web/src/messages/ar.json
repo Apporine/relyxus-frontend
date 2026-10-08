@@ -10,5 +10,8 @@
     "deadlineRemaining": "متبقٍ {remaining} · الموعد {dueTime}",
     "showInUtc": "عرض الأوقات بالتوقيت العالمي المنسق",
     "showInLocalZone": "عرض الأوقات بتوقيت {timeZone}"
+  },
+  "live": {
+    "newUpdates": "{count, plural, zero {لا توجد تحديثات جديدة} one {تحديث جديد واحد} two {تحديثان جديدان} few {# تحديثات جديدة} many {# تحديثًا جديدًا} other {# تحديث جديد}}"
   }
 }

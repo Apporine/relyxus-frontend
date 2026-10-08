@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+commit_message_file="$1"
+
+if grep -qiE '^Co-authored-by:[[:space:]]*Cursor\b' "$commit_message_file"; then
+  echo "Commit message must not include a Cursor co-author trailer." >&2
+  echo "Use scripts/git/commit.ps1 or git commit -F with a message file." >&2
+  exit 1
+fi

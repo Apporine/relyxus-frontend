@@ -12,9 +12,15 @@
     "typecheck": "pnpm --recursive --if-present typecheck",
     "test": "pnpm --recursive --if-present test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "verify:quick": "pnpm format:check && pnpm lint && pnpm typecheck",
+    "verify:push": "pnpm verify:quick && pnpm build",
+    "verify": "pnpm verify:quick && pnpm test && pnpm build && pnpm --filter @relyxus/ui build-storybook --quiet",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "prettier": "3.9.9",
     "prettier-plugin-tailwindcss": "0.8.1"
   }

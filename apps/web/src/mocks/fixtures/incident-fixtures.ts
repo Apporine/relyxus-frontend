@@ -33,12 +33,20 @@ function isActiveIncident(incident: IncidentSummary): boolean {
   );
 }
 
-/** Every incident record for the Payments / UK demo workspace. */
-export function incidentRecordsFor(workspaceSlug: string): IncidentSummary[] | null {
-  if (workspaceSlug !== 'payments-uk') {
-    return null;
-  }
+/** Incidents declared during this browser session, appended to the static demo records. */
+const declaredIncidentsByWorkspace = new Map<string, IncidentSummary[]>();
 
+export function registerDeclaredIncident(workspaceSlug: string, incident: IncidentSummary): void {
+  const incidents = declaredIncidentsByWorkspace.get(workspaceSlug) ?? [];
+  declaredIncidentsByWorkspace.set(workspaceSlug, [...incidents, incident]);
+}
+
+/** Clears declared incidents so each test starts from the static fixture set. */
+export function forgetDeclaredIncidents(): void {
+  declaredIncidentsByWorkspace.clear();
+}
+
+function paymentsUkIncidentRecords(): IncidentSummary[] {
   return [
     {
       reference: 'INC-2041',
@@ -150,6 +158,17 @@ export function incidentRecordsFor(workspaceSlug: string): IncidentSummary[] | n
       impactStartedAt: isoInstantFromNow(-30 * MILLISECONDS_PER_HOUR),
       declaredAt: isoInstantFromNow(-30 * MILLISECONDS_PER_HOUR),
     },
+  ];
+}
+
+/** Every incident record for the Payments / UK demo workspace. */
+export function incidentRecordsFor(workspaceSlug: string): IncidentSummary[] | null {
+  if (workspaceSlug !== 'payments-uk') {
+    return null;
+  }
+  return [
+    ...paymentsUkIncidentRecords(),
+    ...(declaredIncidentsByWorkspace.get(workspaceSlug) ?? []),
   ];
 }
 

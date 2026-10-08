@@ -28,7 +28,7 @@ test.describe('declare incident', () => {
     await expect(declareButton).toBeEnabled();
   });
 
-  test('declares an incident and opens the war room placeholder', async ({ page }) => {
+  test('declares an incident and opens the war room', async ({ page }) => {
     await page.getByRole('combobox', { name: 'Incident type' }).click();
     await page.getByRole('option', { name: 'Payment outage' }).click();
     await page.getByRole('textbox', { name: 'Title' }).fill('Card authorisation spike');
@@ -38,7 +38,10 @@ test.describe('declare incident', () => {
 
     await page.getByRole('button', { name: 'Declare incident' }).click();
     await expect(page).toHaveURL(/\/w\/payments-uk\/incidents\/INC-\d+$/);
-    await expect(page.getByRole('heading', { level: 1, name: /INC-\d+ war room/ })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 1, name: 'Card authorisation spike' }),
+    ).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Acknowledge' })).toBeVisible();
   });
 
   test('has no WCAG 2.2 AA violations in English or Arabic', async ({ page, context, baseURL }) => {

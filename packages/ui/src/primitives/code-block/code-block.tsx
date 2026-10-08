@@ -29,6 +29,7 @@ export function CodeBlock({ code, label, copyLabels, className }: CodeBlockProps
         </div>
       )}
       <pre
+        tabIndex={0}
         className={cn(
           'overflow-x-auto p-3 font-mono text-table text-fg-primary',
           copyLabels && 'pe-12',

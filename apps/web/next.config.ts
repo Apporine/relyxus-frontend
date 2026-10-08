@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 // Applied to every response. Referrer is suppressed entirely because console URLs carry
 // workspace and incident identifiers that must never reach another origin.
@@ -22,4 +23,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
+
+export default withNextIntl(nextConfig);

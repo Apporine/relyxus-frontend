@@ -1,0 +1,14 @@
+{
+  "ui": {
+    "notificationsRegion": "الإشعارات",
+    "dismissNotification": "إغلاق الإشعار"
+  },
+  "time": {
+    "durationHoursMinutes": "{hours} س {minutes} د",
+    "durationMinutes": "{minutes} د",
+    "durationSeconds": "{seconds} ث",
+    "deadlineRemaining": "متبقٍ {remaining} · الموعد {dueTime}",
+    "showInUtc": "عرض الأوقات بالتوقيت العالمي المنسق",
+    "showInLocalZone": "عرض الأوقات بتوقيت {timeZone}"
+  }
+}

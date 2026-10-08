@@ -1,3 +1,5 @@
+'use client';
+
 import { CircleCheck, Clock, OctagonAlert, TriangleAlert } from 'lucide-react';
 import type { ReactNode } from 'react';
 

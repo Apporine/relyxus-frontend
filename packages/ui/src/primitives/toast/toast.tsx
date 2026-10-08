@@ -1,3 +1,5 @@
+'use client';
+
 import { CircleCheck, Info, OctagonAlert, TriangleAlert, X } from 'lucide-react';
 import { Toast as ToastPrimitive } from 'radix-ui';
 import {

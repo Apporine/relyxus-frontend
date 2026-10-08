@@ -481,5 +481,54 @@
       "title": "You don't have access to this item",
       "description": "It may not exist, or it is restricted to named people. Ask the incident commander if you need access."
     }
+  },
+  "evidenceExplorer": {
+    "title": "Evidence Explorer",
+    "documentTitle": "{reference} evidence",
+    "live": "Live",
+    "compare": "Compare",
+    "filters": {
+      "toolbarLabel": "Evidence filters",
+      "sourceAll": "Source: All",
+      "sourceLabel": "Source: {source}",
+      "hypothesisAll": "Hypothesis: All",
+      "hypothesisLabel": "Hypothesis: {hypothesis}",
+      "freshnessAll": "Freshness: All",
+      "freshnessFresh": "Freshness: Fresh",
+      "freshnessStale": "Freshness: Stale",
+      "itemCount": "{count, plural, one {# evidence item} other {# evidence items}}"
+    },
+    "list": {
+      "heading": "Evidence",
+      "empty": "No evidence matches these filters."
+    },
+    "freshness": {
+      "fresh": "Fresh",
+      "stale": "Stale",
+      "staleMinutes": "stale {minutes}m"
+    },
+    "integrity": {
+      "verified": "Verified",
+      "mismatch": "Mismatch",
+      "pending": "Pending"
+    },
+    "hypothesis": {
+      "heading": "Hypothesis",
+      "supporting": "Supporting",
+      "refuting": "Refuting",
+      "whatWasChecked": "What was checked",
+      "noHypothesis": "No hypothesis is available for this incident.",
+      "noLinks": "No linked evidence in this view."
+    },
+    "detail": {
+      "heading": "Raw evidence",
+      "capturedAt": "Captured {time}",
+      "query": "Query",
+      "result": "Result",
+      "integrityHeading": "Integrity",
+      "redaction": "Redaction: {notice}",
+      "openInSource": "Open in source",
+      "aiSeparationNotice": "AI interpretation is kept separate from raw source evidence."
+    }
   }
 }

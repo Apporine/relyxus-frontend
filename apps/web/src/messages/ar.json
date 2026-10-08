@@ -481,5 +481,54 @@
       "title": "ليس لديك صلاحية الوصول إلى هذا العنصر",
       "description": "قد لا يكون موجودًا، أو أنه مقيّد بأشخاص محددين. اطلب الوصول من قائد الحادثة إذا احتجت إليه."
     }
+  },
+  "evidenceExplorer": {
+    "title": "مستكشف الأدلة",
+    "documentTitle": "أدلة {reference}",
+    "live": "مباشر",
+    "compare": "مقارنة",
+    "filters": {
+      "toolbarLabel": "فلاتر الأدلة",
+      "sourceAll": "المصدر: الكل",
+      "sourceLabel": "المصدر: {source}",
+      "hypothesisAll": "الفرضية: الكل",
+      "hypothesisLabel": "الفرضية: {hypothesis}",
+      "freshnessAll": "الحدّة: الكل",
+      "freshnessFresh": "الحدّة: حديث",
+      "freshnessStale": "الحدّة: قديم",
+      "itemCount": "{count, plural, zero {لا توجد عناصر أدلة} one {عنصر دليل واحد} two {عنصرا دليل} few {# عناصر أدلة} many {# عنصر دليل} other {# عنصر دليل}}"
+    },
+    "list": {
+      "heading": "الأدلة",
+      "empty": "لا توجد أدلة تطابق هذه الفلاتر."
+    },
+    "freshness": {
+      "fresh": "حديث",
+      "stale": "قديم",
+      "staleMinutes": "قديم {minutes} د"
+    },
+    "integrity": {
+      "verified": "تم التحقق",
+      "mismatch": "عدم تطابق",
+      "pending": "قيد الانتظار"
+    },
+    "hypothesis": {
+      "heading": "الفرضية",
+      "supporting": "داعمة",
+      "refuting": "نقض",
+      "whatWasChecked": "ما تم فحصه",
+      "noHypothesis": "لا توجد فرضية متاحة لهذه الحادثة.",
+      "noLinks": "لا توجد أدلة مرتبطة في هذا العرض."
+    },
+    "detail": {
+      "heading": "الدليل الخام",
+      "capturedAt": "تم التقاطه {time}",
+      "query": "الاستعلام",
+      "result": "النتيجة",
+      "integrityHeading": "السلامة",
+      "redaction": "التنقيح: {notice}",
+      "openInSource": "فتح في المصدر",
+      "aiSeparationNotice": "يُبقى تفسير الذكاء الاصطناعي منفصلًا عن دليل المصدر الخام."
+    }
   }
 }

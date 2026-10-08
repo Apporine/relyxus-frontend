@@ -138,7 +138,8 @@
     "sectionForbidden": "You don't have access to {section}. Ask a workspace administrator if you need it.",
     "retry": "Try again",
     "notReported": "not reported",
-    "loading": "Loading {section}"
+    "loading": "Loading {section}",
+    "required": "Required"
   },
   "domain": {
     "incidentStates": {
@@ -299,6 +300,79 @@
         "last24Hours": "last 24 hours",
         "noData": "No data yet"
       }
+    },
+    "declare": {
+      "title": "Declare incident",
+      "description": "Open a war room, notify on-call and block unapproved production changes",
+      "detailsHeading": "Incident details",
+      "submit": "Declare incident",
+      "validationIncomplete": "Complete the required fields before declaring.",
+      "submitFailed": "Could not declare the incident. Try again.",
+      "typesLoadFailed": "Could not load incident types.",
+      "liveConnectionRequired": "State-changing actions are paused until the live connection returns.",
+      "fields": {
+        "incidentType": "Incident type",
+        "title": "Title",
+        "affectedServices": "Affected business services",
+        "technicalComponent": "Technical component",
+        "severity": "Severity",
+        "impact": "Business impact (optional)",
+        "moneyAtRisk": "Money at risk (GBP)",
+        "failedTransactions": "Failed transactions",
+        "affectedCustomers": "Affected customers",
+        "visibility": "Visibility",
+        "context": "Initial context"
+      },
+      "placeholders": {
+        "incidentType": "Select an incident type",
+        "title": "What is happening?",
+        "technicalComponent": "e.g. authorisation API",
+        "severity": "Select severity",
+        "moneyAtRisk": "e.g. 184000",
+        "failedTransactions": "e.g. 18400",
+        "affectedCustomers": "e.g. 1200",
+        "visibility": "Select visibility",
+        "context": "Symptoms, recent changes, customer reports…"
+      },
+      "help": {
+        "title": "Short summary shown in lists and notifications.",
+        "technicalComponent": "Optional component or subsystem within the selected services.",
+        "moneyAtRisk": "Estimated exposure in pounds; stored in minor units.",
+        "context": "Optional notes for responders joining the war room."
+      },
+      "progress": {
+        "heading": "Declaration progress",
+        "status": {
+          "complete": "Complete",
+          "current": "In progress",
+          "next": "Next",
+          "optional": "Optional"
+        }
+      },
+      "steps": {
+        "incident-type": "Incident type",
+        "title": "Title",
+        "services": "Affected services",
+        "severity": "Severity",
+        "impact": "Business impact",
+        "visibility": "Visibility",
+        "context": "Context"
+      },
+      "preview": {
+        "heading": "Declaration preview",
+        "onDeclare": "When you declare",
+        "warRoomOpens": "A war room opens for this incident.",
+        "notifications": "Notifications",
+        "notifyOnCall": "On-call and incident roles are notified.",
+        "productionChanges": "Production changes",
+        "productionChangesBlocked": "Unapproved production changes stay blocked.",
+        "affectedServices": "Affected services"
+      }
+    },
+    "warRoom": {
+      "title": "{reference} war room",
+      "description": "Coordinate response, evidence and approvals in one place",
+      "placeholder": "The full war room experience is coming in the next capability."
     }
   }
 }

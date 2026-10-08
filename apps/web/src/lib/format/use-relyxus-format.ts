@@ -29,13 +29,16 @@ export function useRelyxusFormat() {
       timeZone: displayTimeZone,
     };
 
-    function duration(durationMs: number): string {
+    /** "2h 51m", "14m" or "40s"; with seconds, durations under an hour read "2m 41s". */
+    function duration(durationMs: number, { includeSeconds = false } = {}): string {
       const { hours, minutes, seconds } = splitDuration(durationMs);
       if (hours > 0) {
         return translateTime('durationHoursMinutes', { hours, minutes });
       }
       if (minutes > 0) {
-        return translateTime('durationMinutes', { minutes });
+        return includeSeconds
+          ? translateTime('durationMinutesSeconds', { minutes, seconds })
+          : translateTime('durationMinutes', { minutes });
       }
       return translateTime('durationSeconds', { seconds });
     }

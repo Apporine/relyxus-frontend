@@ -1,4 +1,5 @@
 export { cn } from './lib/cn';
+export { useCurrentTime } from './lib/use-current-time';
 
 export {
   RelyxusUiProvider,

@@ -9,7 +9,8 @@
     "durationSeconds": "{seconds} ث",
     "deadlineRemaining": "متبقٍ {remaining} · الموعد {dueTime}",
     "showInUtc": "عرض الأوقات بالتوقيت العالمي المنسق",
-    "showInLocalZone": "عرض الأوقات بتوقيت {timeZone}"
+    "showInLocalZone": "عرض الأوقات بتوقيت {timeZone}",
+    "durationMinutesSeconds": "{minutes} د {seconds} ث"
   },
   "live": {
     "newUpdates": "{count, plural, zero {لا توجد تحديثات جديدة} one {تحديث جديد واحد} two {تحديثان جديدان} few {# تحديثات جديدة} many {# تحديثًا جديدًا} other {# تحديث جديد}}"
@@ -129,10 +130,129 @@
       "title": "هذه الصفحة غير موجودة",
       "description": "قد يكون الرابط مكتوبًا بشكل خاطئ، أو أن الصفحة غير متاحة في هذا الإصدار من Relyxus.",
       "backToConsole": "العودة إلى وحدة التحكم"
+    }
+  },
+  "common": {
+    "sectionLoadFailed": "تعذّر تحميل {section}.",
+    "sectionLoadFailedReference": "المرجع {reference}. حاول مرة أخرى؛ وإذا استمر الخطأ فتواصل مع المسؤول.",
+    "sectionForbidden": "ليس لديك صلاحية الوصول إلى {section}. اطلب ذلك من مسؤول مساحة العمل إذا احتجت إليه.",
+    "retry": "حاول مرة أخرى",
+    "notReported": "غير مُبلَّغ",
+    "loading": "جارٍ تحميل {section}"
+  },
+  "domain": {
+    "incidentStates": {
+      "triage": "الفرز",
+      "investigating": "قيد التحقيق",
+      "mitigating": "قيد المعالجة",
+      "monitoring": "قيد المراقبة",
+      "resolved": "تم الحل",
+      "closed": "مغلقة",
+      "cancelled": "ملغاة",
+      "merged": "مدمجة"
     },
-    "commandCentre": {
-      "title": "مركز القيادة",
-      "description": "مساحة عمل {workspace}"
+    "environments": {
+      "production": "الإنتاج",
+      "staging": "التجهيز",
+      "development": "التطوير"
+    },
+    "visibilities": {
+      "workspace": "مساحة العمل",
+      "restricted-group": "مقيّدة",
+      "invite-only": "بالدعوة فقط",
+      "confidential": "سرية"
+    },
+    "connectorHealth": {
+      "connected": "متصل",
+      "degraded": "متدهور",
+      "disabled": "معطّل",
+      "unavailable": "غير متاح"
+    },
+    "businessServiceHealth": {
+      "at-risk": "معرّضة للخطر",
+      "degraded": "متدهورة",
+      "monitoring": "قيد المراقبة"
+    },
+    "clockPhases": {
+      "normal": "ضمن الموعد",
+      "past-half": "تجاوز 50% من المهلة",
+      "past-three-quarters": "تجاوز 75% من المهلة",
+      "past-ninety-percent": "تجاوز 90% من المهلة",
+      "breached": "فات الموعد النهائي",
+      "submitted": "تم التقديم"
+    },
+    "impactConfidence": {
+      "measured": "مقيس",
+      "estimated": "تقديري",
+      "assumed": "مفترض"
+    }
+  },
+  "commandCentre": {
+    "title": "مركز القيادة",
+    "description": "{workspace} · {dateTime}",
+    "declareIncident": "إعلان حادثة",
+    "attention": {
+      "heading": "يحتاج إلى انتباهك",
+      "moneyAtRisk": "{amount} معرّضة للخطر",
+      "approval": "موافقة",
+      "timeLeft": "متبقٍ {time}",
+      "nothing": "لا شيء ينتظر قرارك الآن."
+    },
+    "activeIncidents": {
+      "heading": "الحوادث النشطة",
+      "viewAll": "عرض جميع الحوادث",
+      "columns": {
+        "incident": "الحادثة",
+        "severity": "الخطورة",
+        "state": "الحالة",
+        "impact": "الأثر",
+        "age": "المدة"
+      },
+      "allClearTitle": "لا توجد حوادث نشطة في {workspace}",
+      "allClearDescription": "تم حل جميع الحوادث. تظهر الحوادث الجديدة هنا خلال ثانية."
+    },
+    "decisions": {
+      "heading": "القرارات",
+      "productionApproval": "موافقة على الإنتاج",
+      "target": "الهدف",
+      "blastRadius": "نطاق التأثير",
+      "quorum": "النصاب",
+      "quorumProgress": "تمت الموافقة {approved} من {required}",
+      "expiresIn": "تنتهي خلال",
+      "review": "مراجعة",
+      "noneWaiting": "لا توجد موافقات بانتظارك."
+    },
+    "clocks": {
+      "heading": "مؤقتات الجهات التنظيمية",
+      "deadline": "الموعد النهائي · {time}",
+      "ownerAndPackage": "المسؤول {owner} · {rulePackage}",
+      "noneRunning": "لا توجد مؤقتات تنظيمية قيد التشغيل."
+    },
+    "health": {
+      "heading": "الصحة التشغيلية",
+      "servicesAtRisk": "الخدمات المعرّضة للخطر",
+      "businessServicesAtRisk": "{count, plural, zero {خدمات أعمال معرّضة للخطر} one {خدمة أعمال معرّضة للخطر} two {خدمتا أعمال معرّضتان للخطر} few {خدمات أعمال معرّضة للخطر} many {خدمة أعمال معرّضة للخطر} other {خدمة أعمال معرّضة للخطر}}",
+      "noServicesAtRisk": "جميع خدمات الأعمال ضمن حدود التحمّل.",
+      "connectors": "الموصلات",
+      "connectorsHealthy": "{healthy} من {total} سليمة",
+      "noConnectors": "لم يتم إعداد أي موصل بعد.",
+      "lastDay": "آخر 24 ساعة",
+      "incidentCount": "{count, plural, zero {لا توجد حوادث} one {حادثة واحدة} two {حادثتان} few {# حوادث} many {# حادثة} other {# حادثة}}",
+      "medianTimeToFirstHypothesis": "الوسيط لزمن أول فرضية",
+      "noHypothesisYet": "لا توجد فرضيات بعد",
+      "resolvedWithoutRollback": "{count} تم حلها دون تراجع",
+      "unapprovedProductionChanges": "{count, plural, zero {لا توجد تغييرات إنتاج غير معتمدة} one {تغيير إنتاج واحد غير معتمد} two {تغييران في الإنتاج غير معتمدين} few {# تغييرات إنتاج غير معتمدة} many {# تغييرًا في الإنتاج غير معتمد} other {# تغيير إنتاج غير معتمد}}"
+    }
+  },
+  "approvals": {
+    "expired": "منتهية",
+    "timeLeft": "متبقٍ {time}"
+  },
+  "incidents": {
+    "impact": {
+      "failedTransactions": "{count, plural, zero {لا توجد معاملات فاشلة} one {معاملة فاشلة واحدة} two {معاملتان فاشلتان} few {# معاملات فاشلة} many {# معاملة فاشلة} other {# معاملة فاشلة}}",
+      "affectedCustomers": "{count, plural, zero {لا يوجد عملاء متأثرون} one {عميل واحد متأثر} two {عميلان متأثران} few {# عملاء متأثرين} many {# عميلًا متأثرًا} other {# عميل متأثر}}",
+      "notMeasured": "غير مقيس"
     }
   }
 }

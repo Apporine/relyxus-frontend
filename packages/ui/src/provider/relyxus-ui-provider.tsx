@@ -1,3 +1,5 @@
+'use client';
+
 import { Direction } from 'radix-ui';
 import type { ReactNode } from 'react';
 

@@ -1,12 +1,11 @@
 'use client';
 
 import { Button, Skeleton, Tabs, TabsContent, TabsList, TabsTrigger } from '@relyxus/ui';
-import { Lock, OctagonAlert } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
+import { isHiddenOrMissing, NoAccessState, PageLoadFailedState } from '@/lib/ui/page-states';
 import { incidentEvidenceHref } from '@/features/incidents/routes';
-import { ApiError } from '@/lib/api/api-error';
 import { useMediaQuery } from '@/lib/ui/use-media-query';
 import { useSearchParamChoice } from '@/lib/ui/use-search-param-choice';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
@@ -33,45 +32,6 @@ function WarRoomLoadingState() {
         <Skeleton className="h-96 w-full" />
       </div>
     </div>
-  );
-}
-
-/**
- * The same words for a restricted incident and one that does not exist, so the page never
- * confirms that a hidden incident exists (Product s. 8A).
- */
-function NoAccessState() {
-  const translateNoAccess = useTranslations('warRoom.noAccess');
-  return (
-    <section className="flex flex-col items-center gap-3 rounded-panel border border-control bg-surface-1 px-8 py-12 text-center">
-      <Lock aria-hidden className="size-6 text-fg-secondary" />
-      <h1 className="text-section-title font-semibold">{translateNoAccess('title')}</h1>
-      <p className="max-w-prose text-body text-fg-secondary">{translateNoAccess('description')}</p>
-    </section>
-  );
-}
-
-function IncidentLoadFailedState({ error, onRetry }: { error: Error; onRetry: () => void }) {
-  const translateCommon = useTranslations('common');
-  const translateWarRoom = useTranslations('warRoom');
-  const reference =
-    error instanceof ApiError && error.correlationId !== undefined
-      ? error.correlationId
-      : translateCommon('notReported');
-  return (
-    <section
-      role="alert"
-      className="flex flex-col items-start gap-3 rounded-panel border border-critical bg-surface-1 p-6"
-    >
-      <h1 className="flex items-center gap-2 text-section-title font-semibold">
-        <OctagonAlert aria-hidden className="size-5 text-critical" />
-        {translateCommon('sectionLoadFailed', { section: translateWarRoom('panels.tabsLabel') })}
-      </h1>
-      <p className="text-body text-fg-secondary">
-        {translateCommon('sectionLoadFailedReference', { reference })}
-      </p>
-      <Button onClick={onRetry}>{translateCommon('retry')}</Button>
-    </section>
   );
 }
 
@@ -102,12 +62,14 @@ export function WarRoomPage({ incidentReference }: { incidentReference: string }
   }
   if (incidentQuery.isError) {
     const { error } = incidentQuery;
-    const isHiddenOrMissing =
-      error instanceof ApiError && (error.kind === 'forbidden' || error.kind === 'not-found');
-    return isHiddenOrMissing ? (
+    return isHiddenOrMissing(error) ? (
       <NoAccessState />
     ) : (
-      <IncidentLoadFailedState error={error} onRetry={() => void incidentQuery.refetch()} />
+      <PageLoadFailedState
+        error={error}
+        sectionName={translatePanels('tabsLabel')}
+        onRetry={() => void incidentQuery.refetch()}
+      />
     );
   }
 

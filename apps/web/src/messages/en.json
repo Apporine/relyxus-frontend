@@ -139,7 +139,11 @@
     "retry": "Try again",
     "notReported": "not reported",
     "loading": "Loading {section}",
-    "required": "Required"
+    "required": "Required",
+    "noAccess": {
+      "title": "You don't have access to this item",
+      "description": "It may not exist, or it is restricted to named people. Ask the incident commander if you need access."
+    }
   },
   "domain": {
     "incidentStates": {
@@ -478,10 +482,6 @@
       "due": "Due {time}",
       "viewFullTimeline": "View full timeline",
       "viewAllTasks": "View all tasks"
-    },
-    "noAccess": {
-      "title": "You don't have access to this item",
-      "description": "It may not exist, or it is restricted to named people. Ask the incident commander if you need access."
     }
   },
   "evidenceExplorer": {

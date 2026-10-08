@@ -7,6 +7,7 @@ import { incidentDeclarationHandlers } from './incident-declaration-handlers';
 import { incidentListHandlers } from './incident-list-handlers';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
 import { sessionFixture } from './fixtures/session-fixture';
+import { onCallHandlers } from './on-call-handlers';
 import { warRoomHandlers } from './war-room-handlers';
 
 /*
@@ -26,6 +27,7 @@ export const handlers = [
   // After the incident list handlers, so /incidents/summary is not read as an incident reference.
   ...evidenceHandlers,
   ...warRoomHandlers,
+  ...onCallHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),
 ];

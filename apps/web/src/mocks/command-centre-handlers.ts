@@ -4,18 +4,6 @@ import { commandCentreFixturesFor, emptyListResponse } from './fixtures/command-
 
 /** Mock Service Worker handlers for the Command Centre endpoints (development only). */
 export const commandCentreHandlers = [
-  http.get('/api/v1/workspaces/:workspaceSlug/approvals', ({ request, params }) => {
-    const url = new URL(request.url);
-    if (url.searchParams.get('status') !== 'pending' || url.searchParams.get('assignee') !== 'me') {
-      return HttpResponse.json(emptyListResponse());
-    }
-    const fixtures = commandCentreFixturesFor(String(params.workspaceSlug));
-    return HttpResponse.json({
-      items: fixtures?.pendingApprovals ?? [],
-      nextCursor: null,
-    });
-  }),
-
   http.get('/api/v1/workspaces/:workspaceSlug/regulator-clocks', ({ request, params }) => {
     const url = new URL(request.url);
     if (url.searchParams.get('status') !== 'active') {

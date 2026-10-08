@@ -256,7 +256,92 @@
   },
   "approvals": {
     "expired": "منتهية",
-    "timeLeft": "متبقٍ {time}"
+    "timeLeft": "متبقٍ {time}",
+    "inbox": {
+      "title": "الموافقات",
+      "description": "إجراءات الإنتاج والتقارير وتغييرات السياسات التي تتطلب قرارك",
+      "pendingCount": "{count, plural, =0 {لا شيء معلّق} zero {لا شيء معلّق} one {طلب واحد معلّق} two {طلبان معلّقان} few {# طلبات معلّقة} many {# طلبًا معلّقًا} other {# طلب معلّق}}",
+      "queueLabel": "قائمة الموافقات",
+      "waitingForYou": "بانتظارك",
+      "waitingForOthers": "بانتظار آخرين",
+      "emptyMine": "لا يوجد ما ينتظر قرارك.",
+      "emptyOthers": "لا توجد طلبات بانتظار موافقين آخرين.",
+      "noSelectionTitle": "لا يوجد ما تراجعه",
+      "noSelectionDescription": "عندما يحتاج إجراء أو تقرير أو تغيير سياسة إلى قرارك يظهر هنا مع كل ما يلزم لاتخاذ القرار.",
+      "detailSectionName": "طلب الموافقة",
+      "kinds": {
+        "production-action": "إجراء إنتاج",
+        "report": "تقرير تنظيمي",
+        "policy": "تغيير سياسة",
+        "configuration": "تغيير إعدادات"
+      },
+      "requestedBy": "طلبه {name}",
+      "exactAction": "الإجراء الدقيق",
+      "commandLabel": "الأمر",
+      "copyCommand": "نسخ الأمر",
+      "commandCopied": "تم نسخ الأمر",
+      "copyFailed": "تعذّر النسخ",
+      "commandScope": "العنقود {cluster} · النطاق {namespace}",
+      "expectedResult": "النتيجة المتوقعة",
+      "evidence": "الأدلة",
+      "noEvidence": "لا توجد أدلة مرتبطة بهذا الطلب.",
+      "effectivePolicy": "السياسة السارية",
+      "noConflicts": "التعارضات: لا يوجد",
+      "conflicts": "التعارضات: {conflicts}",
+      "consequences": "سلّم العواقب",
+      "consequenceSteps": {
+        "target": "الهدف",
+        "blastRadius": "نطاق التأثير",
+        "risk": "المخاطر",
+        "quorum": "النصاب",
+        "rollback": "التراجع",
+        "verification": "التحقق"
+      },
+      "quorumProgress": "تمت الموافقة {approved} من {required}",
+      "missingPart": "غير متاح",
+      "yourApprovalPosition": "ستكون موافقتك رقم {position} من {required}.",
+      "mfaRequired": "يلزم إعادة التأكيد متعدد العوامل.",
+      "approveTarget": "الموافقة على {title} في {environment}",
+      "rejectWithReason": "الرفض مع ذكر السبب",
+      "askQuestion": "طرح سؤال",
+      "askQuestionUnavailable": "تتوفر الأسئلة الموجّهة إلى مقدّم الطلب مع تكامل المحادثة.",
+      "expiresLabel": "تنتهي الموافقة خلال",
+      "blocked": {
+        "waiting-for-others": "ينتظر هذا الطلب موافقين آخرين. لست مؤهلًا للمرحلة الحالية.",
+        "proposer-excluded": "أنت من اقترح هذا الإجراء، لذا تستبعدك السياسة من الموافقة عليه.",
+        "not-eligible": "دورك ليس ضمن الموافقين الذين تتطلبهم هذه السياسة.",
+        "expired": "انتهت صلاحية هذه الموافقة ولا يمكن إعادة استخدامها. اقترح الإجراء مجددًا من صفحة الحادثة.",
+        "already-decided": "تم تسجيل قرارك بشأن هذا الطلب بالفعل.",
+        "incomplete": "لا يمكن الموافقة على هذا الإجراء حتى تتوفر جميع أجزاء البطاقة.",
+        "mfa-unavailable": "تتطلب هذه السياسة إعادة تأكيد متعدد العوامل، وهو ما لا يدعمه هذا الإصدار من وحدة التحكم بعد. لا يزال بإمكانك الرفض مع ذكر السبب.",
+        "kind-unsupported": "تتطلب الموافقة على {kind} شاشة مراجعة خاصة لا يتضمنها هذا الإصدار من وحدة التحكم بعد. لا يزال بإمكانك الرفض مع ذكر السبب.",
+        "live-connection-lost": "القرارات متوقفة حتى يعود الاتصال المباشر."
+      },
+      "confirmApprove": {
+        "title": "الموافقة على {title} في {environment}؟",
+        "description": "تُحتسب موافقتك ضمن النصاب وفق {policy}. تصبح لاغية إذا انتهت صلاحية الطلب أو تغيّر هدفه أو أمره.",
+        "confirm": "الموافقة على {title} في {environment}",
+        "cancel": "إلغاء"
+      },
+      "reject": {
+        "title": "رفض {title}",
+        "description": "يرى مقدّم الطلب وقائد الحادثة سبب الرفض.",
+        "reasonLabel": "السبب",
+        "reasonRequired": "مطلوب",
+        "reasonHelp": "وضّح ما يجب تغييره قبل أن تمكن الموافقة.",
+        "reasonMissing": "أدخل سببًا قبل الرفض.",
+        "confirm": "رفض الطلب",
+        "cancel": "إلغاء"
+      },
+      "outcomes": {
+        "approved": "تمت الموافقة. يُنفَّذ {title} بعد اجتياز فحوص السياسة.",
+        "approval-recorded": "سُجّلت الموافقة: {approved} من {required}.",
+        "rejected": "تم الرفض. يمكن لمقدّم الطلب رؤية السبب."
+      },
+      "decisionFailed": "لم يُسجَّل قرارك",
+      "decisionFailedDetail": "لم يتغير شيء. المرجع {reference}.",
+      "closeDialog": "إغلاق"
+    }
   },
   "incidents": {
     "impact": {

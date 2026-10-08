@@ -1,5 +1,6 @@
 import { http, HttpResponse, ws } from 'msw';
 
+import { approvalHandlers } from './approval-handlers';
 import { commandCentreHandlers } from './command-centre-handlers';
 import { evidenceHandlers } from './evidence-handlers';
 import { incidentDeclarationHandlers } from './incident-declaration-handlers';
@@ -21,6 +22,7 @@ export const handlers = [
   ...incidentListHandlers,
   ...incidentDeclarationHandlers,
   ...commandCentreHandlers,
+  ...approvalHandlers,
   // After the incident list handlers, so /incidents/summary is not read as an incident reference.
   ...evidenceHandlers,
   ...warRoomHandlers,

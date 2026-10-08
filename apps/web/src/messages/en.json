@@ -256,7 +256,92 @@
   },
   "approvals": {
     "expired": "Expired",
-    "timeLeft": "{time} left"
+    "timeLeft": "{time} left",
+    "inbox": {
+      "title": "Approvals",
+      "description": "Production actions, reports and policy changes requiring your decision",
+      "pendingCount": "{count, plural, =0 {Nothing pending} one {# pending} other {# pending}}",
+      "queueLabel": "Approval queue",
+      "waitingForYou": "Waiting for you",
+      "waitingForOthers": "Waiting for others",
+      "emptyMine": "Nothing is waiting for your decision.",
+      "emptyOthers": "No requests are waiting on other approvers.",
+      "noSelectionTitle": "Nothing to review",
+      "noSelectionDescription": "When an action, report or policy change needs your decision it appears here, with everything needed to decide.",
+      "detailSectionName": "Approval request",
+      "kinds": {
+        "production-action": "Production action",
+        "report": "Regulator report",
+        "policy": "Policy change",
+        "configuration": "Configuration change"
+      },
+      "requestedBy": "Requested by {name}",
+      "exactAction": "Exact action",
+      "commandLabel": "Command",
+      "copyCommand": "Copy command",
+      "commandCopied": "Command copied",
+      "copyFailed": "Copy failed",
+      "commandScope": "cluster {cluster} · namespace {namespace}",
+      "expectedResult": "Expected result",
+      "evidence": "Evidence",
+      "noEvidence": "No evidence is linked to this request.",
+      "effectivePolicy": "Effective policy",
+      "noConflicts": "Conflicts: none",
+      "conflicts": "Conflicts: {conflicts}",
+      "consequences": "Consequence ladder",
+      "consequenceSteps": {
+        "target": "Target",
+        "blastRadius": "Blast radius",
+        "risk": "Risk",
+        "quorum": "Quorum",
+        "rollback": "Rollback",
+        "verification": "Verify"
+      },
+      "quorumProgress": "{approved} of {required} approved",
+      "missingPart": "Not available",
+      "yourApprovalPosition": "Your approval will be {position} of {required}.",
+      "mfaRequired": "Multi-factor re-confirmation is required.",
+      "approveTarget": "Approve {title} in {environment}",
+      "rejectWithReason": "Reject with reason",
+      "askQuestion": "Ask a question",
+      "askQuestionUnavailable": "Questions to the proposer arrive with the chat integration.",
+      "expiresLabel": "Approval expires",
+      "blocked": {
+        "waiting-for-others": "This request waits on other approvers. You are not eligible for its current stage.",
+        "proposer-excluded": "You proposed this action, so policy excludes you from approving it.",
+        "not-eligible": "Your role is not among the approvers this policy requires.",
+        "expired": "This approval expired and can never be reused. Propose the action again from the incident.",
+        "already-decided": "Your decision on this request is already recorded.",
+        "incomplete": "This action cannot be approved until every part of the card is available.",
+        "mfa-unavailable": "This policy requires multi-factor re-confirmation, which this version of the console cannot perform yet. You can still reject with a reason.",
+        "kind-unsupported": "Approving a {kind} needs its own review screen, which this version of the console does not include yet. You can still reject with a reason.",
+        "live-connection-lost": "Decisions are paused until the live connection returns."
+      },
+      "confirmApprove": {
+        "title": "Approve {title} in {environment}?",
+        "description": "Your approval counts towards the quorum under {policy}. It is void if the request expires or if its target or command changes.",
+        "confirm": "Approve {title} in {environment}",
+        "cancel": "Cancel"
+      },
+      "reject": {
+        "title": "Reject {title}",
+        "description": "The proposer and the incident commander see your reason.",
+        "reasonLabel": "Reason",
+        "reasonRequired": "Required",
+        "reasonHelp": "Explain what must change before this could be approved.",
+        "reasonMissing": "Enter a reason before rejecting.",
+        "confirm": "Reject request",
+        "cancel": "Cancel"
+      },
+      "outcomes": {
+        "approved": "Approved. {title} runs once policy checks pass.",
+        "approval-recorded": "Approval recorded: {approved} of {required}.",
+        "rejected": "Rejected. The proposer can see your reason."
+      },
+      "decisionFailed": "Your decision was not recorded",
+      "decisionFailedDetail": "Nothing changed. Reference {reference}.",
+      "closeDialog": "Close"
+    }
   },
   "incidents": {
     "impact": {

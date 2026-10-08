@@ -13,5 +13,126 @@
   },
   "live": {
     "newUpdates": "{count, plural, one {# new update} other {# new updates}}"
+  },
+  "shell": {
+    "skipToContent": "Skip to main content",
+    "productName": "Relyxus",
+    "navigation": {
+      "label": "Primary",
+      "groups": {
+        "operate": "Operate",
+        "understand": "Understand",
+        "govern": "Govern",
+        "configure": "Configure"
+      },
+      "areas": {
+        "command-centre": "Command Centre",
+        "incidents": "Incidents",
+        "approvals": "Approvals",
+        "on-call": "On-call",
+        "services": "Services",
+        "ai-quality": "AI Quality",
+        "analytics": "Analytics",
+        "policies": "Policies",
+        "runbooks": "Runbooks",
+        "compliance": "Compliance",
+        "audit": "Audit",
+        "integrations": "Integrations",
+        "admin": "Admin"
+      },
+      "collapse": "Collapse navigation",
+      "expand": "Expand navigation",
+      "mobileLabel": "Main"
+    },
+    "workspace": {
+      "label": "Workspace",
+      "switcherLabel": "Switch workspace, current: {workspace}"
+    },
+    "topBar": {
+      "searchPlaceholder": "Search or run a command",
+      "help": "Help",
+      "dataLocation": "{region} · {deploymentMode}",
+      "dataLocationTitle": "Where this workspace's data lives",
+      "dataLocationSummary": "Records, evidence and backups for {workspace} are stored and processed in {region}.",
+      "deploymentModeSummary": "Deployment: {deploymentMode}.",
+      "deploymentModes": {
+        "saas": "SaaS",
+        "dedicated": "Dedicated",
+        "self-hosted": "Self-hosted",
+        "air-gapped": "Air-gapped"
+      },
+      "platformHealth": {
+        "healthy": "Healthy",
+        "degraded": "Degraded",
+        "down": "Down"
+      },
+      "platformHealthLabel": "Relyxus status: {health}",
+      "accountMenu": "Account menu for {name}",
+      "keyboardShortcuts": "Keyboard shortcuts",
+      "language": "Language"
+    },
+    "banners": {
+      "relyxusDown": "Relyxus is down",
+      "relyxusDegraded": "Relyxus is degraded",
+      "capabilitySummary": "Still working: {working}. Affected: {affected}.",
+      "capabilities": {
+        "alert-intake": "alert intake",
+        "investigations": "investigations",
+        "ai-reasoning": "AI reasoning",
+        "approvals": "approvals",
+        "notifications": "notifications",
+        "integrations": "integrations"
+      },
+      "noCapabilities": "none",
+      "liveReconnecting": "Reconnecting · last update {time}",
+      "liveReconnectingBeforeFirstUpdate": "Reconnecting to live updates",
+      "liveOffline": "You are offline · last update {time}",
+      "liveOfflineBeforeFirstUpdate": "You are offline",
+      "stateChangesPaused": "Actions that change state are paused until the connection returns.",
+      "licenceGrace": "Licence grace period ends {date}",
+      "licenceGraceDetail": "Alert intake and investigations continue. Configuration changes and upgrades will be blocked after that date.",
+      "plannedMaintenance": "Planned maintenance from {start} to {end}"
+    },
+    "commandPalette": {
+      "title": "Command palette",
+      "inputLabel": "Search commands and destinations",
+      "groups": {
+        "actions": "Actions",
+        "navigate": "Go to"
+      },
+      "declareIncident": "Declare incident",
+      "noResults": "No commands match “{query}”"
+    },
+    "shortcuts": {
+      "title": "Keyboard shortcuts",
+      "then": "then",
+      "commandPalette": "Open the command palette",
+      "goHome": "Go to Command Centre",
+      "goIncidents": "Go to incidents",
+      "goApprovals": "Go to approvals",
+      "showShortcuts": "Show all shortcuts",
+      "closeOverlay": "Close drawer, dialog or palette",
+      "closeDialog": "Close"
+    },
+    "states": {
+      "loadingWorkspace": "Loading workspace",
+      "sessionUnavailableTitle": "Your session could not be loaded",
+      "sessionUnavailableDescription": "Relyxus could not confirm who you are or which workspaces you can open. Try again; if it keeps failing, contact your administrator with reference {reference}.",
+      "workspaceUnavailableTitle": "You don't have access to this workspace",
+      "workspaceUnavailableDescription": "It may not exist, or your role does not include it. Ask a workspace administrator if you need access.",
+      "noWorkspacesTitle": "You don't have access to any workspace yet",
+      "noWorkspacesDescription": "Ask an administrator to add you to a workspace.",
+      "retry": "Try again",
+      "notReported": "not reported"
+    },
+    "notFound": {
+      "title": "This page doesn't exist",
+      "description": "The link may be mistyped, or the page is not available in this version of Relyxus.",
+      "backToConsole": "Back to the console"
+    },
+    "commandCentre": {
+      "title": "Command Centre",
+      "description": "{workspace} workspace"
+    }
   }
 }

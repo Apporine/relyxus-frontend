@@ -5,5 +5,5 @@ import nextTypescript from 'eslint-config-next/typescript';
 export default defineConfig([
   ...nextCoreWebVitals,
   ...nextTypescript,
-  globalIgnores(['.next/**', 'out/**', 'next-env.d.ts']),
+  globalIgnores(['.next/**', 'out/**', 'next-env.d.ts', 'public/mockServiceWorker.js']),
 ]);

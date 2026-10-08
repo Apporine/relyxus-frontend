@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   typedRoutes: true,
+  // Keep generated assistant guidance files out of the repository.
+  agentRules: false,
   // The design system is consumed from source; there is no separate package build to drift.
   transpilePackages: ['@relyxus/ui'],
   async headers() {

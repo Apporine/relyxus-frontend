@@ -343,6 +343,29 @@
       "closeDialog": "إغلاق"
     }
   },
+  "onCall": {
+    "title": "المناوبة والتصعيد",
+    "description": "من المسؤول الآن، وفجوات التغطية والاستثناءات",
+    "schedules": "الجداول",
+    "scheduleDetail": "تفاصيل الجدول",
+    "escalationChain": "سلسلة التصعيد",
+    "emptySchedules": "لا توجد جداول مناوبة مهيّأة لهذه مساحة العمل.",
+    "emptyEscalation": "لا توجد سلسلة تصعيد مهيّأة لهذا الجدول.",
+    "noSelectionTitle": "لم يُحدَّد جدول",
+    "noSelectionDescription": "اختر جدولاً لمراجعة التغطية والاستثناءات والتصعيد.",
+    "addOverride": "إضافة استثناء",
+    "addOverrideUnavailable": "ستتوفر استثناءات الجدول مع تكامل خدمة المناوبة.",
+    "none": "لا شيء",
+    "swapRequestsPending": "{count, plural, =0 {لا شيء معلّق} zero {لا شيء معلّق} one {طلب واحد معلّق} two {طلبان معلّقان} few {# طلبات معلّقة} many {# طلبًا معلّقًا} other {# طلب معلّق}}",
+    "sections": {
+      "current": "الحالي",
+      "next": "التالي",
+      "coverageGap": "فجوة التغطية",
+      "override": "استثناء",
+      "swapRequests": "طلبات التبديل",
+      "dstCheck": "فحص التوقيت الصيفي"
+    }
+  },
   "incidents": {
     "impact": {
       "failedTransactions": "{count, plural, zero {لا توجد معاملات فاشلة} one {معاملة فاشلة واحدة} two {معاملتان فاشلتان} few {# معاملات فاشلة} many {# معاملة فاشلة} other {# معاملة فاشلة}}",

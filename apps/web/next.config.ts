@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   typedRoutes: true,
+  // The design system is consumed from source; there is no separate package build to drift.
+  transpilePackages: ['@relyxus/ui'],
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];
   },

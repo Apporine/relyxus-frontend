@@ -5,3 +5,5 @@ New folder/
 **/coverage/
 **/playwright-report/
 **/test-results/
+# Verbatim export from the Obsidian design package; kept byte-identical to the source.
+packages/ui/src/tokens/obsidian.tokens.json

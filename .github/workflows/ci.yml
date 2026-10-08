@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Format, lint, type check and build
+    name: Format, lint, type check, test and build
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -41,6 +41,9 @@ jobs:
 
       - name: Type check
         run: pnpm typecheck
+
+      - name: Unit and component tests
+        run: pnpm test
 
       - name: Build
         run: pnpm build

@@ -38,3 +38,20 @@ export const incidentSummarySchema = z.object({
 export type IncidentSummary = z.infer<typeof incidentSummarySchema>;
 
 export const incidentSummaryListSchema = paginatedListSchema(incidentSummarySchema);
+
+export const incidentViewStatuses = ['active', 'resolved', 'all'] as const;
+export type IncidentViewStatus = (typeof incidentViewStatuses)[number];
+
+/** Header metrics on the Incident List (UI/UX s. 10.2). Provisional contract (ADR 0004). */
+export const incidentListSummarySchema = z.object({
+  activeBySeverity: z.object({
+    SEV1: z.number().int().nonnegative(),
+    SEV2: z.number().int().nonnegative(),
+    SEV3: z.number().int().nonnegative(),
+    SEV4: z.number().int().nonnegative(),
+  }),
+  activeInvestigatingCount: z.number().int().nonnegative(),
+  activeMonitoringCount: z.number().int().nonnegative(),
+  resolvedLast24Hours: z.number().int().nonnegative(),
+});
+export type IncidentListSummary = z.infer<typeof incidentListSummarySchema>;

@@ -1,6 +1,7 @@
 import { http, HttpResponse, ws } from 'msw';
 
 import { commandCentreHandlers } from './command-centre-handlers';
+import { incidentListHandlers } from './incident-list-handlers';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
 import { sessionFixture } from './fixtures/session-fixture';
 
@@ -14,6 +15,7 @@ const workspaceLiveUpdates = ws.link(/\/api\/v1\/workspaces\/[^/]+\/live$/);
 export const handlers = [
   http.get('/api/v1/me', () => HttpResponse.json(sessionFixture)),
   http.get('/api/v1/platform/status', () => HttpResponse.json(platformStatusFixture)),
+  ...incidentListHandlers,
   ...commandCentreHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),

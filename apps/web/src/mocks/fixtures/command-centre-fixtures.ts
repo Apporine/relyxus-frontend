@@ -2,6 +2,7 @@ import type { LastDaySummary } from '@/features/analytics/model';
 import type { PendingApproval } from '@/features/approvals/model';
 import type { RegulatorClock } from '@/features/compliance/model';
 import type { IncidentSummary } from '@/features/incidents/model';
+import { filterIncidentRecords, incidentRecordsFor } from '@/mocks/fixtures/incident-fixtures';
 import type { ConnectorSummary } from '@/features/integrations/model';
 import type { BusinessServiceAtRisk } from '@/features/services/model';
 
@@ -44,85 +45,18 @@ export function commandCentreFixturesFor(workspaceSlug: string): {
   );
   const regulatorStartedAt = isoInstantFromNow(-20 * 60 * MILLISECONDS_PER_MINUTE);
 
+  const allIncidents = incidentRecordsFor(workspaceSlug);
+  if (allIncidents === null) {
+    return null;
+  }
+
   return {
-    activeIncidents: [
-      {
-        reference: 'INC-2041',
-        title: 'Card authorisation failures in UK',
-        severity: 'SEV1',
-        state: 'investigating',
-        visibility: 'workspace',
-        environment: 'production',
-        businessServiceNames: ['Card authorisation'],
-        ownerTeamName: 'Payments on-call',
-        impact: {
-          moneyAtRisk: {
-            amountInMinorUnits: 18_400_000,
-            currencyCode: 'GBP',
-            confidence: 'estimated',
-          },
-          failedTransactions: 18_400,
-          affectedCustomers: null,
-        },
-        impactStartedAt: isoInstantFromNow(-18 * MILLISECONDS_PER_MINUTE),
-        declaredAt: isoInstantFromNow(-19 * MILLISECONDS_PER_MINUTE),
-      },
-      {
-        reference: 'INC-2038',
-        title: 'Settlement queue lag in eu-west-2',
-        severity: 'SEV2',
-        state: 'mitigating',
-        visibility: 'workspace',
-        environment: 'production',
-        businessServiceNames: ['Settlement'],
-        ownerTeamName: 'Core banking',
-        impact: {
-          moneyAtRisk: {
-            amountInMinorUnits: 4_100_000,
-            currencyCode: 'GBP',
-            confidence: 'estimated',
-          },
-          failedTransactions: 2_100,
-          affectedCustomers: null,
-        },
-        impactStartedAt: isoInstantFromNow(-42 * MILLISECONDS_PER_MINUTE),
-        declaredAt: isoInstantFromNow(-43 * MILLISECONDS_PER_MINUTE),
-      },
-      {
-        reference: 'INC-2037',
-        title: 'Identity provider elevated latency',
-        severity: 'SEV3',
-        state: 'monitoring',
-        visibility: 'workspace',
-        environment: 'production',
-        businessServiceNames: ['Customer login'],
-        ownerTeamName: 'Identity',
-        impact: {
-          moneyAtRisk: null,
-          failedTransactions: null,
-          affectedCustomers: 3_204,
-        },
-        impactStartedAt: isoInstantFromNow(-72 * MILLISECONDS_PER_MINUTE),
-        declaredAt: isoInstantFromNow(-73 * MILLISECONDS_PER_MINUTE),
-      },
-      {
-        reference: 'INC-2034',
-        title: 'Merchant webhook delay',
-        severity: 'SEV4',
-        state: 'investigating',
-        visibility: 'workspace',
-        environment: 'production',
-        businessServiceNames: ['Merchant webhooks'],
-        ownerTeamName: 'Integrations',
-        impact: {
-          moneyAtRisk: null,
-          failedTransactions: null,
-          affectedCustomers: null,
-        },
-        impactStartedAt: isoInstantFromNow(-126 * MILLISECONDS_PER_MINUTE),
-        declaredAt: isoInstantFromNow(-127 * MILLISECONDS_PER_MINUTE),
-      },
-    ],
+    activeIncidents: filterIncidentRecords(allIncidents, {
+      status: 'active',
+      severities: [],
+      businessServiceId: null,
+      sort: 'severity',
+    }),
     pendingApprovals: [
       {
         id: 'approval-restart-payments-api',

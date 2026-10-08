@@ -253,6 +253,52 @@
       "failedTransactions": "{count, plural, zero {لا توجد معاملات فاشلة} one {معاملة فاشلة واحدة} two {معاملتان فاشلتان} few {# معاملات فاشلة} many {# معاملة فاشلة} other {# معاملة فاشلة}}",
       "affectedCustomers": "{count, plural, zero {لا يوجد عملاء متأثرون} one {عميل واحد متأثر} two {عميلان متأثران} few {# عملاء متأثرين} many {# عميلًا متأثرًا} other {# عميل متأثر}}",
       "notMeasured": "غير مقيس"
+    },
+    "list": {
+      "title": "الحوادث",
+      "description": "سجلات الحوادث النشطة والتاريخية",
+      "declareIncident": "إعلان حادثة",
+      "tableSectionName": "قائمة الحوادث",
+      "emptyTitle": "لا توجد حوادث تطابق هذه الفلاتر في {workspace}",
+      "emptyDescription": "جرّب عرضًا مختلفًا أو امسح فلاتر الخطورة والخدمة.",
+      "noBusinessService": "غير مرتبطة",
+      "noOwner": "غير مُعيَّنة",
+      "impactLow": "منخفض",
+      "impactUsers": "{count, plural, zero {لا مستخدمين} one {مستخدم واحد} two {مستخدمان} few {# مستخدمين} many {# مستخدمًا} other {# مستخدم}}",
+      "columns": {
+        "idTitle": "المعرّف / العنوان",
+        "severity": "الخطورة",
+        "state": "الحالة",
+        "businessService": "خدمة الأعمال",
+        "owner": "المالك",
+        "impact": "الأثر",
+        "opened": "فُتحت",
+        "age": "العمر"
+      },
+      "filters": {
+        "toolbarLabel": "فلاتر قائمة الحوادث",
+        "viewLabel": "العرض: {view}",
+        "viewActive": "نشطة",
+        "viewResolved": "محلولة",
+        "viewAll": "الكل",
+        "severityLabel": "الخطورة: {severity}",
+        "severityAll": "الكل",
+        "serviceLabel": "الخدمة: {service}",
+        "serviceAll": "الكل"
+      },
+      "metrics": {
+        "sectionName": "ملخص الحوادث",
+        "sev1": "SEV1",
+        "sev2": "SEV2",
+        "investigating": "قيد التحقيق",
+        "monitoring": "قيد المراقبة",
+        "resolved24h": "محلولة 24 س",
+        "activeNow": "نشطة الآن",
+        "allSeverity": "كل مستويات الخطورة",
+        "waitingForStability": "بانتظار الاستقرار",
+        "last24Hours": "آخر 24 ساعة",
+        "noData": "لا توجد بيانات بعد"
+      }
     }
   }
 }

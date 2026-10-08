@@ -1,3 +1,14 @@
+@keyframes relyxus-wordmark-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 @layer base {
   html {
     background-color: var(--color-canvas);

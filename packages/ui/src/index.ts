@@ -144,6 +144,10 @@ export {
 } from './relyxus/metric-card/metric-card';
 export { OwnerChip, type OwnerChipProps, type OwnerKind } from './relyxus/owner-chip/owner-chip';
 export {
+  RelyxusWordmarkLoader,
+  type RelyxusWordmarkLoaderProps,
+} from './relyxus/wordmark-loader/relyxus-wordmark-loader';
+export {
   RestrictedPlaceholder,
   type RestrictedPlaceholderProps,
 } from './relyxus/restricted-placeholder/restricted-placeholder';

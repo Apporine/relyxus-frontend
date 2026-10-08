@@ -1,5 +1,6 @@
 'use client';
 
+import { RelyxusWordmarkLoader } from '@relyxus/ui';
 import { useEffect, useState, type ReactNode } from 'react';
 
 import { isApiMockingEnabled } from './is-api-mocking-enabled';
@@ -38,5 +39,17 @@ export function ApiMockingBoundary({ children }: { children: ReactNode }) {
     };
   }, [mockingEnabled]);
 
-  return isReady ? children : null;
+  if (isReady) {
+    return children;
+  }
+
+  return (
+    <main
+      id="main-content"
+      aria-busy="true"
+      className="flex min-h-dvh items-center justify-center bg-canvas p-6"
+    >
+      <RelyxusWordmarkLoader />
+    </main>
+  );
 }

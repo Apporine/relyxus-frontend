@@ -1,10 +1,11 @@
 'use client';
 
-import { Button, EmptyState, Skeleton, Tooltip } from '@relyxus/ui';
+import { Button, EmptyState, Tooltip } from '@relyxus/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 
+import { PageLoadingState } from '@/lib/ui/page-loading-state';
 import { PageLoadFailedState } from '@/lib/ui/page-states';
 import { useMediaQuery } from '@/lib/ui/use-media-query';
 import { PageHeader } from '@/shell/page-header';
@@ -17,15 +18,6 @@ import { ScheduleDetailPanel } from './schedule-detail-panel';
 import { ScheduleListPanel } from './schedule-list-panel';
 
 const THREE_COLUMN_MEDIA_QUERY = '(min-width: 90rem)';
-
-function OnCallLoadingState() {
-  return (
-    <div aria-busy="true" className="flex flex-col gap-6">
-      <Skeleton className="h-20 w-full" />
-      <Skeleton className="h-[40rem] w-full" />
-    </div>
-  );
-}
 
 /** On-call and escalation (UI/UX s. 13.4): schedules, coverage and escalation chains. */
 export function OnCallPage() {
@@ -64,7 +56,7 @@ export function OnCallPage() {
   const escalationQuery = useEscalationChain(workspace.slug, resolvedScheduleId);
 
   if (schedulesQuery.isPending) {
-    return <OnCallLoadingState />;
+    return <PageLoadingState />;
   }
 
   if (schedulesQuery.isError) {

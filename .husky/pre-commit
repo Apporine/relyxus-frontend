@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+
+export PATH="$PWD/node_modules/.bin:$PATH"
+
+lint-staged
+pnpm verify:quick

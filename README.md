@@ -50,6 +50,8 @@ Run these from the repository root.
 | `pnpm lint`                                 | ESLint across the workspace                               |
 | `pnpm typecheck`                            | TypeScript strict type check                              |
 | `pnpm format` / `pnpm format:check`         | Apply or verify Prettier formatting                       |
+| `pnpm verify:quick`                         | Prettier, ESLint and TypeScript (pre-commit)              |
+| `pnpm verify`                               | Full CI verify job except e2e (pre-push)                  |
 | `pnpm --filter @relyxus/ui storybook`       | Component workshop at http://localhost:6006               |
 | `pnpm --filter @relyxus/ui build-storybook` | Static Storybook build                                    |
 
@@ -67,8 +69,20 @@ running, point them at it with `PLAYWRIGHT_BASE_URL=http://localhost:3000`. Wher
 browser download is blocked, set `PLAYWRIGHT_BROWSER_CHANNEL=chrome` to use the installed
 Chrome.
 
-Before opening a pull request, run `pnpm format:check`, `pnpm lint`, `pnpm typecheck`,
-`pnpm test` and `pnpm build`. CI runs the same checks on every pull request.
+Git hooks run automatically after `pnpm install` (via Husky):
+
+| Hook         | Command                                 | Purpose                                                                                     |
+| ------------ | --------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `pre-commit` | `lint-staged`, then `pnpm verify:quick` | Format and ESLint staged files; verify Prettier, ESLint and TypeScript across the workspace |
+| `pre-push`   | `pnpm verify`                           | Same checks as CI verify (unit tests, production build, Storybook build)                    |
+| `commit-msg` | —                                       | Rejects `Co-authored-by: Cursor` trailers                                                   |
+
+Run the full verify job manually with `pnpm verify`. Skip hooks once with `HUSKY=0` (for example
+`HUSKY=0 git commit …`) only when you intentionally need to bypass them.
+
+End-to-end tests are not run on every push; run
+`pnpm --filter @relyxus/web test:e2e` before changing routes or shell behaviour. CI runs the
+same checks on every pull request.
 
 ## Repository layout
 

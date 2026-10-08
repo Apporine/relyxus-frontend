@@ -10,8 +10,10 @@ import {
   TimelineEvent,
 } from '@relyxus/ui';
 import type { UseQueryResult } from '@tanstack/react-query';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
+import { incidentTasksHref, incidentTimelineHref } from '@/features/incidents/routes';
 import { useRelyxusFormat } from '@/lib/format/use-relyxus-format';
 import { NewUpdatesPill } from '@/lib/live/new-updates-pill';
 import { useLiveUpdateBuffer } from '@/lib/live/use-live-update-buffer';
@@ -107,9 +109,13 @@ function IncidentTasks({ tasks }: { tasks: IncidentTask[] }) {
 
 /** Timeline and tasks, switchable by tab with the choice kept in the URL (UI/UX s. 10.4). */
 export function ActivityPanel({
+  workspaceSlug,
+  incidentReference,
   timelineQuery,
   tasksQuery,
 }: {
+  workspaceSlug: string;
+  incidentReference: string;
   timelineQuery: UseQueryResult<TimelineEntry[]>;
   tasksQuery: UseQueryResult<IncidentTask[]>;
 }) {
@@ -138,7 +144,17 @@ export function ActivityPanel({
             sectionName={translateActivity('timeline')}
             loadingPlaceholder={<ActivityPlaceholder />}
           >
-            {(entries) => <IncidentTimeline entries={entries} />}
+            {(entries) => (
+              <>
+                <IncidentTimeline entries={entries} />
+                <Link
+                  href={incidentTimelineHref(workspaceSlug, incidentReference)}
+                  className="mt-4 inline-flex text-meta font-semibold text-fg-primary hover:underline"
+                >
+                  {translateActivity('viewFullTimeline')}
+                </Link>
+              </>
+            )}
           </QuerySection>
         </TabsContent>
         <TabsContent value="tasks">
@@ -147,7 +163,17 @@ export function ActivityPanel({
             sectionName={translateActivity('tasks')}
             loadingPlaceholder={<ActivityPlaceholder />}
           >
-            {(tasks) => <IncidentTasks tasks={tasks} />}
+            {(tasks) => (
+              <>
+                <IncidentTasks tasks={tasks} />
+                <Link
+                  href={incidentTasksHref(workspaceSlug, incidentReference)}
+                  className="mt-4 inline-flex text-meta font-semibold text-fg-primary hover:underline"
+                >
+                  {translateActivity('viewAllTasks')}
+                </Link>
+              </>
+            )}
           </QuerySection>
         </TabsContent>
       </Tabs>

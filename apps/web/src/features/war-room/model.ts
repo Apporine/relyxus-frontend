@@ -96,6 +96,18 @@ export const communicationsSchema = z.object({
 });
 export type Communications = z.infer<typeof communicationsSchema>;
 
+/** UI/UX s. 10.7 event categories shown on the full timeline view. */
+export const timelineEventTypes = [
+  'approval',
+  'investigation',
+  'role',
+  'change',
+  'alert',
+  'note',
+  'task',
+] as const;
+export type TimelineEventType = (typeof timelineEventTypes)[number];
+
 export const timelineEntrySchema = z.object({
   id: z.string().min(1),
   occurredAt: isoDateTimeSchema,
@@ -103,6 +115,9 @@ export const timelineEntrySchema = z.object({
   actorName: z.string().min(1),
   summary: z.string().min(1),
   needsAttention: z.boolean(),
+  /** Present on the full timeline; omitted in the compact war room panel. */
+  eventType: z.enum(timelineEventTypes).nullish(),
+  contextDetail: z.string().nullish(),
 });
 export type TimelineEntry = z.infer<typeof timelineEntrySchema>;
 
@@ -115,6 +130,8 @@ export const incidentTaskSchema = z.object({
   ownerName: z.string().nullable(),
   dueAt: isoDateTimeSchema.nullable(),
   isOverdue: z.boolean(),
+  /** Secondary line on kanban cards, for example "waiting" on a blocked approval task. */
+  statusDetail: z.string().nullish(),
 });
 export type IncidentTask = z.infer<typeof incidentTaskSchema>;
 

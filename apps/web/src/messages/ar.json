@@ -475,7 +475,9 @@
       },
       "unassigned": "غير مُسندة",
       "overdue": "متأخرة",
-      "due": "مستحقة {time}"
+      "due": "مستحقة {time}",
+      "viewFullTimeline": "عرض الخط الزمني الكامل",
+      "viewAllTasks": "عرض جميع المهام"
     },
     "noAccess": {
       "title": "ليس لديك صلاحية الوصول إلى هذا العنصر",
@@ -529,6 +531,45 @@
       "redaction": "التنقيح: {notice}",
       "openInSource": "فتح في المصدر",
       "aiSeparationNotice": "يُبقى تفسير الذكاء الاصطناعي منفصلًا عن دليل المصدر الخام."
+    }
+  },
+  "incidentTasks": {
+    "title": "مهام الحادثة",
+    "documentTitle": "مهام {reference}",
+    "createTask": "إنشاء مهمة",
+    "createTaskUnavailable": "ستتوفر إنشاء المهام مع عناصر التحكم في غرفة العمليات",
+    "emptyColumn": "لا توجد مهام",
+    "columns": {
+      "open": "مفتوحة",
+      "in-progress": "قيد التنفيذ",
+      "blocked": "متعثرة",
+      "done": "منجزة"
+    }
+  },
+  "incidentTimeline": {
+    "title": "الخط الزمني للحادثة",
+    "documentTitle": "الخط الزمني {reference}",
+    "subtitle": "سجل تشغيلي كامل",
+    "live": "مباشر",
+    "addNote": "إضافة ملاحظة",
+    "addNoteUnavailable": "ستتوفر إضافة الملاحظات مع عناصر التحكم في غرفة العمليات",
+    "noFilteredEvents": "لا توجد أحداث تطابق هذه الفلاتر.",
+    "filters": {
+      "toolbarLabel": "فلاتر الخط الزمني",
+      "eventsAll": "جميع الأحداث",
+      "actorAll": "الفاعل: الكل",
+      "actorLabel": "الفاعل: {actor}",
+      "typeAll": "النوع: الكل",
+      "typeLabel": "النوع: {type}",
+      "eventTypes": {
+        "approval": "موافقة",
+        "investigation": "تحقيق",
+        "role": "دور",
+        "change": "تغيير",
+        "alert": "تنبيه",
+        "note": "ملاحظة",
+        "task": "مهمة"
+      }
     }
   }
 }

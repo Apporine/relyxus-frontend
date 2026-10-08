@@ -127,7 +127,12 @@ export function WarRoomPage({ incidentReference }: { incidentReference: string }
     />
   );
   const activityPanel = (
-    <ActivityPanel timelineQuery={warRoomData.timelineQuery} tasksQuery={warRoomData.tasksQuery} />
+    <ActivityPanel
+      workspaceSlug={workspace.slug}
+      incidentReference={incidentReference}
+      timelineQuery={warRoomData.timelineQuery}
+      tasksQuery={warRoomData.tasksQuery}
+    />
   );
   const pendingDecisionCount = actionsQuery.data?.length ?? 0;
 

@@ -232,6 +232,25 @@ contract. Figma frame numbers refer to `New folder/screens`.
 Routes for admin sub-pages that the UI/UX specification does not list explicitly (for
 example `/org/admin/platform`) are proposals and are tracked in the open questions log.
 
+## 5a. Delivery status
+
+Updated as each capability merges into `dev`. Large capabilities get an implementation brief
+in [briefs](briefs) before coding.
+
+| #     | Capability                               | Status                                                                              | Pull requests |
+| ----- | ---------------------------------------- | ----------------------------------------------------------------------------------- | ------------- |
+| 1–9   | Foundations                              | Merged                                                                              | #1 to #9      |
+| —     | End-to-end and accessibility harness     | Merged                                                                              | #11           |
+| 10    | Identity and Session                     | Blocked on open question Q5 (Keycloak client and session design)                    | —             |
+| 11    | Command Centre                           | Merged                                                                              | #12           |
+| 12    | Incident List                            | Merged                                                                              | #13           |
+| 13    | Incident Declaration                     | Merged                                                                              | #14           |
+| 14    | Incident War Room                        | In progress, see [brief](briefs/incident-war-room.md); split into two pull requests | —             |
+| 15    | Evidence Explorer                        | Next after the war room                                                             | —             |
+| 16    | Incident Tasks and Timeline (full views) | Planned                                                                             | —             |
+| 17    | Approval Governance Inbox                | Planned                                                                             | —             |
+| 18–44 | Remaining capabilities                   | Planned in the order of section 5                                                   | —             |
+
 ## 6. Cross-cutting requirements applied to every screen
 
 Each screen pull request must show evidence of:

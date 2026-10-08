@@ -2,22 +2,21 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 
+import { isApiMockingEnabled } from './is-api-mocking-enabled';
+
 /*
- * Mock Service Worker serves the provisional API in development so screens can be built
- * before the backend exists (UI/UX s. 19). It is on by default in `next dev` and can be
- * turned off with NEXT_PUBLIC_RELYXUS_API_MOCKING=disabled to point at a real API. Production
- * builds compile this condition to false, so the worker is never loaded or registered there.
+ * Mock Service Worker serves the provisional API while the backend is unavailable (UI/UX
+ * s. 19). It is on by default in `next dev`, off in production unless
+ * NEXT_PUBLIC_RELYXUS_API_MOCKING=enabled for public demo hosts.
  */
-const isApiMockingEnabled =
-  process.env.NODE_ENV === 'development' &&
-  process.env.NEXT_PUBLIC_RELYXUS_API_MOCKING !== 'disabled';
 
 /** Holds rendering until the mock worker is intercepting requests, so no request escapes it. */
 export function ApiMockingBoundary({ children }: { children: ReactNode }) {
-  const [isReady, setIsReady] = useState(!isApiMockingEnabled);
+  const mockingEnabled = isApiMockingEnabled();
+  const [isReady, setIsReady] = useState(!mockingEnabled);
 
   useEffect(() => {
-    if (!isApiMockingEnabled) {
+    if (!mockingEnabled) {
       return;
     }
     let isUnmounted = false;
@@ -37,7 +36,7 @@ export function ApiMockingBoundary({ children }: { children: ReactNode }) {
     return () => {
       isUnmounted = true;
     };
-  }, []);
+  }, [mockingEnabled]);
 
   return isReady ? children : null;
 }

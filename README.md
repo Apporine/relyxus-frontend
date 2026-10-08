@@ -53,8 +53,10 @@ Run these from the repository root.
 | `pnpm --filter @relyxus/ui storybook`       | Component workshop at http://localhost:6006               |
 | `pnpm --filter @relyxus/ui build-storybook` | Static Storybook build                                    |
 
-Production builds never include the mock API. Without a Relyxus API behind `/api`, the
-production server shows the "session could not be loaded" state, which is expected.
+Production builds do not include the mock API unless
+`NEXT_PUBLIC_RELYXUS_API_MOCKING=enabled` is set at build time (the Vercel deployment sets
+this so the public demo behaves like local development). Without mocks or a Relyxus API
+behind `/api`, the production server shows the "session could not be loaded" state.
 
 The build uses Next.js `standalone` output for container images:
 `apps/web/.next/standalone` contains the server, which needs `.next/static` and `public`

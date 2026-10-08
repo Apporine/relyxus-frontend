@@ -34,7 +34,11 @@ test.describe('approvals inbox', () => {
 
     await page.getByLabel('Reason').fill('Need load test window confirmation from platform team.');
     await page.getByRole('button', { name: 'Reject request' }).click();
-    await expect(page.getByText('Rejected. The proposer can see your reason.')).toBeVisible();
+    await expect(
+      page
+        .getByRole('region', { name: 'Notifications' })
+        .getByText('Rejected. The proposer can see your reason.'),
+    ).toBeVisible();
   });
 
   test('mirrors the inbox in Arabic', async ({ page, context, baseURL }) => {

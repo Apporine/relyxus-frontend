@@ -10,8 +10,8 @@ import { sessionFixture } from './fixtures/session-fixture';
 import { warRoomHandlers } from './war-room-handlers';
 
 /*
- * DEVELOPMENT ONLY. Request handlers for the provisional API contract (ADR 0004). Each
- * capability adds the handlers for the endpoints its screens use.
+ * Mock API handlers for the provisional contract (ADR 0004). Loaded by Mock Service Worker
+ * in development and on demo hosts where NEXT_PUBLIC_RELYXUS_API_MOCKING=enabled.
  */
 
 const workspaceLiveUpdates = ws.link(/\/api\/v1\/workspaces\/[^/]+\/live$/);

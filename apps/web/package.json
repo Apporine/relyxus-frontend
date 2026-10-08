@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "predev": "msw init public --no-save",
+    "prebuild": "msw init public --no-save",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

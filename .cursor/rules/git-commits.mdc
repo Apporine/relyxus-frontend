@@ -1,0 +1,29 @@
+---
+description: Git commit authorship — never add Cursor as co-author
+alwaysApply: true
+---
+
+# Git commits
+
+- **Never** add `Co-authored-by: Cursor`, `Co-authored-by: cursoragent@cursor.com`, or any AI/tool co-author trailer to commit messages.
+- Commits must list only the repository owner's authorship unless the user explicitly names another human co-author.
+- Before **every** `git push`, verify the commit message is clean:
+
+```powershell
+git log -1 --format=%B
+```
+
+If the body contains `Co-authored-by: Cursor`, rewrite it before pushing:
+
+```powershell
+@'
+<subject line>
+
+<body paragraph if needed>
+'@ | Set-Content -Encoding utf8NoBOM .git/COMMIT_MSG_CLEAN
+git commit --amend -F .git/COMMIT_MSG_CLEAN
+Remove-Item .git/COMMIT_MSG_CLEAN
+```
+
+- Prefer `git commit -F .git/COMMIT_MSG_CLEAN` (message from file) over inline `-m` when the Cursor agent runs commits, to reduce automatic co-author injection.
+- Do not amend commits that are already on `dev` or `main` unless the user explicitly requests it.

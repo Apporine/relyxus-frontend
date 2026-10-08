@@ -9,7 +9,6 @@ test.describe('application shell', () => {
     await expect(page).toHaveURL('/w/payments-uk/home');
     await expect(page.getByRole('heading', { level: 1, name: 'Command Centre' })).toBeVisible();
   });
-  
 
   test('shows thirteen destinations in four groups with no WCAG 2.2 AA violations', async ({
     page,

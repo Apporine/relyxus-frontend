@@ -5,6 +5,7 @@ import { incidentDeclarationHandlers } from './incident-declaration-handlers';
 import { incidentListHandlers } from './incident-list-handlers';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
 import { sessionFixture } from './fixtures/session-fixture';
+import { warRoomHandlers } from './war-room-handlers';
 
 /*
  * DEVELOPMENT ONLY. Request handlers for the provisional API contract (ADR 0004). Each
@@ -19,6 +20,8 @@ export const handlers = [
   ...incidentListHandlers,
   ...incidentDeclarationHandlers,
   ...commandCentreHandlers,
+  // After the incident list handlers, so /incidents/summary is not read as an incident reference.
+  ...warRoomHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),
 ];

@@ -60,6 +60,11 @@ The build uses Next.js `standalone` output for container images:
 `apps/web/.next/standalone` contains the server, which needs `.next/static` and `public`
 copied alongside it.
 
+End-to-end tests start their own development server on port 3200. If `pnpm dev` is already
+running, point them at it with `PLAYWRIGHT_BASE_URL=http://localhost:3000`. Where Playwright's
+browser download is blocked, set `PLAYWRIGHT_BROWSER_CHANNEL=chrome` to use the installed
+Chrome.
+
 Before opening a pull request, run `pnpm format:check`, `pnpm lint`, `pnpm typecheck`,
 `pnpm test` and `pnpm build`. CI runs the same checks on every pull request.
 

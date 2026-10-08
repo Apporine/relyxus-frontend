@@ -1,0 +1,9 @@
+/*
+ * Typefaces are bundled from Fontsource packages so the console never fetches fonts from a
+ * public CDN; self-hosted and air-gapped deployments serve them from the application itself.
+ */
+@import '@fontsource-variable/ibm-plex-sans/wght.css';
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/600.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';

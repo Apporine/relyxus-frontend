@@ -1,0 +1,142 @@
+{
+  "color": {
+    "canvas": {
+      "value": "#050505",
+      "type": "color"
+    },
+    "nav": {
+      "value": "#080808",
+      "type": "color"
+    },
+    "s1": {
+      "value": "#0D0D0F",
+      "type": "color"
+    },
+    "s2": {
+      "value": "#131315",
+      "type": "color"
+    },
+    "raised": {
+      "value": "#1A1A1D",
+      "type": "color"
+    },
+    "sel": {
+      "value": "#212124",
+      "type": "color"
+    },
+    "div": {
+      "value": "#29292E",
+      "type": "color"
+    },
+    "control": {
+      "value": "#47474F",
+      "type": "color"
+    },
+    "strong": {
+      "value": "#66666F",
+      "type": "color"
+    },
+    "p": {
+      "value": "#F5F5F2",
+      "type": "color"
+    },
+    "s": {
+      "value": "#D0D0CB",
+      "type": "color"
+    },
+    "t": {
+      "value": "#A6A6A0",
+      "type": "color"
+    },
+    "action": {
+      "value": "#F2F2ED",
+      "type": "color"
+    },
+    "actxt": {
+      "value": "#080808",
+      "type": "color"
+    },
+    "critical": {
+      "value": "#FF6868",
+      "type": "color"
+    },
+    "major": {
+      "value": "#FF965C",
+      "type": "color"
+    },
+    "warning": {
+      "value": "#F4C95D",
+      "type": "color"
+    },
+    "healthy": {
+      "value": "#50CFA1",
+      "type": "color"
+    },
+    "ai": {
+      "value": "#E2E2DD",
+      "type": "color"
+    },
+    "neutral": {
+      "value": "#C8C8C3",
+      "type": "color"
+    }
+  },
+  "fontFamilies": {
+    "ui": {
+      "value": "IBM Plex Sans Variable",
+      "type": "fontFamilies"
+    },
+    "arabic": {
+      "value": "IBM Plex Sans Arabic",
+      "type": "fontFamilies"
+    },
+    "technical": {
+      "value": "JetBrains Mono",
+      "type": "fontFamilies"
+    }
+  },
+  "fontSize": {
+    "pageTitle": {
+      "value": "24",
+      "type": "fontSizes"
+    },
+    "sectionTitle": {
+      "value": "20",
+      "type": "fontSizes"
+    },
+    "panelTitle": {
+      "value": "16",
+      "type": "fontSizes"
+    },
+    "body": {
+      "value": "15",
+      "type": "fontSizes"
+    },
+    "table": {
+      "value": "14",
+      "type": "fontSizes"
+    },
+    "meta": {
+      "value": "13.5",
+      "type": "fontSizes"
+    }
+  },
+  "radius": {
+    "control": {
+      "value": "4",
+      "type": "borderRadius"
+    },
+    "button": {
+      "value": "6",
+      "type": "borderRadius"
+    },
+    "panel": {
+      "value": "8",
+      "type": "borderRadius"
+    },
+    "dialog": {
+      "value": "12",
+      "type": "borderRadius"
+    }
+  }
+}

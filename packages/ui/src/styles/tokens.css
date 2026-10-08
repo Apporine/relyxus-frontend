@@ -1,0 +1,131 @@
+/*
+ * Relyxus Obsidian design tokens.
+ *
+ * Source of truth: ../tokens/obsidian.tokens.json (exported from the Obsidian design package).
+ * tokens.test.ts fails if a colour here drifts from that file.
+ *
+ * Components never use these hex values directly; they use the Tailwind names mapped in
+ * theme.css, which resolve to these custom properties at runtime.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces, darkest to lightest */
+  --rx-canvas: #050505;
+  --rx-nav: #080808;
+  --rx-surface-1: #0d0d0f;
+  --rx-surface-2: #131315;
+  --rx-raised: #1a1a1d;
+  --rx-selected: #212124;
+
+  /* Borders. Divider and Control are decorative or structural only: neither reaches the
+   * 3:1 non-text contrast WCAG 2.2 requires for the boundary of an input, so form control
+   * boundaries use Strong (see docs/frontend/open-questions.md, Q15). */
+  --rx-divider: #29292e;
+  --rx-control: #47474f;
+  --rx-strong: #66666f;
+
+  /* Text */
+  --rx-fg-primary: #f5f5f2;
+  --rx-fg-secondary: #d0d0cb;
+  --rx-fg-tertiary: #a6a6a0;
+
+  /* Primary action */
+  --rx-action: #f2f2ed;
+  --rx-action-fg: #080808;
+
+  /* Keyboard focus */
+  --rx-focus: #ffffff;
+
+  /* Operational meaning only: never decorative */
+  --rx-critical: #ff6868;
+  --rx-major: #ff965c;
+  --rx-warning: #f4c95d;
+  --rx-healthy: #50cfa1;
+  --rx-neutral: #c8c8c3;
+  --rx-ai: #e2e2dd;
+
+  /* Tinted backgrounds for banners and highlighted rows (UI/UX s. 5: 18 to 20 percent in dark) */
+  --rx-critical-subtle: color-mix(in srgb, var(--rx-critical) 18%, transparent);
+  --rx-major-subtle: color-mix(in srgb, var(--rx-major) 18%, transparent);
+  --rx-warning-subtle: color-mix(in srgb, var(--rx-warning) 18%, transparent);
+  --rx-healthy-subtle: color-mix(in srgb, var(--rx-healthy) 18%, transparent);
+  --rx-neutral-subtle: color-mix(in srgb, var(--rx-neutral) 18%, transparent);
+
+  /* Typefaces */
+  --rx-font-ui: 'IBM Plex Sans Variable', 'IBM Plex Sans', sans-serif;
+  --rx-font-arabic: 'IBM Plex Sans Arabic', 'IBM Plex Sans Variable', sans-serif;
+  --rx-font-technical: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+  --rx-font-active: var(--rx-font-ui);
+
+  /* Type scale. Sizes from the Obsidian tokens; line heights await design sign-off (Q2). */
+  --rx-text-page-title-size: 1.5rem;
+  --rx-text-page-title-leading: 2rem;
+  --rx-text-section-title-size: 1.25rem;
+  --rx-text-section-title-leading: 1.75rem;
+  --rx-text-panel-title-size: 1rem;
+  --rx-text-panel-title-leading: 1.5rem;
+  --rx-text-body-size: 0.9375rem;
+  --rx-text-body-leading: 1.375rem;
+  --rx-text-table-size: 0.875rem;
+  --rx-text-table-leading: 1.25rem;
+  --rx-text-meta-size: 0.84375rem;
+  --rx-text-meta-leading: 1.25rem;
+  --rx-text-metric-size: 1.75rem;
+  --rx-text-metric-leading: 2.125rem;
+
+  /* Shape */
+  --rx-radius-control: 4px;
+  --rx-radius-button: 6px;
+  --rx-radius-panel: 8px;
+  --rx-radius-dialog: 12px;
+
+  /* Density: comfortable is the default (UI/UX s. 5) */
+  --rx-control-height: 2.25rem;
+  --rx-row-height: 2.75rem;
+  --rx-touch-target: 2.75rem;
+
+  /* Motion: one ease-out curve, durations by purpose */
+  --rx-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --rx-duration-feedback: 100ms;
+  --rx-duration-hover: 150ms;
+  --rx-duration-panel: 200ms;
+  --rx-duration-overlay: 250ms;
+  --rx-duration-arrival-highlight: 1500ms;
+
+  /* Stacking layers */
+  --rx-layer-base: 0;
+  --rx-layer-sticky: 10;
+  --rx-layer-drawer: 40;
+  --rx-layer-dialog: 50;
+  --rx-layer-toast: 60;
+  --rx-layer-command-palette: 70;
+
+  /* Layout */
+  --rx-sidebar-expanded-width: 240px;
+  --rx-sidebar-collapsed-width: 64px;
+  --rx-content-max-width: 1600px;
+}
+
+:root[data-density='compact'] {
+  --rx-control-height: 2rem;
+  --rx-row-height: 2rem;
+}
+
+/* Arabic is set one size step larger with 2 px more line height (UI/UX s. 5). */
+:root:lang(ar) {
+  --rx-font-active: var(--rx-font-arabic);
+  --rx-text-page-title-size: calc(1.5rem + 1px);
+  --rx-text-page-title-leading: calc(2rem + 2px);
+  --rx-text-section-title-size: calc(1.25rem + 1px);
+  --rx-text-section-title-leading: calc(1.75rem + 2px);
+  --rx-text-panel-title-size: calc(1rem + 1px);
+  --rx-text-panel-title-leading: calc(1.5rem + 2px);
+  --rx-text-body-size: calc(0.9375rem + 1px);
+  --rx-text-body-leading: calc(1.375rem + 2px);
+  --rx-text-table-size: calc(0.875rem + 1px);
+  --rx-text-table-leading: calc(1.25rem + 2px);
+  --rx-text-meta-size: calc(0.84375rem + 1px);
+  --rx-text-meta-leading: calc(1.25rem + 2px);
+}

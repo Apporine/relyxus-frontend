@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import './globals.css';
+
 // Page titles use the template only with non-sensitive names; restricted incident titles
 // must never reach document metadata.
 export const metadata: Metadata = {

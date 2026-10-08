@@ -1,0 +1,85 @@
+/*
+ * Maps Obsidian tokens onto Tailwind theme names.
+ *
+ * Tailwind's default palette, type scale, radii, shadows and breakpoints are cleared first so
+ * that only Relyxus tokens exist as utilities: `bg-red-500` or `shadow-lg` simply do not
+ * compile, which keeps one-off colours out of components.
+ *
+ * `inline` makes each utility reference the custom property itself, so values follow
+ * runtime overrides such as compact density and Arabic typography.
+ */
+
+@theme inline {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --blur-*: initial;
+  --ease-*: initial;
+  --breakpoint-*: initial;
+
+  --color-canvas: var(--rx-canvas);
+  --color-nav: var(--rx-nav);
+  --color-surface-1: var(--rx-surface-1);
+  --color-surface-2: var(--rx-surface-2);
+  --color-raised: var(--rx-raised);
+  --color-selected: var(--rx-selected);
+
+  --color-divider: var(--rx-divider);
+  --color-control: var(--rx-control);
+  --color-strong: var(--rx-strong);
+
+  --color-fg-primary: var(--rx-fg-primary);
+  --color-fg-secondary: var(--rx-fg-secondary);
+  --color-fg-tertiary: var(--rx-fg-tertiary);
+
+  --color-action: var(--rx-action);
+  --color-action-fg: var(--rx-action-fg);
+  --color-focus: var(--rx-focus);
+
+  --color-critical: var(--rx-critical);
+  --color-major: var(--rx-major);
+  --color-warning: var(--rx-warning);
+  --color-healthy: var(--rx-healthy);
+  --color-neutral: var(--rx-neutral);
+  --color-ai: var(--rx-ai);
+
+  --color-critical-subtle: var(--rx-critical-subtle);
+  --color-major-subtle: var(--rx-major-subtle);
+  --color-warning-subtle: var(--rx-warning-subtle);
+  --color-healthy-subtle: var(--rx-healthy-subtle);
+  --color-neutral-subtle: var(--rx-neutral-subtle);
+
+  --font-sans: var(--rx-font-active);
+  --font-mono: var(--rx-font-technical);
+
+  --text-page-title: var(--rx-text-page-title-size);
+  --text-page-title--line-height: var(--rx-text-page-title-leading);
+  --text-section-title: var(--rx-text-section-title-size);
+  --text-section-title--line-height: var(--rx-text-section-title-leading);
+  --text-panel-title: var(--rx-text-panel-title-size);
+  --text-panel-title--line-height: var(--rx-text-panel-title-leading);
+  --text-body: var(--rx-text-body-size);
+  --text-body--line-height: var(--rx-text-body-leading);
+  --text-table: var(--rx-text-table-size);
+  --text-table--line-height: var(--rx-text-table-leading);
+  --text-meta: var(--rx-text-meta-size);
+  --text-meta--line-height: var(--rx-text-meta-leading);
+  --text-metric: var(--rx-text-metric-size);
+  --text-metric--line-height: var(--rx-text-metric-leading);
+
+  --radius-control: var(--rx-radius-control);
+  --radius-button: var(--rx-radius-button);
+  --radius-panel: var(--rx-radius-panel);
+  --radius-dialog: var(--rx-radius-dialog);
+
+  --ease-standard: var(--rx-ease-standard);
+
+  /* UI/UX s. 15: mobile 360 to 767 is the unprefixed default */
+  --breakpoint-tablet: 48rem;
+  --breakpoint-laptop: 64rem;
+  --breakpoint-desktop: 90rem;
+  --breakpoint-wall: 120rem;
+}

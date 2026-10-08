@@ -1,0 +1,11 @@
+/*
+ * Relyxus design system stylesheet. Import after `@import 'tailwindcss';` in an app's global
+ * stylesheet so the theme mapping below replaces Tailwind's defaults.
+ */
+@import './fonts.css';
+@import './tokens.css';
+@import './theme.css';
+@import './base.css';
+
+/* Component source in this package uses Tailwind utilities; scan it from every consuming app. */
+@source '../';

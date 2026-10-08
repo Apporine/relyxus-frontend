@@ -1,5 +1,4 @@
 import type { LastDaySummary } from '@/features/analytics/model';
-import type { PendingApproval } from '@/features/approvals/model';
 import type { RegulatorClock } from '@/features/compliance/model';
 import type { IncidentSummary } from '@/features/incidents/model';
 import { filterIncidentRecords, incidentRecordsFor } from '@/mocks/fixtures/incident-fixtures';
@@ -25,7 +24,6 @@ function emptyListResponse() {
 /** Returns Command Centre fixtures for the Payments / UK demo workspace. */
 export function commandCentreFixturesFor(workspaceSlug: string): {
   activeIncidents: IncidentSummary[];
-  pendingApprovals: PendingApproval[];
   regulatorClocks: RegulatorClock[];
   businessServicesAtRisk: BusinessServiceAtRisk[];
   connectors: ConnectorSummary[];
@@ -35,9 +33,6 @@ export function commandCentreFixturesFor(workspaceSlug: string): {
     return null;
   }
 
-  const approvalExpiresAt = isoInstantFromNow(
-    3 * MILLISECONDS_PER_MINUTE + 18 * MILLISECONDS_PER_SECOND,
-  );
   const regulatorDeadlineAt = isoInstantFromNow(
     3 * 60 * 60 * MILLISECONDS_PER_SECOND +
       41 * MILLISECONDS_PER_MINUTE +
@@ -60,19 +55,6 @@ export function commandCentreFixturesFor(workspaceSlug: string): {
       businessServiceId: null,
       sort: 'severity',
     }),
-    pendingApprovals: [
-      {
-        id: 'approval-restart-payments-api',
-        kind: 'production-action',
-        title: 'Restart payments-api',
-        incidentReference: 'INC-2041',
-        target: 'payments-api / PROD',
-        environment: 'production',
-        blastRadius: '3 pods · UK cards',
-        quorum: { approved: 1, required: 2 },
-        expiresAt: approvalExpiresAt,
-      },
-    ],
     regulatorClocks: [
       {
         id: 'clock-dora-initial-notice',

@@ -75,7 +75,7 @@ Git hooks run automatically after `pnpm install` (via Husky):
 | Hook         | Command                                 | Purpose                                                                                     |
 | ------------ | --------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `pre-commit` | `lint-staged`, then `pnpm verify:quick` | Format and ESLint staged files; verify Prettier, ESLint and TypeScript across the workspace |
-| `pre-push`   | `pnpm verify:push`                      | Prettier, ESLint, TypeScript, production build and Storybook build (Vercel-aligned)         |
+| `pre-push`   | `pnpm verify:push`                      | Prettier, ESLint, TypeScript and production build (Vercel-aligned)                          |
 | `commit-msg` | —                                       | Rejects `Co-authored-by: Cursor` trailers                                                   |
 
 Run the full CI verify job manually with `pnpm verify` (includes unit tests). Skip hooks once with

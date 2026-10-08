@@ -138,7 +138,8 @@
     "sectionForbidden": "ليس لديك صلاحية الوصول إلى {section}. اطلب ذلك من مسؤول مساحة العمل إذا احتجت إليه.",
     "retry": "حاول مرة أخرى",
     "notReported": "غير مُبلَّغ",
-    "loading": "جارٍ تحميل {section}"
+    "loading": "جارٍ تحميل {section}",
+    "required": "مطلوب"
   },
   "domain": {
     "incidentStates": {
@@ -299,6 +300,79 @@
         "last24Hours": "آخر 24 ساعة",
         "noData": "لا توجد بيانات بعد"
       }
+    },
+    "declare": {
+      "title": "إعلان حادثة",
+      "description": "افتح غرفة عمليات، وأبلغ المناوبين، وامنع تغييرات الإنتاج غير المعتمدة",
+      "detailsHeading": "تفاصيل الحادثة",
+      "submit": "إعلان الحادثة",
+      "validationIncomplete": "أكمل الحقول المطلوبة قبل الإعلان.",
+      "submitFailed": "تعذّر إعلان الحادثة. حاول مرة أخرى.",
+      "typesLoadFailed": "تعذّر تحميل أنواع الحوادث.",
+      "liveConnectionRequired": "الإجراءات التي تغيّر الحالة متوقفة حتى يعود الاتصال المباشر.",
+      "fields": {
+        "incidentType": "نوع الحادثة",
+        "title": "العنوان",
+        "affectedServices": "خدمات الأعمال المتأثرة",
+        "technicalComponent": "المكوّن التقني",
+        "severity": "الخطورة",
+        "impact": "الأثر على الأعمال (اختياري)",
+        "moneyAtRisk": "الأموال المعرّضة للخطر (GBP)",
+        "failedTransactions": "المعاملات الفاشلة",
+        "affectedCustomers": "العملاء المتأثرون",
+        "visibility": "الرؤية",
+        "context": "السياق الأولي"
+      },
+      "placeholders": {
+        "incidentType": "اختر نوع الحادثة",
+        "title": "ما الذي يحدث؟",
+        "technicalComponent": "مثال: واجهة التفويض",
+        "severity": "اختر الخطورة",
+        "moneyAtRisk": "مثال: 184000",
+        "failedTransactions": "مثال: 18400",
+        "affectedCustomers": "مثال: 1200",
+        "visibility": "اختر الرؤية",
+        "context": "الأعراض، التغييرات الأخيرة، بلاغات العملاء…"
+      },
+      "help": {
+        "title": "ملخص قصير يظهر في القوائم والإشعارات.",
+        "technicalComponent": "مكوّن أو نظام فرعي اختياري ضمن الخدمات المحددة.",
+        "moneyAtRisk": "التعرّض المقدّر بالجنيه؛ يُخزَّن بوحدات صغرى.",
+        "context": "ملاحظات اختيارية للمستجيبين الذين ينضمون إلى غرفة العمليات."
+      },
+      "progress": {
+        "heading": "تقدّم الإعلان",
+        "status": {
+          "complete": "مكتمل",
+          "current": "قيد التنفيذ",
+          "next": "التالي",
+          "optional": "اختياري"
+        }
+      },
+      "steps": {
+        "incident-type": "نوع الحادثة",
+        "title": "العنوان",
+        "services": "الخدمات المتأثرة",
+        "severity": "الخطورة",
+        "impact": "الأثر على الأعمال",
+        "visibility": "الرؤية",
+        "context": "السياق"
+      },
+      "preview": {
+        "heading": "معاينة الإعلان",
+        "onDeclare": "عند الإعلان",
+        "warRoomOpens": "تُفتح غرفة عمليات لهذه الحادثة.",
+        "notifications": "الإشعارات",
+        "notifyOnCall": "يُبلَّغ المناوبون وأدوار الحادثة.",
+        "productionChanges": "تغييرات الإنتاج",
+        "productionChangesBlocked": "تبقى تغييرات الإنتاج غير المعتمدة محظورة.",
+        "affectedServices": "الخدمات المتأثرة"
+      }
+    },
+    "warRoom": {
+      "title": "غرفة عمليات {reference}",
+      "description": "نسّق الاستجابة والأدلة والموافقات في مكان واحد",
+      "placeholder": "تجربة غرفة العمليات الكاملة قادمة في القدرة التالية."
     }
   }
 }

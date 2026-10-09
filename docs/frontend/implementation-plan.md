@@ -252,7 +252,8 @@ in [briefs](briefs) before coding.
 | 18    | On-call and Escalation                   | Merged                                                           | #22           |
 | 19    | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
 | 20    | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)      | #26           |
-| 21–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 21    | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)                 | #27           |
+| 22–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

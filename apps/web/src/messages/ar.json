@@ -972,5 +972,156 @@
       "configureImpactFormula": "ضبط معادلة الأثر",
       "startDrill": "بدء تمرين مرونة"
     }
+  },
+  "aiQuality": {
+    "title": "إعادة التشغيل وجودة الذكاء الاصطناعي",
+    "description": "الدقة والمعايرة والتراجعات ومسارات النماذج المعتمدة",
+    "actions": {
+      "more": "إجراءات أخرى",
+      "unavailable": "إجراءات حوكمة النماذج غير متاحة بعد.",
+      "compare": "مقارنة النماذج أو التعليمات",
+      "approveRoute": "اعتماد مسار نموذج",
+      "startShadowMode": "بدء الوضع الظلي",
+      "exportValidationPack": "تصدير حزمة التحقق",
+      "createReplay": "إنشاء إعادة تشغيل",
+      "createReplayUnavailable": "إنشاء إعادة تشغيل من وحدة التحكم غير متاح بعد. تُجدوَل إعادات التشغيل مع فريق Relyxus."
+    },
+    "scorecard": {
+      "sectionName": "بطاقة الدقة",
+      "correctFirst": "صحيحة من المحاولة الأولى",
+      "topThree": "ضمن الثلاثة الأولى",
+      "firstHypothesis": "أول فرضية",
+      "misses": "إخفاقات إعادة التشغيل",
+      "percent": "{value, number, ::percent}",
+      "change": "{points} نقطة مقارنة بآخر {days} يومًا السابقة",
+      "median": "الوسيط",
+      "lastDays": "آخر {days} يومًا",
+      "notEnoughData": "بيانات غير كافية: قُيّمت {scored} من {minimum} حادثة"
+    },
+    "calibration": {
+      "title": "المعايرة",
+      "description": "الثقة المتوقعة مقابل الدقة الفعلية. على الخط المتقطع، تعني الثقة 80% الصواب 8 مرات من 10.",
+      "empty": "لا توجد فرضيات مُقيّمة بعد.",
+      "chartLabel": "مخطط المعايرة: الثقة المتوقعة مقابل الدقة الفعلية",
+      "showFigures": "عرض الأرقام",
+      "tableCaption": "المعايرة حسب نطاق الثقة",
+      "predicted": "الثقة المتوقعة",
+      "actual": "الدقة الفعلية",
+      "perfectCalibration": "معايرة مثالية",
+      "measured": "مقيسة",
+      "sampleSize": "الفرضيات",
+      "percent": "{value, number, ::percent}"
+    },
+    "misses": {
+      "title": "الإخفاقات",
+      "description": "مرتبة حسب التكرار",
+      "dimensionsLabel": "تجميع الإخفاقات حسب",
+      "dimensions": {
+        "type": "النوع",
+        "service": "الخدمة",
+        "model": "النموذج"
+      },
+      "empty": "لا توجد إخفاقات في هذه الفترة."
+    },
+    "routes": {
+      "title": "مسارات النماذج",
+      "description": "المسارات الأساسية والاحتياطية المعتمدة وسبب اعتماد كل منها",
+      "empty": "لا توجد مسارات نماذج مهيّأة.",
+      "columns": {
+        "route": "المسار",
+        "region": "المنطقة",
+        "residency": "إقامة البيانات",
+        "status": "الحالة",
+        "lastReplay": "آخر إعادة تشغيل",
+        "accuracy": "الدقة"
+      },
+      "routeName": "{role} · {name}",
+      "roles": {
+        "primary": "أساسي",
+        "fallback": "احتياطي",
+        "shadow": "ظلي",
+        "legacy": "قديم"
+      },
+      "pinned": "إصدار مثبّت",
+      "approvedBy": "اعتمده {name} في {time}.",
+      "viewEvidence": "أدلة إعادة التشغيل لـ {name}",
+      "breaksResidency": "يخالف إقامة البيانات",
+      "retires": "يُسحب في {time}",
+      "statuses": {
+        "approved": "معتمد",
+        "shadow": "ظلي",
+        "pending-approval": "بانتظار الاعتماد",
+        "deprecated": "متقادم",
+        "unavailable": "غير متاح"
+      },
+      "never": "أبدًا",
+      "noAccuracy": "غير مقيسة",
+      "percent": "{value, number, ::percent}",
+      "tableLabel": "جدول مسارات النماذج"
+    },
+    "runs": {
+      "title": "عمليات إعادة التشغيل",
+      "empty": "لم تُنفَّذ أي إعادة تشغيل بعد.",
+      "scope": "{route} · {incidents, plural, zero {لا حوادث} one {حادثة واحدة} two {حادثتان} few {# حوادث} many {# حادثة} other {# حادثة}}",
+      "progress": "أُعيد تشغيل {progress, number, ::percent} · متوقع بحلول {time}",
+      "noEstimate": "لا يوجد تقدير بعد",
+      "progressLabel": "تقدم {name}",
+      "results": "صحيحة أولًا {correctFirst, number, ::percent} · ضمن الثلاثة الأولى {topThree, number, ::percent} · توفير {minutesSaved} دقيقة لكل حادثة",
+      "statuses": {
+        "queued": "في الانتظار",
+        "running": "قيد التشغيل",
+        "completed": "مكتملة",
+        "failed": "فشلت"
+      }
+    },
+    "notices": {
+      "unavailableTitle": "مسار النموذج غير متاح: {name}",
+      "unavailableDescription": "تفكير الذكاء الاصطناعي متوقف مؤقتًا. يستمر جمع الأدلة، ويرى المستجيبون الأدلة الخام وأدلة التشغيل حتى يتعافى المسار.",
+      "residencyTitle": "الرجوع الاحتياطي سيخالف إقامة البيانات: {name}",
+      "residencyDescription": "تسمح مساحة العمل هذه بـ {residency}. لن تعود Relyxus إلى هذا المسار؛ اختر مسارًا احتياطيًا متوافقًا.",
+      "regressionTitle": "تراجع في {metric} على {route}",
+      "regressionDescription": "انخفض بمقدار {drop} نقطة مقابل حد متفق عليه قدره {tolerance} نقطة. تُعلَّق التغييرات على هذا المسار حتى يجتاز إعادة التشغيل مجددًا.",
+      "retiringTitle": "يجري سحب الإصدار المثبّت {version}",
+      "retiringDescription": "يسحب المزوّد الإصدار المثبّت لـ {name} في {time}. خطّط لبديل وأعد تشغيله قبل ذلك.",
+      "metrics": {
+        "correct-first": "معدل الصواب أولًا",
+        "top-three": "معدل الثلاثة الأولى",
+        "calibration": "المعايرة"
+      }
+    },
+    "run": {
+      "sectionName": "عملية إعادة التشغيل",
+      "description": "حوادث سابقة أُعيد تشغيلها بالبيانات التي كانت موجودة آنذاك فقط",
+      "reproduce": "ما تم اختباره",
+      "reproduceDescription": "كل ما يلزم لإعادة إنتاج هذا التقييم: المسار والإصدارات ومجموعة الحوادث والحد الزمني لكل حادثة.",
+      "route": "مسار النموذج",
+      "modelVersion": "إصدار النموذج",
+      "promptVersion": "إصدار التعليمات",
+      "incidentsTested": "الحوادث المختبرة",
+      "started": "بدأت",
+      "results": "النتائج",
+      "incidents": "الحوادث",
+      "filterLabel": "عرض الحوادث",
+      "filters": {
+        "all": "الكل",
+        "missed": "الإخفاقات"
+      },
+      "empty": {
+        "all": "لم تُقيَّم أي حادثة بعد.",
+        "missed": "لا توجد إخفاقات في هذه العملية."
+      },
+      "outcomes": {
+        "correct-first": "صحيحة أولًا",
+        "top-three": "ضمن الثلاثة الأولى",
+        "missed": "إخفاق"
+      },
+      "actualCause": "السبب الفعلي",
+      "topHypothesis": "أول فرضية للذكاء الاصطناعي",
+      "hypothesisWithConfidence": "{hypothesis} (بثقة {confidence, number, ::percent})",
+      "missReason": "سبب الإخفاق",
+      "timeFence": "الحد الزمني",
+      "evidenceCutoff": "الأدلة حتى {time}",
+      "decisionTrace": "مسار القرار ({count, plural, zero {لا خطوات} one {خطوة واحدة} two {خطوتان} few {# خطوات} many {# خطوة} other {# خطوة}})"
+    }
   }
 }

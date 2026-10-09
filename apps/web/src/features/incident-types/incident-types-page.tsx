@@ -12,6 +12,8 @@ import { useUrlSelection } from '@/lib/ui/use-url-selection';
 import { PageHeader } from '@/shell/page-header';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
+import { AdminAreaNavigation } from '@/features/admin/admin-area-navigation';
+
 import type { IncidentTypeDetail } from './model';
 import { incidentTypeQueries } from './queries';
 
@@ -115,6 +117,7 @@ export function IncidentTypesPage() {
           />
         }
       />
+      <AdminAreaNavigation current="incident-types" />
       <ListDetailContent
         listQuery={listQuery}
         detailQuery={detailQuery}

@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { IncidentTasksPage } from '@/features/incident-activity/incident-tasks-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 type IncidentTasksRouteProps = {
   params: Promise<{ incidentReference: string }>;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: IncidentTasksRouteProps): Pro
 export default async function IncidentTasksRoute({ params }: IncidentTasksRouteProps) {
   const { incidentReference } = await params;
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <IncidentTasksPage incidentReference={decodeURIComponent(incidentReference)} />
     </Suspense>
   );

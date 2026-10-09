@@ -43,6 +43,19 @@
     color: var(--color-fg-primary);
   }
 
+  /*
+   * Scrollbars are hidden throughout the product for a cleaner operational surface. Scrolling
+   * still works with the wheel, touch and keyboard; scroll regions stay focusable so keyboard
+   * users can reach them (WCAG 2.2 scrollable-region-focusable).
+   */
+  * {
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
   /* One visible focus treatment everywhere; never removed, never hidden behind colour alone. */
   :focus-visible {
     outline: 2px solid var(--color-focus);

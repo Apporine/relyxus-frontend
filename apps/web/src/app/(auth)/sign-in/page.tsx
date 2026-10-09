@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { SignInPage } from '@/features/identity/sign-in-page';
+import { FullPageBusyState } from '@/shell/states/full-page-busy-state';
 
 export async function generateMetadata(): Promise<Metadata> {
   const translateSignIn = await getTranslations('signIn');
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function SignInRoute() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<FullPageBusyState />}>
       <SignInPage />
     </Suspense>
   );

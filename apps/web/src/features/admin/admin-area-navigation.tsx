@@ -20,6 +20,7 @@ export const adminPages = [
   'support-access',
   'platform',
   'promotion',
+  'trust-centre',
 ] as const;
 export type AdminPage = (typeof adminPages)[number];
 
@@ -31,7 +32,7 @@ export function adminPageHref(workspaceSlug: string, page: AdminPage): Route {
 /** Pages grouped by what they configure: this workspace, or the whole organisation. */
 export const adminPageGroups = {
   workspace: ['incident-types', 'status-pages'],
-  organisation: ['users', 'security', 'support-access', 'platform', 'promotion'],
+  organisation: ['users', 'security', 'support-access', 'platform', 'promotion', 'trust-centre'],
 } as const satisfies Record<string, readonly Exclude<AdminPage, 'overview'>[]>;
 
 export function AdminAreaNavigation({ current }: { current: AdminPage }) {

@@ -1597,7 +1597,8 @@
       "security": "الأمن والبيانات",
       "support-access": "وصول الدعم",
       "platform": "عمليات المنصة",
-      "promotion": "ترقية الإعدادات"
+      "promotion": "ترقية الإعدادات",
+      "trust-centre": "مركز الثقة"
     },
     "statusPages": {
       "title": "صفحات الحالة",
@@ -1838,7 +1839,8 @@
         "security": "تسجيل الدخول والمفاتيح وإقامة البيانات ومسارات النماذج وبث SIEM",
         "support-access": "جلسات دعم المزوّد التي تعتمدها وتراقبها وتلغيها",
         "platform": "صحة العنقود المستضاف ذاتيًا والنسخ الاحتياطي والشهادات والترقيات",
-        "promotion": "نقل الإعدادات من التجهيز إلى الإنتاج بعد المراجعة"
+        "promotion": "نقل الإعدادات من التجهيز إلى الإنتاج بعد المراجعة",
+        "trust-centre": "مستندات الضمان التي يمكن للمشترين تنزيلها أو طلبها"
       }
     }
   },
@@ -1990,5 +1992,82 @@
     "acknowledge": "تأكيد الاستلام",
     "acknowledgedBy": "أكّد الاستلام {name} في {time}",
     "openWarRoom": "فتح غرفة العمليات كاملة"
+  },
+  "signIn": {
+    "title": "تسجيل الدخول إلى Relyxus",
+    "description": "استخدم تسجيل الدخول الخاص بمؤسستك. لا تطلب Relyxus كلمة مرور أبدًا.",
+    "continue": "المتابعة عبر مؤسستك",
+    "notConfigured": "لم يُهيَّأ تسجيل الدخول في هذه البيئة بعد.",
+    "sessionExpiredTitle": "انتهت جلستك",
+    "sessionExpiredDescription": "سجّل الدخول مجددًا للمتابعة من حيث توقفت.",
+    "returnTo": "بعد تسجيل الدخول تعود إلى",
+    "openDemo": "فتح مساحة العمل التجريبية"
+  },
+  "trustCentre": {
+    "title": "مركز الثقة",
+    "description": "مكتبة الضمانات الموجهة للعملاء",
+    "publicTitle": "مركز الثقة في Relyxus",
+    "publicDescription": "الشهادات ونتائج الاختبارات والسياسات والبنية الحالية، جاهزة للتنزيل أو الطلب.",
+    "publishDocument": "نشر مستند",
+    "publishDocumentUnavailable": "يتوفر النشر مع سير عمل المستندات ومراجعته القانونية.",
+    "documents": "مستندات الضمان",
+    "documentsDescription": "الشهادات والبنية والسياسات والتأمين واستمرارية الأعمال",
+    "viewPublicPage": "عرض الصفحة العامة",
+    "empty": "لا توجد مستندات بعد.",
+    "columns": {
+      "document": "المستند",
+      "version": "الإصدار",
+      "status": "الحالة",
+      "audience": "الجمهور",
+      "updated": "آخر تحديث",
+      "buyerAction": "ما يمكن للمشترين فعله"
+    },
+    "categories": {
+      "certifications": "الشهادات",
+      "penetration-tests": "اختبارات الاختراق",
+      "policies": "السياسات",
+      "subprocessors": "المعالجون الفرعيون",
+      "architecture": "البنية وتدفقات البيانات",
+      "continuity": "الاستمرارية"
+    },
+    "statuses": {
+      "current": "حالي",
+      "superseded": "مستبدل",
+      "expired": "منتهي"
+    },
+    "audiences": {
+      "public": "عام",
+      "nda": "يتطلب اتفاقية عدم إفصاح",
+      "internal": "داخلي"
+    },
+    "documentMeta": "{version} · {audience} · حُدّث {updated}",
+    "actions": {
+      "download": "تنزيل",
+      "request-access": "طلب الوصول"
+    },
+    "downloadDocument": "تنزيل {title}",
+    "requestDocument": "طلب الوصول إلى {title}",
+    "subscribeUnavailable": "الاشتراك في التحديثات قريبًا",
+    "historyOnly": "محفوظ للسجل",
+    "internalOnly": "لا يُعرض للمشترين أبدًا",
+    "requestAccess": {
+      "title": "طلب الوصول إلى {title}",
+      "description": "نشارك هذا المستند بعد قبولك اتفاقية عدم الإفصاح واعتماد طلبك.",
+      "fullName": "الاسم الكامل",
+      "fullNameMissing": "أدخل اسمك الكامل.",
+      "workEmail": "بريد العمل",
+      "workEmailInvalid": "أدخل عنوان بريد عمل صالحًا.",
+      "company": "الشركة",
+      "companyMissing": "أدخل اسم شركتك.",
+      "acceptNda": "أقبل اتفاقية عدم الإفصاح لهذا المستند.",
+      "ndaRequired": "اقبل اتفاقية عدم الإفصاح لطلب هذا المستند.",
+      "submit": "إرسال الطلب",
+      "cancel": "إلغاء",
+      "close": "إغلاق",
+      "done": "تم",
+      "failed": "لم يُرسل الطلب. المرجع {reference}. حاول مرة أخرى.",
+      "receivedTitle": "تم استلام الطلب",
+      "receivedDescription": "سنراسلك عند اعتماد الوصول إلى {title}."
+    }
   }
 }

@@ -9,6 +9,11 @@ import {
   supportSessionFixtures,
   userFixtures,
 } from './fixtures/admin-fixtures';
+import {
+  isRequestableTrustDocument,
+  managedTrustDocuments,
+  publicTrustDocuments,
+} from './fixtures/trust-fixtures';
 
 /* DEVELOPMENT ONLY. Mock Service Worker handlers for status pages and administration. */
 
@@ -42,6 +47,20 @@ export const adminHandlers = [
   http.get('/api/v1/workspaces/:workspaceSlug/settings/platform', ({ params }) =>
     params.workspaceSlug === 'payments-uk'
       ? HttpResponse.json(platformOperationsFixture())
+      : HttpResponse.json(
+          { title: 'Not found', status: 404, correlationId: 'RX-MOCK-404' },
+          { status: 404, headers: { 'Content-Type': 'application/problem+json' } },
+        ),
+  ),
+  http.get('/api/v1/workspaces/:workspaceSlug/settings/trust-documents', () =>
+    HttpResponse.json({ items: managedTrustDocuments(), nextCursor: null }),
+  ),
+  http.get('/api/v1/trust/documents', () =>
+    HttpResponse.json({ items: publicTrustDocuments(), nextCursor: null }),
+  ),
+  http.post('/api/v1/trust/documents/:documentId/access-requests', ({ params }) =>
+    isRequestableTrustDocument(String(params.documentId))
+      ? HttpResponse.json({ requestId: `access-${String(params.documentId)}` }, { status: 201 })
       : HttpResponse.json(
           { title: 'Not found', status: 404, correlationId: 'RX-MOCK-404' },
           { status: 404, headers: { 'Content-Type': 'application/problem+json' } },

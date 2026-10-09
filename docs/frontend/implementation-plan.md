@@ -157,18 +157,18 @@ contract. Figma frame numbers refer to `New folder/screens`.
 
 ### Foundations
 
-| #   | Capability                     | Specification                          | Delivers                                                                                                                                                                                                                       | Branch                                   |
-| --- | ------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| 1   | Repository Governance          | Git contract                           | Ignore rules, line endings, contribution rules, PR template                                                                                                                                                                    | `chore/repository-governance-foundation` |
-| 2   | Frontend Implementation Plan   | Contract s. 53, 56                     | This plan, ADRs, open questions                                                                                                                                                                                                | `docs/frontend-implementation-plan`      |
-| 3   | Workspace Toolchain            | Tech stack s. 5, 13                    | pnpm workspace, Next.js app, strict TypeScript, ESLint, Prettier, Vitest, Playwright, CI workflow                                                                                                                              | `chore/web-workspace-toolchain`          |
-| 4   | Obsidian Design Tokens         | UI/UX s. 5, Obsidian package, frame 00 | `--rx-*` tokens, Tailwind theme, bundled fonts, density, motion, layers, reduced motion                                                                                                                                        | `feat/obsidian-design-tokens`            |
-| 5   | Base Component Library         | UI/UX s. 7 table 1, frame 01           | Button, icon button, text field, select, checkbox, switch, tabs, dialog, drawer, tooltip, toast, banner, skeleton, empty state, keyboard hint, copy, code viewer, plus Storybook                                               | `feat/base-component-library`            |
-| 6   | Relyxus Domain Components      | UI/UX s. 7 table 2, frame 01           | Severity, state, visibility, environment and connector badges, AI marker, confidence indicator, clock, restricted placeholder, owner chip, metric card, hypothesis card, evidence item, action card, timeline event, task item | `feat/relyxus-domain-components`         |
-| 7   | Localisation and Right-to-Left | UI/UX s. 6, 16                         | next-intl, English and Arabic catalogues, direction handling, date, duration and money formatting, UTC toggle                                                                                                                  | `feat/localisation-and-rtl`              |
-| 8   | Data Access and Live Updates   | Product s. 22A, UI/UX s. 8, 9          | HTTP client, problem details, idempotency, ETag conflicts, Query provider, WebSocket and SSE client, update buffer, new-updates pill                                                                                           | `feat/data-access-and-live-updates`      |
-| 9   | Application Shell              | UI/UX s. 3, 4, 8, frame 02, 41         | Top bar, region badge, platform status, sidebar with 13 destinations, workspace switcher, banner slot with reconnect banner, context drawer, command palette, shortcuts, skip link, MSW development fixtures                   | `feat/application-shell`                 |
-| 10  | Identity and Session           | Product s. 14, 17; Tech stack s. 9     | Sign-in, OIDC via Keycloak, session expiry return, step-up re-confirmation hook. Blocked on open question Q5                                                                                                                   | `feat/identity-and-session`              |
+| #   | Capability                     | Specification                                              | Delivers                                                                                                                                                                                                                       | Branch                                   |
+| --- | ------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| 1   | Repository Governance          | Git contract                                               | Ignore rules, line endings, contribution rules, PR template                                                                                                                                                                    | `chore/repository-governance-foundation` |
+| 2   | Frontend Implementation Plan   | Contract s. 53, 56                                         | This plan, ADRs, open questions                                                                                                                                                                                                | `docs/frontend-implementation-plan`      |
+| 3   | Workspace Toolchain            | Tech stack s. 5, 13                                        | pnpm workspace, Next.js app, strict TypeScript, ESLint, Prettier, Vitest, Playwright, CI workflow                                                                                                                              | `chore/web-workspace-toolchain`          |
+| 4   | Obsidian Design Tokens         | UI/UX s. 5, Obsidian package, frame 00                     | `--rx-*` tokens, Tailwind theme, bundled fonts, density, motion, layers, reduced motion                                                                                                                                        | `feat/obsidian-design-tokens`            |
+| 5   | Base Component Library         | UI/UX s. 7 table 1, frame 01                               | Button, icon button, text field, select, checkbox, switch, tabs, dialog, drawer, tooltip, toast, banner, skeleton, empty state, keyboard hint, copy, code viewer, plus Storybook                                               | `feat/base-component-library`            |
+| 6   | Relyxus Domain Components      | UI/UX s. 7 table 2, frame 01                               | Severity, state, visibility, environment and connector badges, AI marker, confidence indicator, clock, restricted placeholder, owner chip, metric card, hypothesis card, evidence item, action card, timeline event, task item | `feat/relyxus-domain-components`         |
+| 7   | Localisation and Right-to-Left | UI/UX s. 6, 16                                             | next-intl, English and Arabic catalogues, direction handling, date, duration and money formatting, UTC toggle                                                                                                                  | `feat/localisation-and-rtl`              |
+| 8   | Data Access and Live Updates   | Product s. 22A, UI/UX s. 8, 9                              | HTTP client, problem details, idempotency, ETag conflicts, Query provider, WebSocket and SSE client, update buffer, new-updates pill                                                                                           | `feat/data-access-and-live-updates`      |
+| 9   | Application Shell              | UI/UX s. 3, 4, 8, frame 02, 41                             | Top bar, region badge, platform status, sidebar with 13 destinations, workspace switcher, banner slot with reconnect banner, context drawer, command palette, shortcuts, skip link, MSW development fixtures                   | `feat/application-shell`                 |
+| 10  | Identity and Session           | Sign-in screen merged (#34); provider wiring blocked on Q5 | #34                                                                                                                                                                                                                            |
 
 ### Operate
 
@@ -237,44 +237,45 @@ example `/org/admin/platform`) are proposals and are tracked in the open questio
 Updated as each capability merges into `dev`. Large capabilities get an implementation brief
 in [briefs](briefs) before coding.
 
-| #      | Capability                               | Status                                                           | Pull requests |
-| ------ | ---------------------------------------- | ---------------------------------------------------------------- | ------------- |
-| 1–9    | Foundations                              | Merged                                                           | #1 to #9      |
-| —      | End-to-end and accessibility harness     | Merged                                                           | #11           |
-| 10     | Identity and Session                     | Blocked on open question Q5 (Keycloak client and session design) | —             |
-| 11     | Command Centre                           | Merged                                                           | #12           |
-| 12     | Incident List                            | Merged                                                           | #13           |
-| 13     | Incident Declaration                     | Merged                                                           | #14           |
-| 14     | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)                 | #16           |
-| 15     | Evidence Explorer                        | Merged                                                           | #17           |
-| 16     | Incident Tasks and Timeline (full views) | Merged                                                           | #18           |
-| 17     | Approval Governance Inbox                | Merged                                                           | #20           |
-| 18     | On-call and Escalation                   | Merged                                                           | #22           |
-| 19     | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
-| 20     | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)      | #26           |
-| 21     | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)                 | #27           |
-| 22     | Analytics and Dashboards                 | Merged: reliability view (custom dashboards pending)             | #28           |
-| 27     | Compliance Centre                        | Merged                                                           | #28           |
-| 32     | Audit Log                                | Merged                                                           | #28           |
-| 33     | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                             | #28           |
-| 23     | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)        | #29           |
-| 26     | Runbooks and Playbooks                   | Merged: library, steps and execution history                     | #29           |
-| 34     | Incident Types, Fields and Forms         | Merged: type configuration and responder preview                 | #29           |
-| 24     | Approval Routing Builder                 | Merged: routes and exact-approver preview (builder pending)      | #30           |
-| 25     | Notification Rules                       | Merged: rules and delivery preview (rule builder pending)        | #30           |
-| 28     | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)         | #30           |
-| 29     | Regulatory Rule Library                  | Merged                                                           | #30           |
-| 30     | Post-Incident Review                     | Merged: document, authorship and sign-off gate                   | #30           |
-| 31     | Status Pages                             | Merged: pages, draft update and live preview (editor pending)    | #31           |
-| 35     | Configuration Promotion                  | Merged: difference tree and validation                           | #31           |
-| 36     | Platform Operations                      | Merged: health, system checks and available update               | #31           |
-| 37     | Support Access                           | Merged: sessions and live control (revoke pending)               | #31           |
-| 38     | Users, Teams and Roles                   | Merged: identity and access controls                             | #31           |
-| 39     | Security and Data Controls               | Merged: sections and data flow preview                           | #31           |
-| 40     | Personal Settings                        | Merged: sections, working language switch                        | #32           |
-| 41     | Onboarding and Sample Workspace          | Merged: progress, current step and sample workspace link         | #32           |
-| 43     | Wall Mode                                | Merged: full-screen read-only view, restricted never shown       | #32           |
-| 42, 44 | Mobile views and Trust Centre            | Planned                                                          | —             |     | Planned in the order of section 5 | —   |
+| #   | Capability                               | Status                                                        | Pull requests |
+| --- | ---------------------------------------- | ------------------------------------------------------------- | ------------- |
+| 1–9 | Foundations                              | Merged                                                        | #1 to #9      |
+| —   | End-to-end and accessibility harness     | Merged                                                        | #11           |
+| 10  | Identity and Session                     | Sign-in screen merged (#34); provider wiring blocked on Q5    | #34           |
+| 11  | Command Centre                           | Merged                                                        | #12           |
+| 12  | Incident List                            | Merged                                                        | #13           |
+| 13  | Incident Declaration                     | Merged                                                        | #14           |
+| 14  | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)              | #16           |
+| 15  | Evidence Explorer                        | Merged                                                        | #17           |
+| 16  | Incident Tasks and Timeline (full views) | Merged                                                        | #18           |
+| 17  | Approval Governance Inbox                | Merged                                                        | #20           |
+| 18  | On-call and Escalation                   | Merged                                                        | #22           |
+| 19  | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)        | #25           |
+| 20  | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)   | #26           |
+| 21  | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)              | #27           |
+| 22  | Analytics and Dashboards                 | Merged: reliability view (custom dashboards pending)          | #28           |
+| 27  | Compliance Centre                        | Merged                                                        | #28           |
+| 32  | Audit Log                                | Merged                                                        | #28           |
+| 33  | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                          | #28           |
+| 23  | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)     | #29           |
+| 26  | Runbooks and Playbooks                   | Merged: library, steps and execution history                  | #29           |
+| 34  | Incident Types, Fields and Forms         | Merged: type configuration and responder preview              | #29           |
+| 24  | Approval Routing Builder                 | Merged: routes and exact-approver preview (builder pending)   | #30           |
+| 25  | Notification Rules                       | Merged: rules and delivery preview (rule builder pending)     | #30           |
+| 28  | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)      | #30           |
+| 29  | Regulatory Rule Library                  | Merged                                                        | #30           |
+| 30  | Post-Incident Review                     | Merged: document, authorship and sign-off gate                | #30           |
+| 31  | Status Pages                             | Merged: pages, draft update and live preview (editor pending) | #31           |
+| 35  | Configuration Promotion                  | Merged: difference tree and validation                        | #31           |
+| 36  | Platform Operations                      | Merged: health, system checks and available update            | #31           |
+| 37  | Support Access                           | Merged: sessions and live control (revoke pending)            | #31           |
+| 38  | Users, Teams and Roles                   | Merged: identity and access controls                          | #31           |
+| 39  | Security and Data Controls               | Merged: sections and data flow preview                        | #31           |
+| 40  | Personal Settings                        | Merged: sections, working language switch                     | #32           |
+| 41  | Onboarding and Sample Workspace          | Merged: progress, current step and sample workspace link      | #32           |
+| 43  | Wall Mode                                | Merged: full-screen read-only view, restricted never shown    | #32           |
+| 42  | Mobile Acknowledge and Approve (PWA)     | Merged: incident summary, single approval, Me tab             | #33           |
+| 44  | Trust Centre                             | Merged: public page with access requests, console view        | #34           |
 
 ## 6. Cross-cutting requirements applied to every screen
 

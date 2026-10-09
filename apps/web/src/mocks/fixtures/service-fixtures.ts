@@ -94,7 +94,7 @@ const serviceFixtures: ServiceFixture[] = [
   serviceFixture(summary('payments-api', 'tier-0', 'at-risk', 'Payments platform'), {
     description: 'Authorises and captures card payments for UK merchants.',
     environments: ['production', 'staging'],
-    businessServices: [{ id: 'card-payments-uk', name: 'Card payments UK' }],
+    businessServices: [{ id: 'svc-card-payments', name: 'Card payments' }],
     sourceRecords: [
       { source: 'cmdb', externalId: 'CI0042187', lastSyncedAt: hoursAgo(6) },
       {
@@ -165,14 +165,19 @@ const serviceFixtures: ServiceFixture[] = [
     ],
   }),
   serviceFixture(summary('card-router', 'tier-0', 'healthy', 'Payments platform'), {
-    businessServices: [{ id: 'card-payments-uk', name: 'Card payments UK' }],
+    businessServices: [{ id: 'svc-card-payments', name: 'Card payments' }],
     onCallScheduleName: 'Payments primary',
   }),
-  serviceFixture(summary('fraud-score', 'tier-1', 'healthy', 'Risk engineering')),
+  serviceFixture(summary('fraud-score', 'tier-1', 'healthy', 'Risk engineering'), {
+    businessServices: [{ id: 'svc-card-payments', name: 'Card payments' }],
+  }),
   serviceFixture(summary('customer-auth', 'tier-0', 'healthy', 'Identity'), {
+    businessServices: [{ id: 'svc-customer-login', name: 'Customer login' }],
     onCallScheduleName: 'Identity primary',
   }),
-  serviceFixture(summary('settlement-worker', 'tier-1', 'degraded', 'Settlement')),
+  serviceFixture(summary('settlement-worker', 'tier-1', 'degraded', 'Settlement'), {
+    businessServices: [{ id: 'svc-settlement', name: 'Settlement' }],
+  }),
   serviceFixture(summary('postgres-pay', 'tier-1', 'healthy', 'Data platform')),
   serviceFixture(summary('redis-session', 'tier-1', 'healthy', 'Data platform')),
   serviceFixture(summary('api-gateway', 'tier-0', 'healthy', PLATFORM_TEAM_NAME)),
@@ -396,4 +401,15 @@ export function affectedServicesFor(incidentReference: string): { id: string; na
     .map((serviceId) => findServiceFixture(serviceId))
     .filter((service) => service !== undefined)
     .map(({ id, name }) => ({ id, name }));
+}
+
+/** Technical services mapped to a business service, as the business view lists them. */
+export function technicalServicesLinkedTo(
+  businessServiceId: string,
+): { id: string; name: string; health: ServiceHealth }[] {
+  return serviceFixtures
+    .filter((service) =>
+      service.businessServices.some((businessService) => businessService.id === businessServiceId),
+    )
+    .map(({ id, name, health }) => ({ id, name, health }));
 }

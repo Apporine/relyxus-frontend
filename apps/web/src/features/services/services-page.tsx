@@ -24,6 +24,7 @@ import {
 } from './queries';
 import { ServiceDetailPanel } from './service-detail-panel';
 import { ServiceListPanel } from './service-list-panel';
+import { ServicesAreaNavigation } from './services-area-navigation';
 import {
   SERVICE_TAB_PARAMETER,
   selectedServiceIdFromSearchParams,
@@ -183,6 +184,7 @@ export function ServicesPage() {
         description={translateServices('description')}
         actions={<AddServiceAction />}
       />
+      <ServicesAreaNavigation current="technical" />
       <div
         className={
           showsTwoColumns

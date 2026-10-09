@@ -176,7 +176,9 @@
     "businessServiceHealth": {
       "at-risk": "At risk",
       "degraded": "Degraded",
-      "monitoring": "Monitoring"
+      "monitoring": "Monitoring",
+      "breached": "Breached",
+      "healthy": "Healthy"
     },
     "clockPhases": {
       "normal": "On track",
@@ -862,6 +864,113 @@
       "retiredDescription": "Its full incident history is kept. Alerts still arriving for it are flagged.",
       "staleTitle": "Stale: no telemetry or source update for 30 days",
       "staleDescription": "Review whether this service still runs, then confirm or retire it."
+    },
+    "areaNavigation": {
+      "label": "Services views",
+      "technical": "Technical services",
+      "business": "Business services"
+    }
+  },
+  "businessServices": {
+    "title": "Business services and tolerances",
+    "description": "Operational resilience view",
+    "newService": "New service",
+    "newServiceUnavailable": "Adding business services needs policy-owner approval, which is not available yet.",
+    "detailSectionName": "Business service",
+    "list": {
+      "title": "Business services",
+      "emptyTitle": "No important business services yet",
+      "emptyDescription": "A resilience owner defines business services and maps technical services to them."
+    },
+    "tolerance": {
+      "timeToBreach": "{time} to breach",
+      "outsideTolerance": "Outside tolerance for {time}",
+      "notDisrupted": "Not disrupted. Tolerance {tolerance}.",
+      "clockTitle": "Time to breach for {service}",
+      "breachAt": "Breach at {time} · tolerance {tolerance}",
+      "disruptedSince": "Disrupted since {time}"
+    },
+    "tolerancePhases": {
+      "normal": "Within tolerance",
+      "past-half": "Past 50% of tolerance",
+      "past-three-quarters": "Past 75% of tolerance",
+      "past-ninety-percent": "Past 90% of tolerance",
+      "breached": "Tolerance breached",
+      "submitted": "Disruption ended"
+    },
+    "detail": {
+      "timeToBreach": "Time to breach",
+      "downtimeBudget": "Downtime budget",
+      "currentImpact": "Current impact",
+      "technicalDependencies": "Technical dependencies",
+      "noTechnicalServices": "No technical services are mapped to this business service.",
+      "regulators": "Regulators",
+      "noRegulators": "No regulator mappings",
+      "owner": "Owner",
+      "noOwner": "No owner"
+    },
+    "downtimeBudget": {
+      "remaining": "{remaining, number, ::percent} of the budget remains for this {period, select, month {calendar month} quarter {calendar quarter} year {calendar year} other {budget period}}",
+      "used": "{used} used of {allowed}"
+    },
+    "impact": {
+      "overridden": "Overridden",
+      "overrideDetail": "Set by {name} at {time}: {reason}",
+      "noValue": "No value: no source or fallback could produce one.",
+      "provenance": "Formula v{version} · {confidence} · {source} · {time}",
+      "sourceMissingTitle": "Impact source missing",
+      "sourceMissingDescription": "{source} is not returning data. Money at risk uses the fallback assumption: {fallback}.",
+      "sourceStaleTitle": "Impact data is stale",
+      "sourceStaleDescription": "{source} data is older than the {minutes}-minute freshness limit. Treat the value as an estimate.",
+      "ruleChangedTitle": "Impact formula changed from v{previous} to v{current}",
+      "ruleChangedDescription": "Values before {time} were calculated with v{previous}."
+    },
+    "formula": {
+      "title": "Impact formula v{version}",
+      "metric": "Measures",
+      "expression": "Formula",
+      "source": "Source",
+      "currency": "Currency",
+      "freshnessLimit": "Freshness limit",
+      "freshnessMinutes": "{minutes, plural, one {# minute} other {# minutes}}",
+      "fallback": "Fallback",
+      "thresholds": "Severity thresholds"
+    },
+    "breachHistory": {
+      "title": "Breach history",
+      "empty": "No tolerance breaches recorded.",
+      "entry": "{time} · {outside} outside tolerance",
+      "lastDrill": "Last resilience drill {time}",
+      "noDrill": "No resilience drill recorded"
+    },
+    "posture": {
+      "title": "Current posture",
+      "health": "Health",
+      "impactSource": "Impact source",
+      "impactSourceStates": {
+        "fresh": "Fresh",
+        "stale": "Stale",
+        "missing": "Missing"
+      },
+      "tolerance": "Tolerance",
+      "notDisrupted": "Not disrupted",
+      "consumed": "{consumed, number, ::percent} consumed",
+      "toleranceStates": {
+        "within": "Within tolerance",
+        "near-breach": "Near breach",
+        "breached": "Breached"
+      },
+      "override": "Override",
+      "noOverride": "None",
+      "overriddenBy": "Overridden by {name}"
+    },
+    "actions": {
+      "menu": "Manage",
+      "unavailable": "Changes need policy-owner approval, which is not available yet.",
+      "editMapping": "Edit mapping",
+      "editTolerance": "Edit tolerance",
+      "configureImpactFormula": "Configure impact formula",
+      "startDrill": "Start a resilience drill"
     }
   }
 }

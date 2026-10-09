@@ -7,18 +7,13 @@ import type { ReactNode } from 'react';
 
 import type { LastDaySummary } from '@/features/analytics/model';
 import type { ConnectorSummary } from '@/features/integrations/model';
-import type { BusinessServiceAtRisk, BusinessServiceHealth } from '@/features/services/model';
+import type { BusinessServiceAtRisk } from '@/features/services/model';
+import { businessServiceHealthClassNames } from '@/features/services/service-labels';
 import { useRelyxusFormat } from '@/lib/format/use-relyxus-format';
 import { QuerySection } from '@/lib/ui/query-section';
 
 const MAX_LISTED_ITEMS = 3;
 const MILLISECONDS_PER_SECOND = 1_000;
-
-const businessServiceHealthClassNames = {
-  'at-risk': { dot: 'bg-critical', text: 'text-critical' },
-  degraded: { dot: 'bg-warning', text: 'text-warning' },
-  monitoring: { dot: 'bg-warning', text: 'text-warning' },
-} satisfies Record<BusinessServiceHealth, { dot: string; text: string }>;
 
 const connectorAttentionOrder = { unavailable: 0, degraded: 1, disabled: 2, connected: 3 } as const;
 

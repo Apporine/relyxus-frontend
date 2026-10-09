@@ -16,18 +16,6 @@ export const commandCentreHandlers = [
     });
   }),
 
-  http.get('/api/v1/workspaces/:workspaceSlug/business-services', ({ request, params }) => {
-    const url = new URL(request.url);
-    if (url.searchParams.get('health') !== 'not-healthy') {
-      return HttpResponse.json(emptyListResponse());
-    }
-    const fixtures = commandCentreFixturesFor(String(params.workspaceSlug));
-    return HttpResponse.json({
-      items: fixtures?.businessServicesAtRisk ?? [],
-      nextCursor: null,
-    });
-  }),
-
   http.get('/api/v1/workspaces/:workspaceSlug/connectors', ({ params }) => {
     const fixtures = commandCentreFixturesFor(String(params.workspaceSlug));
     return HttpResponse.json({

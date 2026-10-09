@@ -4,37 +4,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@relyxus/ui';
 import { useTranslations } from 'next-intl';
 
 import { Panel } from '@/lib/ui/panel';
+import { RankedBars } from '@/lib/ui/ranked-bars';
 import { useSearchParamChoice } from '@/lib/ui/use-search-param-choice';
 
-import { missDimensions, type MissCount, type Scorecard } from './model';
-
-function MissBars({ misses, emptyText }: { misses: readonly MissCount[]; emptyText: string }) {
-  if (misses.length === 0) {
-    return <p className="text-body text-fg-secondary">{emptyText}</p>;
-  }
-  const sortedMisses = misses.toSorted((first, second) => second.count - first.count);
-  const largestCount = sortedMisses[0]?.count ?? 1;
-
-  return (
-    <ul className="flex flex-col gap-3">
-      {sortedMisses.map((miss) => (
-        <li
-          key={miss.label}
-          className="grid grid-cols-[minmax(7rem,10rem)_1fr_auto] items-center gap-3"
-        >
-          <span className="truncate text-table">{miss.label}</span>
-          <span aria-hidden className="h-2 rounded-full bg-surface-2">
-            <span
-              className="block h-full rounded-full bg-fg-secondary"
-              style={{ width: `${(miss.count / largestCount) * 100}%` }}
-            />
-          </span>
-          <span className="text-table font-semibold tabular-nums">{miss.count}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { missDimensions, type Scorecard } from './model';
 
 /** Misses sorted by frequency, by incident type, service or model (UI/UX s. 11.7). */
 export function MissesPanel({ misses }: { misses: Scorecard['misses'] }) {
@@ -54,7 +27,10 @@ export function MissesPanel({ misses }: { misses: Scorecard['misses'] }) {
         </TabsList>
         {missDimensions.map((missDimension) => (
           <TabsContent key={missDimension} value={missDimension}>
-            <MissBars misses={misses[missDimension]} emptyText={translateMisses('empty')} />
+            <RankedBars
+              items={misses[missDimension].map((miss) => ({ key: miss.label, ...miss }))}
+              emptyText={translateMisses('empty')}
+            />
           </TabsContent>
         ))}
       </Tabs>

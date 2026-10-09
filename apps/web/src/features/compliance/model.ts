@@ -22,3 +22,52 @@ export const regulatorClockSchema = z.object({
 export type RegulatorClock = z.infer<typeof regulatorClockSchema>;
 
 export const regulatorClockListSchema = paginatedListSchema(regulatorClockSchema);
+
+/*
+ * Compliance Centre overview (UI/UX s. 12.1; Product s. 12): incidents needing compliance
+ * attention, the nearest obligations and evidence pack completeness. Incidents the viewer
+ * may not open are omitted by the server. Provisional contract (ADR 0004).
+ */
+export const complianceClassifications = [
+  'major-ict',
+  'reportable',
+  'review-needed',
+  'not-reportable',
+] as const;
+export const complianceReportStates = [
+  'none',
+  'draft',
+  'submitted',
+  'amendment',
+  'closed',
+] as const;
+
+export const complianceOverviewSchema = z.object({
+  incidents: z.array(
+    z.object({
+      reference: z.string().min(1),
+      title: z.string().min(1),
+      classification: z.enum(complianceClassifications),
+      clock: z.object({ deadlineAt: isoDateTimeSchema, isSubmitted: z.boolean() }).nullable(),
+      reportState: z.enum(complianceReportStates),
+      ownerName: z.string().nullable(),
+    }),
+  ),
+  deadlines: z.array(
+    z.object({
+      id: z.string().min(1),
+      obligationName: z.string().min(1),
+      /** What the obligation concerns, for example an incident or a rule package. */
+      subject: z.string().min(1),
+      dueAt: isoDateTimeSchema,
+    }),
+  ),
+  evidencePacks: z.array(
+    z.object({
+      incidentReference: z.string().min(1),
+      completenessPercent: z.number().min(0).max(100),
+      missingSourceCount: z.number().int().nonnegative(),
+    }),
+  ),
+});
+export type ComplianceOverview = z.infer<typeof complianceOverviewSchema>;

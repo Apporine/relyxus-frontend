@@ -1123,5 +1123,178 @@
       "evidenceCutoff": "الأدلة حتى {time}",
       "decisionTrace": "مسار القرار ({count, plural, zero {لا خطوات} one {خطوة واحدة} two {خطوتان} few {# خطوات} many {# خطوة} other {# خطوة}})"
     }
+  },
+  "analytics": {
+    "title": "التحليلات",
+    "description": "الموثوقية وأثر الأعمال والأتمتة وإنفاق الذكاء الاصطناعي",
+    "scheduleReport": "جدولة تقرير",
+    "scheduleReportUnavailable": "تتوفر التقارير المجدولة مع خدمة التقارير.",
+    "metrics": {
+      "mttr": "متوسط وقت الحل",
+      "incidents": "الحوادث",
+      "downtimeAvoided": "التوقف الذي تم تجنبه",
+      "customerImpact": "أثر العملاء",
+      "noData": "لا توجد بيانات بعد",
+      "mttrDown": "انخفض {change}",
+      "mttrUp": "ارتفع {change}",
+      "window": "نافذة {days} يومًا",
+      "verified": "تم التحقق",
+      "unverified": "لم يتم التحقق بعد",
+      "atRisk": "{confidence} معرّض للخطر"
+    },
+    "trend": {
+      "title": "متوسط وقت الحل عبر الزمن",
+      "definition": "تعريف المقياس الإصدار {version}",
+      "chartLabel": "متوسط وقت الحل حسب الأسبوع",
+      "series": "متوسط وقت الحل",
+      "viewAsTable": "العرض كقائمة",
+      "point": "أسبوع {period}: {minutes} دقيقة"
+    },
+    "byService": {
+      "title": "الحوادث حسب الخدمة",
+      "description": "مرتبة حسب الحجم؛ تفتح كل خدمة حوادثها",
+      "empty": "لا توجد حوادث في هذه النافذة."
+    },
+    "drillDowns": {
+      "title": "تفاصيل الموثوقية",
+      "description": "كل رقم يذكر مصدره",
+      "caption": "مقاييس الموثوقية مقارنة بالنافذة السابقة",
+      "empty": "لا توجد مقاييس في هذه النافذة.",
+      "columns": {
+        "metric": "المقياس",
+        "current": "الحالي",
+        "prior": "السابق",
+        "change": "التغيّر",
+        "source": "المصدر"
+      },
+      "metrics": {
+        "mttr": "متوسط وقت الحل",
+        "time-to-first-hypothesis": "الوقت حتى أول فرضية",
+        "downtime-avoided": "التوقف الذي تم تجنبه",
+        "unapproved-production-changes": "تغييرات إنتاج غير معتمدة"
+      },
+      "noPrior": "لا توجد قيمة سابقة"
+    }
+  },
+  "audit": {
+    "title": "سجل التدقيق",
+    "description": "سجل تشغيلي غير قابل للتعديل مع التحقق من السلسلة",
+    "filterLabel": "تصفية الأحداث",
+    "categories": {
+      "all": "الكل",
+      "incident": "الحوادث",
+      "action": "الإجراءات",
+      "approval": "الموافقات",
+      "policy": "السياسات",
+      "report": "التقارير",
+      "support": "وصول الدعم"
+    },
+    "events": "الأحداث",
+    "masked": "مقيّد",
+    "maskingNote": "تُخفى تفاصيل العناصر المقيّدة حيث لا تسمح صلاحياتك بها.",
+    "chainVerified": "تم التحقق من سلسلة التجزئة حتى {time}.",
+    "chainBrokenTitle": "فشل التحقق من سلسلة التدقيق",
+    "chainBrokenDescription": "تعذّر التحقق من الإدخالات بعد {time}. تم تنبيه فريق الأمن؛ لا تعتمد على تلك الإدخالات حتى يتم التحقق منها.",
+    "empty": "لا توجد أحداث تطابق هذا المرشّح.",
+    "columns": {
+      "time": "الوقت",
+      "event": "الحدث",
+      "actor": "الفاعل",
+      "target": "الهدف",
+      "action": "الإجراء",
+      "hash": "التجزئة",
+      "siem": "SIEM"
+    },
+    "hashStatuses": {
+      "verified": "تم التحقق",
+      "mismatch": "عدم تطابق"
+    },
+    "siemDeliveries": {
+      "delivered": "تم التسليم",
+      "queued": "في الانتظار",
+      "failed": "فشل"
+    }
+  },
+  "integrations": {
+    "title": "التكاملات",
+    "description": "اربط أنظمة القياس والأنظمة المؤسسية دون فقدان السيطرة",
+    "addConnector": "إضافة موصل",
+    "addConnectorUnavailable": "يتوفر الإعداد الموجَّه للموصلات مع معالج الموصلات.",
+    "viewsLabel": "عرض التكاملات",
+    "views": {
+      "connected": "المتصلة",
+      "catalogue": "الكتالوج"
+    },
+    "connected": {
+      "title": "الأنظمة المتصلة",
+      "description": "الحالة والنطاق ووضع الوصول",
+      "empty": "لا توجد أنظمة متصلة بعد."
+    },
+    "catalogue": {
+      "title": "كتالوج الموصلات",
+      "description": "يتبع كل موصل خطوات الإعداد نفسها",
+      "connected": "متصل",
+      "available": "متاح"
+    },
+    "columns": {
+      "connector": "الموصل",
+      "type": "النوع",
+      "health": "الحالة",
+      "scope": "النطاق",
+      "mode": "الوضع"
+    },
+    "accessModes": {
+      "read-only": "قراءة فقط",
+      "write-gated": "كتابة مشروطة",
+      "write-disabled": "الكتابة معطّلة"
+    }
+  },
+  "compliance": {
+    "title": "مركز الامتثال",
+    "description": "المواعيد النهائية والتصنيف والتقارير والأدلة",
+    "activeClocks": "المؤقتات النشطة",
+    "noActiveClocks": "لا توجد مؤقتات تنظيمية قيد التشغيل.",
+    "deadline": "الموعد النهائي · {time}",
+    "clockDetails": "{incident} · {rulePackage} · {owner}",
+    "overviewSectionName": "نظرة عامة على الامتثال",
+    "attention": {
+      "title": "حوادث تتطلب اهتمام الامتثال",
+      "empty": "لا توجد حوادث تتطلب اهتمام الامتثال.",
+      "columns": {
+        "incident": "الحادثة",
+        "classification": "التصنيف",
+        "clock": "المؤقت",
+        "report": "التقرير",
+        "owner": "المالك"
+      },
+      "classifications": {
+        "major-ict": "حادثة تقنية كبرى",
+        "reportable": "واجبة الإبلاغ",
+        "review-needed": "تحتاج مراجعة",
+        "not-reportable": "غير واجبة الإبلاغ"
+      },
+      "noClock": "لا يوجد مؤقت",
+      "submitted": "مُقدَّم",
+      "reportStates": {
+        "none": "لا يوجد",
+        "draft": "مسودة",
+        "submitted": "مُقدَّم",
+        "amendment": "تعديل",
+        "closed": "مغلق"
+      },
+      "unassigned": "غير معيّن"
+    },
+    "deadlines": {
+      "title": "المواعيد التي تتطلب الانتباه",
+      "description": "أقرب الالتزامات",
+      "empty": "لا توجد التزامات قادمة."
+    },
+    "evidencePacks": {
+      "title": "حزم الأدلة",
+      "description": "الاكتمال والمصادر المفقودة",
+      "empty": "لا توجد حزم أدلة بعد.",
+      "status": "{completeness, number, ::percent} · {missing, plural, =0 {مكتملة} zero {مكتملة} one {مصدر واحد مفقود} two {مصدران مفقودان} few {# مصادر مفقودة} many {# مصدرًا مفقودًا} other {# مصدر مفقود}}",
+      "progressLabel": "اكتمال حزمة الأدلة لـ {incident}"
+    }
   }
 }

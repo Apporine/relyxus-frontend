@@ -4,6 +4,7 @@ import { aiQualityHandlers } from './ai-quality-handlers';
 import { approvalHandlers } from './approval-handlers';
 import { businessServiceHandlers } from './business-service-handlers';
 import { commandCentreHandlers } from './command-centre-handlers';
+import { configurationHandlers } from './configuration-handlers';
 import { evidenceHandlers } from './evidence-handlers';
 import { incidentDeclarationHandlers } from './incident-declaration-handlers';
 import { incidentListHandlers } from './incident-list-handlers';
@@ -36,6 +37,7 @@ export const handlers = [
   ...businessServiceHandlers,
   ...aiQualityHandlers,
   ...insightHandlers,
+  ...configurationHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),
 ];

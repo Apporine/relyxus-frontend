@@ -1296,5 +1296,122 @@
       "status": "{completeness, number, ::percent} · {missing, plural, =0 {nothing missing} one {# source missing} other {# sources missing}}",
       "progressLabel": "Evidence pack completeness for {incident}"
     }
+  },
+  "policies": {
+    "title": "Policies and autonomy",
+    "description": "Govern what Relyxus may suggest, request or execute",
+    "newPolicy": "New policy",
+    "newPolicyUnavailable": "Writing policies arrives with the policy editor and its approval flow.",
+    "listTitle": "Policies",
+    "empty": "No policies are defined yet.",
+    "detailSectionName": "Policy",
+    "listMeta": "{autonomy} · {state}",
+    "autonomy": {
+      "deny": "Deny",
+      "l0": "L0 Observe",
+      "l1": "L1 Suggest",
+      "l2": "L2 One-click approval",
+      "l3": "L3 Four-eyes",
+      "l4": "L4 Automatic within limits"
+    },
+    "states": {
+      "draft": "Draft",
+      "published": "Published",
+      "active": "Active"
+    },
+    "facts": {
+      "action": "Action",
+      "scope": "Scope",
+      "environment": "Environment",
+      "autonomy": "Autonomy",
+      "approvers": "Approvers",
+      "freezeCalendar": "Freeze calendar"
+    },
+    "noFreeze": "No freeze",
+    "none": "None",
+    "required": "Required",
+    "notRequired": "Not required",
+    "effective": {
+      "title": "Effective policy",
+      "result": "Result",
+      "inheritedDeny": "Inherited deny",
+      "rollback": "Rollback",
+      "verification": "Verification",
+      "simulation": "Simulation",
+      "simulationResult": "{allowed} allowed · {needingApproval} need approval · {denied} denied"
+    }
+  },
+  "runbooks": {
+    "title": "Runbooks and playbooks",
+    "description": "Versioned procedures with gated actions",
+    "importRunbook": "Import runbook",
+    "importRunbookUnavailable": "Importing runbooks arrives with the runbook compiler.",
+    "listTitle": "Runbook library",
+    "empty": "No runbooks yet.",
+    "detailSectionName": "Runbook",
+    "listMeta": "{source} · v{version} · tested {tested}",
+    "listMetaReviewDue": "{source} · review due",
+    "neverTested": "never",
+    "versionLine": "{source} · version {version}",
+    "sources": {
+      "git": "Git",
+      "manual": "Manual"
+    },
+    "stepLabel": "Step {number} · {kind}",
+    "stepKinds": {
+      "read": "Read",
+      "gate": "Gate",
+      "action": "Action",
+      "verify": "Verify",
+      "manual": "Manual"
+    },
+    "history": {
+      "title": "Execution history",
+      "empty": "This runbook has not run in an incident yet.",
+      "latestRun": "Latest run",
+      "result": "Result",
+      "version": "Version",
+      "pinnedVersion": "v{version}, pinned",
+      "unpinnedVersion": "v{version}",
+      "recovery": "Recovery"
+    },
+    "results": {
+      "succeeded": "Succeeded",
+      "failed": "Failed",
+      "partially-failed": "Partially failed"
+    }
+  },
+  "incidentTypes": {
+    "title": "Incident types, fields and forms",
+    "description": "Versioned declaration and lifecycle configuration",
+    "newType": "New type",
+    "newTypeUnavailable": "Creating types arrives with the form builder.",
+    "listTitle": "Incident types",
+    "empty": "No incident types yet.",
+    "detailSectionName": "Incident type",
+    "listMeta": "v{version} · {state}",
+    "states": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "facts": {
+      "declarationForm": "Declaration form",
+      "visibilityDefault": "Default visibility",
+      "lifecycle": "Lifecycle",
+      "automations": "Automations",
+      "regulatorMappings": "Regulator mappings",
+      "versionBehaviour": "Version behaviour"
+    },
+    "lifecycleArrow": "→",
+    "versionBehaviour": "Past incidents stay pinned to the version they were declared with",
+    "none": "None",
+    "preview": {
+      "title": "Live preview",
+      "responderView": "Responder view",
+      "requiredFields": "Required fields",
+      "conditionalField": "Conditional field",
+      "condition": "{field} when {condition}"
+    }
   }
 }

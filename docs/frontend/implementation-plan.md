@@ -253,7 +253,11 @@ in [briefs](briefs) before coding.
 | 19    | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
 | 20    | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)      | #26           |
 | 21    | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)                 | #27           |
-| 22–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 22    | Analytics and Dashboards                 | Merged: reliability view (custom dashboards pending)             | #28           |
+| 27    | Compliance Centre                        | Merged                                                           | #28           |
+| 32    | Audit Log                                | Merged                                                           | #28           |
+| 33    | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                             | #28           |
+| 23–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

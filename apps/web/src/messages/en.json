@@ -1123,5 +1123,178 @@
       "evidenceCutoff": "Evidence up to {time}",
       "decisionTrace": "Decision trace ({count, plural, one {# step} other {# steps}})"
     }
+  },
+  "analytics": {
+    "title": "Analytics",
+    "description": "Reliability, business impact, automation and AI spend",
+    "scheduleReport": "Schedule report",
+    "scheduleReportUnavailable": "Scheduled reports arrive with the reporting service.",
+    "metrics": {
+      "mttr": "MTTR",
+      "incidents": "Incidents",
+      "downtimeAvoided": "Downtime avoided",
+      "customerImpact": "Customer impact",
+      "noData": "No data yet",
+      "mttrDown": "Down {change}",
+      "mttrUp": "Up {change}",
+      "window": "{days}-day window",
+      "verified": "Verified",
+      "unverified": "Not yet verified",
+      "atRisk": "{confidence} at risk"
+    },
+    "trend": {
+      "title": "MTTR over time",
+      "definition": "Metric definition v{version}",
+      "chartLabel": "Mean time to resolve by week",
+      "series": "MTTR",
+      "viewAsTable": "View as a list",
+      "point": "Week of {period}: {minutes} minutes"
+    },
+    "byService": {
+      "title": "Incidents by service",
+      "description": "Sorted by volume; each service opens its incidents",
+      "empty": "No incidents in this window."
+    },
+    "drillDowns": {
+      "title": "Reliability drill-downs",
+      "description": "Every figure names its source",
+      "caption": "Reliability metrics against the prior window",
+      "empty": "No metrics in this window.",
+      "columns": {
+        "metric": "Metric",
+        "current": "Current",
+        "prior": "Prior",
+        "change": "Change",
+        "source": "Source"
+      },
+      "metrics": {
+        "mttr": "MTTR",
+        "time-to-first-hypothesis": "Time to first hypothesis",
+        "downtime-avoided": "Downtime avoided",
+        "unapproved-production-changes": "Unapproved production changes"
+      },
+      "noPrior": "No prior value"
+    }
+  },
+  "audit": {
+    "title": "Audit log",
+    "description": "Immutable operational ledger with chain verification",
+    "filterLabel": "Filter events",
+    "categories": {
+      "all": "All",
+      "incident": "Incidents",
+      "action": "Actions",
+      "approval": "Approvals",
+      "policy": "Policies",
+      "report": "Reports",
+      "support": "Support access"
+    },
+    "events": "Events",
+    "masked": "Restricted",
+    "maskingNote": "Details of restricted items are masked where your permissions do not allow them.",
+    "chainVerified": "Hash chain verified up to {time}.",
+    "chainBrokenTitle": "Audit chain verification failed",
+    "chainBrokenDescription": "Entries after {time} could not be verified. Your security team has been alerted; do not rely on those entries until they are.",
+    "empty": "No events match this filter.",
+    "columns": {
+      "time": "Time",
+      "event": "Event",
+      "actor": "Actor",
+      "target": "Target",
+      "action": "Action",
+      "hash": "Hash",
+      "siem": "SIEM"
+    },
+    "hashStatuses": {
+      "verified": "Verified",
+      "mismatch": "Mismatch"
+    },
+    "siemDeliveries": {
+      "delivered": "Delivered",
+      "queued": "Queued",
+      "failed": "Failed"
+    }
+  },
+  "integrations": {
+    "title": "Integrations",
+    "description": "Connect telemetry and enterprise systems without losing control",
+    "addConnector": "Add connector",
+    "addConnectorUnavailable": "The guided connector set-up arrives with the connector wizard.",
+    "viewsLabel": "Integrations view",
+    "views": {
+      "connected": "Connected",
+      "catalogue": "Catalogue"
+    },
+    "connected": {
+      "title": "Connected systems",
+      "description": "Health, scope and access mode",
+      "empty": "No systems are connected yet."
+    },
+    "catalogue": {
+      "title": "Connector catalogue",
+      "description": "Every connector follows the same set-up steps",
+      "connected": "Connected",
+      "available": "Available"
+    },
+    "columns": {
+      "connector": "Connector",
+      "type": "Type",
+      "health": "Health",
+      "scope": "Scope",
+      "mode": "Mode"
+    },
+    "accessModes": {
+      "read-only": "Read only",
+      "write-gated": "Write gated",
+      "write-disabled": "Write disabled"
+    }
+  },
+  "compliance": {
+    "title": "Compliance Centre",
+    "description": "Deadlines, classification, reports and evidence",
+    "activeClocks": "Active clocks",
+    "noActiveClocks": "No regulator clocks are running.",
+    "deadline": "Deadline · {time}",
+    "clockDetails": "{incident} · {rulePackage} · {owner}",
+    "overviewSectionName": "Compliance overview",
+    "attention": {
+      "title": "Incidents requiring compliance attention",
+      "empty": "No incidents need compliance attention.",
+      "columns": {
+        "incident": "Incident",
+        "classification": "Classification",
+        "clock": "Clock",
+        "report": "Report",
+        "owner": "Owner"
+      },
+      "classifications": {
+        "major-ict": "Major ICT incident",
+        "reportable": "Reportable",
+        "review-needed": "Review needed",
+        "not-reportable": "Not reportable"
+      },
+      "noClock": "No clock",
+      "submitted": "Submitted",
+      "reportStates": {
+        "none": "None",
+        "draft": "Draft",
+        "submitted": "Submitted",
+        "amendment": "Amendment",
+        "closed": "Closed"
+      },
+      "unassigned": "Unassigned"
+    },
+    "deadlines": {
+      "title": "Deadline attention",
+      "description": "Nearest obligations",
+      "empty": "No upcoming obligations."
+    },
+    "evidencePacks": {
+      "title": "Evidence packs",
+      "description": "Completeness and missing sources",
+      "empty": "No evidence packs yet.",
+      "status": "{completeness, number, ::percent} · {missing, plural, =0 {nothing missing} one {# source missing} other {# sources missing}}",
+      "progressLabel": "Evidence pack completeness for {incident}"
+    }
   }
 }

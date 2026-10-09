@@ -70,7 +70,8 @@
       "platformHealthLabel": "Relyxus status: {health}",
       "accountMenu": "Account menu for {name}",
       "keyboardShortcuts": "Keyboard shortcuts",
-      "language": "Language"
+      "language": "Language",
+      "personalSettings": "Personal settings"
     },
     "banners": {
       "relyxusDown": "Relyxus is down",
@@ -1585,6 +1586,7 @@
   "admin": {
     "navigation": {
       "label": "Admin views",
+      "overview": "Overview",
       "incident-types": "Incident types",
       "status-pages": "Status pages",
       "users": "Users and roles",
@@ -1813,6 +1815,158 @@
         "restricted-incidents": "Restricted incidents",
         "support-visibility": "Support visibility"
       }
+    },
+    "overview": {
+      "title": "Admin",
+      "description": "Configuration for {workspace} and for your organisation",
+      "groups": {
+        "workspace": "This workspace",
+        "organisation": "Organisation"
+      },
+      "groupDescriptions": {
+        "workspace": "Settings that apply only to this workspace.",
+        "organisation": "Settings shared by every workspace in your organisation."
+      },
+      "purposes": {
+        "incident-types": "Declaration forms, lifecycle and regulator mappings for each incident type",
+        "status-pages": "What customers, partners and employees see during an incident",
+        "users": "People, teams, roles, sessions and access reviews",
+        "security": "Sign-in, keys, data residency, model routes and SIEM streaming",
+        "support-access": "Vendor support sessions you approve, watch and revoke",
+        "platform": "Self-hosted cluster health, backups, certificates and upgrades",
+        "promotion": "Move configuration from staging to production after review"
+      }
     }
+  },
+  "wallMode": {
+    "title": "Relyxus Operations",
+    "live": "Live · {time}",
+    "reconnecting": "Reconnecting · last update {time}",
+    "loading": "Loading…",
+    "unavailable": "Not available right now",
+    "activeIncidents": "Active incidents",
+    "noIncidents": "No active incidents",
+    "moneyAtRisk": "{amount} at risk",
+    "clock": "{remaining} · {obligation}",
+    "restrictedNote": "Restricted incidents are never shown on wall mode.",
+    "servicesAtRisk": "Services at risk",
+    "noServicesAtRisk": "All business services are healthy",
+    "platformHealth": "Platform health",
+    "connectorsHealthy": "{healthy} of {total} connectors healthy",
+    "footer": "Read-only operations view · no personal data · no information that needs hovering"
+  },
+  "personalSettings": {
+    "title": "Personal settings",
+    "description": "Preferences that apply to you only",
+    "listTitle": "Settings",
+    "sections": {
+      "profile": "Profile",
+      "appearance": "Appearance",
+      "language": "Language and region",
+      "time": "Time and numbers",
+      "notifications": "Notifications",
+      "shortcuts": "Keyboard shortcuts"
+    },
+    "summaries": {
+      "profile": "Name and sign-in",
+      "appearance": "Dark · comfortable",
+      "language": "Interface language",
+      "time": "Time zone and UTC toggle",
+      "notifications": "Set by workspace rules",
+      "shortcuts": "Enabled"
+    },
+    "profile": {
+      "name": "Name",
+      "email": "Email",
+      "source": "Managed by",
+      "sourceValue": "Your organisation's identity provider"
+    },
+    "appearance": {
+      "theme": "Theme",
+      "themeValue": "Dark",
+      "density": "Density",
+      "densityValue": "Comfortable",
+      "warRoomPanels": "War room panels",
+      "warRoomPanelsValue": "All open when space allows",
+      "languageFont": "Interface font",
+      "technicalFont": "Technical font",
+      "motion": "Motion",
+      "motionValue": "Reduced motion follows your operating system"
+    },
+    "language": {
+      "interfaceLanguage": "Interface language",
+      "help": "Technical content such as commands and logs always stays left to right."
+    },
+    "time": {
+      "zone": "Time zone",
+      "utcToggle": "UTC toggle",
+      "utcToggleValue": "Available on every page with times",
+      "digits": "Digits",
+      "digitsValue": "Western digits in every language"
+    },
+    "notifications": {
+      "rules": "Rules",
+      "rulesLink": "View the workspace notification rules",
+      "quietHours": "Quiet hours",
+      "quietHoursValue": "Never applied to SEV1 or approvals"
+    },
+    "shortcuts": {
+      "status": "Status",
+      "statusValue": "Enabled",
+      "reference": "Reference",
+      "referenceValue": "Press ? anywhere to see every shortcut"
+    },
+    "preview": {
+      "title": "Accessibility",
+      "contrast": "Contrast",
+      "contrastValue": "High visibility",
+      "focus": "Focus",
+      "focusValue": "Visible ring on every control",
+      "tableRow": "Table rows",
+      "tableRowValue": "44 px, comfortable",
+      "scope": "Scope of changes",
+      "scopeValue": "This user only"
+    }
+  },
+  "onboarding": {
+    "title": "Set up Relyxus",
+    "description": "Five steps to your first real Replay",
+    "connectPrometheus": "Connect Prometheus",
+    "connectPrometheusUnavailable": "Connecting arrives with the connector wizard.",
+    "progress": "Setup progress",
+    "stepTitle": "{number}. {name}",
+    "steps": {
+      "organisation": "Organisation",
+      "connect-source": "Connect first source",
+      "confirm-services": "Confirm services",
+      "invite-team": "Invite team",
+      "first-replay": "Run first Replay"
+    },
+    "states": {
+      "complete": "Complete",
+      "current": "Current",
+      "next": "Next",
+      "optional": "Optional"
+    },
+    "currentStep": "Connect first source",
+    "recommended": "Recommended",
+    "recommendedValue": "Prometheus or Alertmanager",
+    "mode": "Mode",
+    "modeValue": "Read only by default",
+    "requirement": "Requirement",
+    "requirementValue": "At least one connector passes its tests",
+    "next": "Next",
+    "nextValue": "Discover services",
+    "sampleWorkspace": "Sample workspace",
+    "openSampleWorkspace": "Explore the sample workspace",
+    "whyTitle": "Why this matters",
+    "firstValue": "First value",
+    "firstValueText": "Explain a real past incident",
+    "readOnly": "Read only",
+    "readOnlyText": "No production change is made",
+    "resume": "Resume",
+    "resumeText": "Leave at any step and continue later",
+    "sampleData": "Sample data",
+    "sampleDataText": "Always labelled as sample"
   }
 }

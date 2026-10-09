@@ -1,12 +1,18 @@
-import type { Route } from 'next';
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { Suspense } from 'react';
 
-type WorkspaceSettingsRouteProps = {
-  params: Promise<{ workspace: string }>;
-};
+import { AdminOverviewPage } from '@/features/admin/admin-overview-page';
 
-/** Workspace settings open on incident types, the first settings page available. */
-export default async function WorkspaceSettingsRoute({ params }: WorkspaceSettingsRouteProps) {
-  const { workspace } = await params;
-  redirect(`/w/${encodeURIComponent(workspace)}/settings/incident-types` as Route);
+export async function generateMetadata(): Promise<Metadata> {
+  const translateOverview = await getTranslations('admin.overview');
+  return { title: translateOverview('title') };
+}
+
+export default function AdminOverviewRoute() {
+  return (
+    <Suspense fallback={null}>
+      <AdminOverviewPage />
+    </Suspense>
+  );
 }

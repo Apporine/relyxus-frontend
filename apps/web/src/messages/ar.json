@@ -70,7 +70,8 @@
       "platformHealthLabel": "حالة Relyxus: {health}",
       "accountMenu": "قائمة حساب {name}",
       "keyboardShortcuts": "اختصارات لوحة المفاتيح",
-      "language": "اللغة"
+      "language": "اللغة",
+      "personalSettings": "الإعدادات الشخصية"
     },
     "banners": {
       "relyxusDown": "Relyxus متوقف",
@@ -1585,6 +1586,7 @@
   "admin": {
     "navigation": {
       "label": "عروض الإدارة",
+      "overview": "نظرة عامة",
       "incident-types": "أنواع الحوادث",
       "status-pages": "صفحات الحالة",
       "users": "المستخدمون والأدوار",
@@ -1813,6 +1815,158 @@
         "restricted-incidents": "الحوادث المقيّدة",
         "support-visibility": "رؤية الدعم"
       }
+    },
+    "overview": {
+      "title": "الإدارة",
+      "description": "إعدادات {workspace} ومؤسستك",
+      "groups": {
+        "workspace": "مساحة العمل هذه",
+        "organisation": "المؤسسة"
+      },
+      "groupDescriptions": {
+        "workspace": "إعدادات تنطبق على مساحة العمل هذه فقط.",
+        "organisation": "إعدادات مشتركة بين جميع مساحات العمل في مؤسستك."
+      },
+      "purposes": {
+        "incident-types": "نماذج الإعلان ودورة الحياة والارتباطات التنظيمية لكل نوع حادثة",
+        "status-pages": "ما يراه العملاء والشركاء والموظفون أثناء الحادثة",
+        "users": "الأشخاص والفرق والأدوار والجلسات ومراجعات الوصول",
+        "security": "تسجيل الدخول والمفاتيح وإقامة البيانات ومسارات النماذج وبث SIEM",
+        "support-access": "جلسات دعم المزوّد التي تعتمدها وتراقبها وتلغيها",
+        "platform": "صحة العنقود المستضاف ذاتيًا والنسخ الاحتياطي والشهادات والترقيات",
+        "promotion": "نقل الإعدادات من التجهيز إلى الإنتاج بعد المراجعة"
+      }
     }
+  },
+  "wallMode": {
+    "title": "عمليات Relyxus",
+    "live": "مباشر · {time}",
+    "reconnecting": "إعادة الاتصال · آخر تحديث {time}",
+    "loading": "جارٍ التحميل…",
+    "unavailable": "غير متاح الآن",
+    "activeIncidents": "الحوادث النشطة",
+    "noIncidents": "لا توجد حوادث نشطة",
+    "moneyAtRisk": "{amount} معرّضة للخطر",
+    "clock": "{remaining} · {obligation}",
+    "restrictedNote": "لا تُعرض الحوادث المقيّدة أبدًا في وضع الشاشة الجدارية.",
+    "servicesAtRisk": "الخدمات المعرّضة للخطر",
+    "noServicesAtRisk": "جميع خدمات الأعمال سليمة",
+    "platformHealth": "صحة المنصة",
+    "connectorsHealthy": "{healthy} من {total} موصلات سليمة",
+    "footer": "عرض تشغيلي للقراءة فقط · بلا بيانات شخصية · بلا معلومات تتطلب التمرير"
+  },
+  "personalSettings": {
+    "title": "الإعدادات الشخصية",
+    "description": "تفضيلات تنطبق عليك وحدك",
+    "listTitle": "الإعدادات",
+    "sections": {
+      "profile": "الملف الشخصي",
+      "appearance": "المظهر",
+      "language": "اللغة والمنطقة",
+      "time": "الوقت والأرقام",
+      "notifications": "الإشعارات",
+      "shortcuts": "اختصارات لوحة المفاتيح"
+    },
+    "summaries": {
+      "profile": "الاسم وتسجيل الدخول",
+      "appearance": "داكن · مريح",
+      "language": "لغة الواجهة",
+      "time": "المنطقة الزمنية ومفتاح UTC",
+      "notifications": "تحددها قواعد مساحة العمل",
+      "shortcuts": "مفعّلة"
+    },
+    "profile": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "source": "تتم إدارته بواسطة",
+      "sourceValue": "مزوّد الهوية في مؤسستك"
+    },
+    "appearance": {
+      "theme": "السمة",
+      "themeValue": "داكنة",
+      "density": "الكثافة",
+      "densityValue": "مريحة",
+      "warRoomPanels": "لوحات غرفة العمليات",
+      "warRoomPanelsValue": "مفتوحة كلها عند توفر المساحة",
+      "languageFont": "خط الواجهة",
+      "technicalFont": "الخط التقني",
+      "motion": "الحركة",
+      "motionValue": "تقليل الحركة يتبع نظام التشغيل"
+    },
+    "language": {
+      "interfaceLanguage": "لغة الواجهة",
+      "help": "يبقى المحتوى التقني مثل الأوامر والسجلات من اليسار إلى اليمين دائمًا."
+    },
+    "time": {
+      "zone": "المنطقة الزمنية",
+      "utcToggle": "مفتاح UTC",
+      "utcToggleValue": "متاح في كل صفحة تعرض أوقاتًا",
+      "digits": "الأرقام",
+      "digitsValue": "أرقام غربية في كل اللغات"
+    },
+    "notifications": {
+      "rules": "القواعد",
+      "rulesLink": "عرض قواعد إشعارات مساحة العمل",
+      "quietHours": "ساعات الهدوء",
+      "quietHoursValue": "لا تُطبَّق أبدًا على SEV1 أو الموافقات"
+    },
+    "shortcuts": {
+      "status": "الحالة",
+      "statusValue": "مفعّلة",
+      "reference": "المرجع",
+      "referenceValue": "اضغط ? في أي مكان لعرض كل الاختصارات"
+    },
+    "preview": {
+      "title": "إمكانية الوصول",
+      "contrast": "التباين",
+      "contrastValue": "وضوح عالٍ",
+      "focus": "التركيز",
+      "focusValue": "حلقة ظاهرة حول كل عنصر تحكم",
+      "tableRow": "صفوف الجداول",
+      "tableRowValue": "44 بكسل، مريحة",
+      "scope": "نطاق التغييرات",
+      "scopeValue": "هذا المستخدم فقط"
+    }
+  },
+  "onboarding": {
+    "title": "إعداد Relyxus",
+    "description": "خمس خطوات لأول إعادة تشغيل حقيقية",
+    "connectPrometheus": "ربط Prometheus",
+    "connectPrometheusUnavailable": "يتوفر الربط مع معالج الموصلات.",
+    "progress": "تقدم الإعداد",
+    "stepTitle": "{number}. {name}",
+    "steps": {
+      "organisation": "المؤسسة",
+      "connect-source": "ربط أول مصدر",
+      "confirm-services": "تأكيد الخدمات",
+      "invite-team": "دعوة الفريق",
+      "first-replay": "تشغيل أول إعادة تشغيل"
+    },
+    "states": {
+      "complete": "مكتملة",
+      "current": "الحالية",
+      "next": "التالية",
+      "optional": "اختيارية"
+    },
+    "currentStep": "ربط أول مصدر",
+    "recommended": "الموصى به",
+    "recommendedValue": "Prometheus أو Alertmanager",
+    "mode": "الوضع",
+    "modeValue": "قراءة فقط افتراضيًا",
+    "requirement": "المتطلب",
+    "requirementValue": "يجتاز موصل واحد على الأقل اختباراته",
+    "next": "التالي",
+    "nextValue": "اكتشاف الخدمات",
+    "sampleWorkspace": "مساحة العمل التجريبية",
+    "openSampleWorkspace": "استكشاف مساحة العمل التجريبية",
+    "whyTitle": "لماذا هذا مهم",
+    "firstValue": "القيمة الأولى",
+    "firstValueText": "تفسير حادثة سابقة حقيقية",
+    "readOnly": "قراءة فقط",
+    "readOnlyText": "لا يُجرى أي تغيير على الإنتاج",
+    "resume": "الاستئناف",
+    "resumeText": "غادر عند أي خطوة وأكمل لاحقًا",
+    "sampleData": "بيانات تجريبية",
+    "sampleDataText": "معلَّمة دائمًا بأنها تجريبية"
   }
 }

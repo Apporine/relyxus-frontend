@@ -9,7 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@relyxus/ui';
-import { Check, Keyboard } from 'lucide-react';
+import { Check, Keyboard, UserCog } from 'lucide-react';
+import type { Route } from 'next';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTransition } from 'react';
@@ -39,7 +40,7 @@ export function AccountMenu({ onOpenShortcuts }: { onOpenShortcuts: () => void }
   const activeLocale = useLocale();
   const router = useRouter();
   const [isChangingLanguage, startLanguageChange] = useTransition();
-  const { user } = useCurrentWorkspace();
+  const { user, workspace } = useCurrentWorkspace();
 
   function changeLanguage(locale: SupportedLocale) {
     startLanguageChange(async () => {
@@ -62,6 +63,12 @@ export function AccountMenu({ onOpenShortcuts }: { onOpenShortcuts: () => void }
           <span className="truncate font-normal">{user.email}</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem
+          onSelect={() => router.push(`/w/${encodeURIComponent(workspace.slug)}/me` as Route)}
+        >
+          <UserCog aria-hidden />
+          {translateTopBar('personalSettings')}
+        </DropdownMenuItem>
         <DropdownMenuItem onSelect={onOpenShortcuts}>
           <Keyboard aria-hidden />
           {translateTopBar('keyboardShortcuts')}

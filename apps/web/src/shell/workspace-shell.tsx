@@ -16,6 +16,8 @@ import { CurrentWorkspaceProvider, type CurrentWorkspace } from './workspace/cur
 type WorkspaceShellProps = {
   workspaceSlug: string;
   initialSidebarCollapsed: boolean;
+  /** The console has the sidebar and top bar; wall mode is the page alone, full screen. */
+  chrome?: 'console' | 'wall';
   children: ReactNode;
 };
 
@@ -26,6 +28,7 @@ type WorkspaceShellProps = {
 export function WorkspaceShell({
   workspaceSlug,
   initialSidebarCollapsed,
+  chrome = 'console',
   children,
 }: WorkspaceShellProps) {
   const sessionQuery = useSession();
@@ -59,7 +62,11 @@ export function WorkspaceShell({
   return (
     <CurrentWorkspaceProvider currentWorkspace={currentWorkspace}>
       <LiveUpdatesProvider workspaceSlug={currentWorkspace.workspace.slug}>
-        <AppShell initialSidebarCollapsed={initialSidebarCollapsed}>{children}</AppShell>
+        {chrome === 'console' ? (
+          <AppShell initialSidebarCollapsed={initialSidebarCollapsed}>{children}</AppShell>
+        ) : (
+          children
+        )}
       </LiveUpdatesProvider>
     </CurrentWorkspaceProvider>
   );

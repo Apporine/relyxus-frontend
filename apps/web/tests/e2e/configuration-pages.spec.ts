@@ -31,14 +31,13 @@ test.describe('policies, runbooks and incident types', () => {
     });
   }
 
-  test('opens workspace settings on incident types from the sidebar', async ({ page }) => {
+  test('opens the Admin overview from the sidebar', async ({ page }) => {
     await page.goto('/w/payments-uk/home');
-    await page.getByRole('link', { name: 'Admin' }).click();
+    await page.getByRole('link', { name: 'Admin', exact: true }).click();
 
-    await page.waitForURL(/settings\/incident-types/);
-    await expect(
-      page.getByRole('heading', { level: 1, name: 'Incident types, fields and forms' }),
-    ).toBeVisible();
+    await page.waitForURL(/\/settings$/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Admin' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Organisation' })).toBeVisible();
   });
 
   test('mirrors policies in Arabic', async ({ page, context, baseURL }) => {

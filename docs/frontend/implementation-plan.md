@@ -237,41 +237,44 @@ example `/org/admin/platform`) are proposals and are tracked in the open questio
 Updated as each capability merges into `dev`. Large capabilities get an implementation brief
 in [briefs](briefs) before coding.
 
-| #     | Capability                               | Status                                                           | Pull requests |
-| ----- | ---------------------------------------- | ---------------------------------------------------------------- | ------------- |
-| 1–9   | Foundations                              | Merged                                                           | #1 to #9      |
-| —     | End-to-end and accessibility harness     | Merged                                                           | #11           |
-| 10    | Identity and Session                     | Blocked on open question Q5 (Keycloak client and session design) | —             |
-| 11    | Command Centre                           | Merged                                                           | #12           |
-| 12    | Incident List                            | Merged                                                           | #13           |
-| 13    | Incident Declaration                     | Merged                                                           | #14           |
-| 14    | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)                 | #16           |
-| 15    | Evidence Explorer                        | Merged                                                           | #17           |
-| 16    | Incident Tasks and Timeline (full views) | Merged                                                           | #18           |
-| 17    | Approval Governance Inbox                | Merged                                                           | #20           |
-| 18    | On-call and Escalation                   | Merged                                                           | #22           |
-| 19    | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
-| 20    | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)      | #26           |
-| 21    | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)                 | #27           |
-| 22    | Analytics and Dashboards                 | Merged: reliability view (custom dashboards pending)             | #28           |
-| 27    | Compliance Centre                        | Merged                                                           | #28           |
-| 32    | Audit Log                                | Merged                                                           | #28           |
-| 33    | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                             | #28           |
-| 23    | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)        | #29           |
-| 26    | Runbooks and Playbooks                   | Merged: library, steps and execution history                     | #29           |
-| 34    | Incident Types, Fields and Forms         | Merged: type configuration and responder preview                 | #29           |
-| 24    | Approval Routing Builder                 | Merged: routes and exact-approver preview (builder pending)      | #30           |
-| 25    | Notification Rules                       | Merged: rules and delivery preview (rule builder pending)        | #30           |
-| 28    | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)         | #30           |
-| 29    | Regulatory Rule Library                  | Merged                                                           | #30           |
-| 30    | Post-Incident Review                     | Merged: document, authorship and sign-off gate                   | #30           |
-| 31    | Status Pages                             | Merged: pages, draft update and live preview (editor pending)    | #31           |
-| 35    | Configuration Promotion                  | Merged: difference tree and validation                           | #31           |
-| 36    | Platform Operations                      | Merged: health, system checks and available update               | #31           |
-| 37    | Support Access                           | Merged: sessions and live control (revoke pending)               | #31           |
-| 38    | Users, Teams and Roles                   | Merged: identity and access controls                             | #31           |
-| 39    | Security and Data Controls               | Merged: sections and data flow preview                           | #31           |
-| 40–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| #      | Capability                               | Status                                                           | Pull requests |
+| ------ | ---------------------------------------- | ---------------------------------------------------------------- | ------------- |
+| 1–9    | Foundations                              | Merged                                                           | #1 to #9      |
+| —      | End-to-end and accessibility harness     | Merged                                                           | #11           |
+| 10     | Identity and Session                     | Blocked on open question Q5 (Keycloak client and session design) | —             |
+| 11     | Command Centre                           | Merged                                                           | #12           |
+| 12     | Incident List                            | Merged                                                           | #13           |
+| 13     | Incident Declaration                     | Merged                                                           | #14           |
+| 14     | Incident War Room                        | Merged, see [brief](briefs/incident-war-room.md)                 | #16           |
+| 15     | Evidence Explorer                        | Merged                                                           | #17           |
+| 16     | Incident Tasks and Timeline (full views) | Merged                                                           | #18           |
+| 17     | Approval Governance Inbox                | Merged                                                           | #20           |
+| 18     | On-call and Escalation                   | Merged                                                           | #22           |
+| 19     | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
+| 20     | Business Services and Tolerances         | Merged, see [brief](briefs/business-services-tolerances.md)      | #26           |
+| 21     | Replay and AI Quality                    | Merged, see [brief](briefs/replay-ai-quality.md)                 | #27           |
+| 22     | Analytics and Dashboards                 | Merged: reliability view (custom dashboards pending)             | #28           |
+| 27     | Compliance Centre                        | Merged                                                           | #28           |
+| 32     | Audit Log                                | Merged                                                           | #28           |
+| 33     | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                             | #28           |
+| 23     | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)        | #29           |
+| 26     | Runbooks and Playbooks                   | Merged: library, steps and execution history                     | #29           |
+| 34     | Incident Types, Fields and Forms         | Merged: type configuration and responder preview                 | #29           |
+| 24     | Approval Routing Builder                 | Merged: routes and exact-approver preview (builder pending)      | #30           |
+| 25     | Notification Rules                       | Merged: rules and delivery preview (rule builder pending)        | #30           |
+| 28     | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)         | #30           |
+| 29     | Regulatory Rule Library                  | Merged                                                           | #30           |
+| 30     | Post-Incident Review                     | Merged: document, authorship and sign-off gate                   | #30           |
+| 31     | Status Pages                             | Merged: pages, draft update and live preview (editor pending)    | #31           |
+| 35     | Configuration Promotion                  | Merged: difference tree and validation                           | #31           |
+| 36     | Platform Operations                      | Merged: health, system checks and available update               | #31           |
+| 37     | Support Access                           | Merged: sessions and live control (revoke pending)               | #31           |
+| 38     | Users, Teams and Roles                   | Merged: identity and access controls                             | #31           |
+| 39     | Security and Data Controls               | Merged: sections and data flow preview                           | #31           |
+| 40     | Personal Settings                        | Merged: sections, working language switch                        | #32           |
+| 41     | Onboarding and Sample Workspace          | Merged: progress, current step and sample workspace link         | #32           |
+| 43     | Wall Mode                                | Merged: full-screen read-only view, restricted never shown       | #32           |
+| 42, 44 | Mobile views and Trust Centre            | Planned                                                          | —             |     | Planned in the order of section 5 | —   |
 
 ## 6. Cross-cutting requirements applied to every screen
 

@@ -12,6 +12,7 @@ import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
  * organisation shell route is decided (open question Q13).
  */
 export const adminPages = [
+  'overview',
   'incident-types',
   'status-pages',
   'users',
@@ -23,8 +24,15 @@ export const adminPages = [
 export type AdminPage = (typeof adminPages)[number];
 
 export function adminPageHref(workspaceSlug: string, page: AdminPage): Route {
-  return `${areaHref(workspaceSlug, 'admin')}/${page}` as Route;
+  const base = areaHref(workspaceSlug, 'admin');
+  return (page === 'overview' ? base : `${base}/${page}`) as Route;
 }
+
+/** Pages grouped by what they configure: this workspace, or the whole organisation. */
+export const adminPageGroups = {
+  workspace: ['incident-types', 'status-pages'],
+  organisation: ['users', 'security', 'support-access', 'platform', 'promotion'],
+} as const satisfies Record<string, readonly Exclude<AdminPage, 'overview'>[]>;
 
 export function AdminAreaNavigation({ current }: { current: AdminPage }) {
   const translateNavigation = useTranslations('admin.navigation');

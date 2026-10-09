@@ -10,6 +10,7 @@ import { evidenceHandlers } from './evidence-handlers';
 import { governanceHandlers } from './governance-handlers';
 import { incidentDeclarationHandlers } from './incident-declaration-handlers';
 import { incidentListHandlers } from './incident-list-handlers';
+import { onboardingProgressFixture } from './fixtures/onboarding-fixture';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
 import { sessionFixture } from './fixtures/session-fixture';
 import { insightHandlers } from './insight-handlers';
@@ -27,6 +28,7 @@ const workspaceLiveUpdates = ws.link(/\/api\/v1\/workspaces\/[^/]+\/live$/);
 export const handlers = [
   http.get('/api/v1/me', () => HttpResponse.json(sessionFixture)),
   http.get('/api/v1/platform/status', () => HttpResponse.json(platformStatusFixture)),
+  http.get('/api/v1/onboarding', () => HttpResponse.json(onboardingProgressFixture)),
   ...incidentListHandlers,
   ...incidentDeclarationHandlers,
   ...commandCentreHandlers,

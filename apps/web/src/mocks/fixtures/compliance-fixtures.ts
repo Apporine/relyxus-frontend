@@ -21,6 +21,7 @@ export function complianceOverviewFor(workspaceSlug: string): ComplianceOverview
         classification: 'major-ict',
         clock: { deadlineAt: minutesFromNow(221), isSubmitted: false },
         reportState: 'draft',
+        reportId: 'report-inc-2041-dora-initial',
         ownerName: 'A. Rahman',
       },
       {
@@ -29,6 +30,7 @@ export function complianceOverviewFor(workspaceSlug: string): ComplianceOverview
         classification: 'review-needed',
         clock: null,
         reportState: 'none',
+        reportId: null,
         ownerName: null,
       },
       {
@@ -37,6 +39,7 @@ export function complianceOverviewFor(workspaceSlug: string): ComplianceOverview
         classification: 'reportable',
         clock: { deadlineAt: minutesFromNow(-2_880), isSubmitted: true },
         reportState: 'amendment',
+        reportId: null,
         ownerName: 'N. Ali',
       },
       {
@@ -45,6 +48,7 @@ export function complianceOverviewFor(workspaceSlug: string): ComplianceOverview
         classification: 'not-reportable',
         clock: null,
         reportState: 'closed',
+        reportId: null,
         ownerName: 'S. Evans',
       },
     ],

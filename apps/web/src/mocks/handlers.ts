@@ -6,6 +6,7 @@ import { businessServiceHandlers } from './business-service-handlers';
 import { commandCentreHandlers } from './command-centre-handlers';
 import { configurationHandlers } from './configuration-handlers';
 import { evidenceHandlers } from './evidence-handlers';
+import { governanceHandlers } from './governance-handlers';
 import { incidentDeclarationHandlers } from './incident-declaration-handlers';
 import { incidentListHandlers } from './incident-list-handlers';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
@@ -29,6 +30,8 @@ export const handlers = [
   ...incidentDeclarationHandlers,
   ...commandCentreHandlers,
   ...approvalHandlers,
+  // Before the incident and policy handlers, whose :id routes would match these paths.
+  ...governanceHandlers,
   // After the incident list handlers, so /incidents/summary is not read as an incident reference.
   ...evidenceHandlers,
   ...warRoomHandlers,

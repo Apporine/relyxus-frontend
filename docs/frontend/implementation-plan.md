@@ -260,7 +260,12 @@ in [briefs](briefs) before coding.
 | 23    | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)        | #29           |
 | 26    | Runbooks and Playbooks                   | Merged: library, steps and execution history                     | #29           |
 | 34    | Incident Types, Fields and Forms         | Merged: type configuration and responder preview                 | #29           |
-| 24–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 24    | Approval Routing Builder                 | Merged: routes and exact-approver preview (builder pending)      | #30           |
+| 25    | Notification Rules                       | Merged: rules and delivery preview (rule builder pending)        | #30           |
+| 28    | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)         | #30           |
+| 29    | Regulatory Rule Library                  | Merged                                                           | #30           |
+| 30    | Post-Incident Review                     | Merged: document, authorship and sign-off gate                   | #30           |
+| 31–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

@@ -1295,6 +1295,11 @@
       "empty": "No evidence packs yet.",
       "status": "{completeness, number, ::percent} · {missing, plural, =0 {nothing missing} one {# source missing} other {# sources missing}}",
       "progressLabel": "Evidence pack completeness for {incident}"
+    },
+    "areaNavigation": {
+      "label": "Compliance views",
+      "overview": "Overview",
+      "rules": "Rule library"
     }
   },
   "policies": {
@@ -1339,6 +1344,12 @@
       "verification": "Verification",
       "simulation": "Simulation",
       "simulationResult": "{allowed} allowed · {needingApproval} need approval · {denied} denied"
+    },
+    "areaNavigation": {
+      "label": "Policies views",
+      "policies": "Policies",
+      "approval-routing": "Approval routing",
+      "notification-rules": "Notification rules"
     }
   },
   "runbooks": {
@@ -1413,5 +1424,162 @@
       "conditionalField": "Conditional field",
       "condition": "{field} when {condition}"
     }
+  },
+  "approvalRouting": {
+    "title": "Approval routing",
+    "description": "Preview exactly who will be asked and why",
+    "newRoute": "New route",
+    "newRouteUnavailable": "Building routes arrives with the routing editor and its approval flow.",
+    "listTitle": "Routes",
+    "empty": "No approval routes are defined yet.",
+    "detailSectionName": "Approval route",
+    "listMeta": "{mode} · {stages, plural, one {# stage} other {# stages}} · quorum {quorum}",
+    "modes": {
+      "staged": "Staged",
+      "sequential": "Sequential",
+      "parallel": "Parallel"
+    },
+    "stageResolver": "Stage {number} resolver",
+    "resolverWithQuorum": "{resolver} · quorum {quorum}",
+    "proposerExclusion": "Proposer exclusion",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "fallback": "Fallback",
+    "noFallback": "No fallback approvers",
+    "fallbackAfter": "After {minutes} minutes",
+    "delegation": "Delegation",
+    "allowed": "Allowed",
+    "notAllowed": "Not allowed",
+    "mfa": {
+      "always": "Always required",
+      "production": "Required on PROD",
+      "never": "Not required"
+    },
+    "exactApprovers": "Exact approvers",
+    "stage": "Stage {number}",
+    "approverWithReason": "{name} · {reason}",
+    "eligibility": "Eligibility",
+    "allEligible": "Every approver is active and eligible",
+    "notAllEligible": "At least one approver is not eligible",
+    "absence": "Absence",
+    "neverAutoApproves": "Never approves automatically",
+    "mfaLabel": "MFA"
+  },
+  "notificationRules": {
+    "title": "Notification rules",
+    "description": "Predict who will be contacted before publishing",
+    "newRule": "New rule",
+    "newRuleUnavailable": "Writing rules arrives with the rule builder.",
+    "listTitle": "Rules",
+    "empty": "No notification rules yet.",
+    "detailSectionName": "Notification rule",
+    "enabledWith": "Enabled · {channels}",
+    "disabled": "Disabled",
+    "trigger": "Trigger",
+    "conditions": "Conditions",
+    "recipients": "Recipients",
+    "channels": "Channels",
+    "renotify": "Renotify",
+    "noRenotify": "Does not repeat",
+    "renotifyEvery": "Every {minutes} minutes",
+    "escalation": "Escalation",
+    "noEscalation": "No escalation",
+    "escalateTo": "{target} after {afterMinutes} minutes",
+    "preview": "Delivery preview",
+    "afterMinutes": "{channels} after {minutes} minutes",
+    "restrictedSafety": "Restricted safety",
+    "noDetailsLeak": "No restricted details are sent",
+    "detailsMayLeak": "Messages may include restricted details"
+  },
+  "ruleLibrary": {
+    "title": "Regulatory rule library",
+    "description": "Effective versions and legal sign-off",
+    "importVersion": "Import version",
+    "importVersionUnavailable": "Rule packages are published by Relyxus after legal validation.",
+    "jurisdictions": "Jurisdictions",
+    "empty": "No rule packages are available.",
+    "detailSectionName": "Rule package",
+    "effectiveFrom": "Effective from",
+    "validation": "Validation",
+    "signedOffBy": "Signed off by {names}",
+    "notSignedOff": "Not yet signed off; do not rely on it",
+    "clockRules": "Clock rules",
+    "clockRuleSummary": "{count} rules · {conflicts, plural, =0 {no conflicts} one {# conflict} other {# conflicts}}",
+    "templates": "Templates",
+    "activatedWorkspaces": "Activated workspaces",
+    "reviewDue": "Review due",
+    "versionHistory": "Version history",
+    "version": "Version {version}",
+    "versionStates": {
+      "active": "Active",
+      "superseded": "Superseded",
+      "draft": "Draft"
+    },
+    "conflicts": "Conflicts",
+    "noConflicts": "None"
+  },
+  "regulatorReport": {
+    "sectionName": "Regulator report",
+    "subtitle": "{incident} · {jurisdiction} · rule package {rulePackage}",
+    "requestReview": "Request review",
+    "requestReviewBlocked": "Complete {count, plural, one {# required field} other {# required fields}} before requesting review.",
+    "requestReviewUnavailable": "Review requests arrive with the report workflow.",
+    "fields": "Report fields",
+    "noFields": "This report has no fields.",
+    "fieldStatuses": {
+      "complete": "Complete",
+      "ai-suggested": "AI suggested",
+      "needs-input": "Needs input"
+    },
+    "selectedField": "Selected field: {name}",
+    "value": "Value",
+    "noValue": "Not filled. Relyxus never guesses a regulator field.",
+    "source": "Source {number}",
+    "sourceDetail": "{name} · {detail}",
+    "authorship": "Authorship",
+    "authorships": {
+      "human": "Written by a person",
+      "ai-suggested-pending-review": "AI suggested · human review pending",
+      "ai-accepted": "AI suggested · accepted by a person"
+    },
+    "validation": "Validation",
+    "validations": {
+      "verified": "Source chain verified",
+      "unverified": "Not verified"
+    },
+    "status": "Report status",
+    "stage": "Stage",
+    "stages": {
+      "draft": "Draft",
+      "in-review": "In review",
+      "approved": "Approved",
+      "submitted": "Submitted"
+    },
+    "deadline": "Deadline",
+    "missing": "Missing",
+    "missingCount": "{count, plural, =0 {nothing missing} one {# required field} other {# required fields}}",
+    "guessedText": "Guessed text",
+    "guessedTextCount": "{count, plural, =0 {no guessed text} one {# unsourced sentence} other {# unsourced sentences}}"
+  },
+  "postIncidentReview": {
+    "title": "Post-incident review",
+    "documentTitle": "Review of {reference}",
+    "subtitle": "{incident} · {title} · {severity} · due {due}",
+    "completeReview": "Complete review",
+    "completeBlocked": "{count, plural, one {# required reviewer has} other {# required reviewers have}} not signed yet.",
+    "completeUnavailable": "Completing reviews arrives with the review workflow.",
+    "sections": "Sections",
+    "authorships": {
+      "ai-generated": "AI generated",
+      "human-edited": "Human edited",
+      "mixed": "AI and human",
+      "pending": "Not written yet"
+    },
+    "document": "Review document",
+    "notWritten": "This section has not been written yet.",
+    "reviewers": "Required reviewers",
+    "reviewerLabel": "{name} · {role}",
+    "pending": "Not signed",
+    "signedAt": "Signed {time}"
   }
 }

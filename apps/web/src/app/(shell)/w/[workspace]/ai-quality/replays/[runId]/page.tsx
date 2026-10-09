@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { ReplayRunPage } from '@/features/ai-quality/replay-run-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 type ReplayRunRouteProps = {
   params: Promise<{ runId: string }>;
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ReplayRunRoute({ params }: ReplayRunRouteProps) {
   const { runId } = await params;
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <ReplayRunPage runId={decodeURIComponent(runId)} />
     </Suspense>
   );

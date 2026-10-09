@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { ServicesPage } from '@/features/services/services-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 export async function generateMetadata(): Promise<Metadata> {
   const translateServices = await getTranslations('services');
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ServicesRoute() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <ServicesPage />
     </Suspense>
   );

@@ -145,7 +145,8 @@
     "noAccess": {
       "title": "You don't have access to this item",
       "description": "It may not exist, or it is restricted to named people. Ask the incident commander if you need access."
-    }
+    },
+    "loadingPage": "Loading page"
   },
   "domain": {
     "incidentStates": {

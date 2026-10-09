@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { RuleLibraryPage } from '@/features/compliance/rule-library-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 export async function generateMetadata(): Promise<Metadata> {
   const translatePage = await getTranslations('ruleLibrary');
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RuleLibraryRoute() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <RuleLibraryPage />
     </Suspense>
   );

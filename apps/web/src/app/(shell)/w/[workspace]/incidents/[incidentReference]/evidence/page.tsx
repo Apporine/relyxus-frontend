@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { EvidenceExplorerPage } from '@/features/evidence/evidence-explorer-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 type EvidenceExplorerRouteProps = {
   params: Promise<{ incidentReference: string }>;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: EvidenceExplorerRouteProps): 
 export default async function EvidenceExplorerRoute({ params }: EvidenceExplorerRouteProps) {
   const { incidentReference } = await params;
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <EvidenceExplorerPage incidentReference={decodeURIComponent(incidentReference)} />
     </Suspense>
   );

@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { PersonalSettingsPage } from '@/features/personal-settings/personal-settings-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 export async function generateMetadata(): Promise<Metadata> {
   const translateSettings = await getTranslations('personalSettings');
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function PersonalSettingsRoute() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <PersonalSettingsPage />
     </Suspense>
   );

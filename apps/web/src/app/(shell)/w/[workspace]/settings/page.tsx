@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { AdminOverviewPage } from '@/features/admin/admin-overview-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 export async function generateMetadata(): Promise<Metadata> {
   const translateOverview = await getTranslations('admin.overview');
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function AdminOverviewRoute() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <AdminOverviewPage />
     </Suspense>
   );

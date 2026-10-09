@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { RegulatorReportPage } from '@/features/compliance/regulator-report-page';
+import { RouteLoadingState } from '@/lib/ui/route-loading-state';
 
 type RegulatorReportRouteProps = {
   params: Promise<{ reportId: string }>;
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RegulatorReportRoute({ params }: RegulatorReportRouteProps) {
   const { reportId } = await params;
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteLoadingState />}>
       <RegulatorReportPage reportId={decodeURIComponent(reportId)} />
     </Suspense>
   );

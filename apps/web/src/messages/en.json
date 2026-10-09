@@ -972,5 +972,156 @@
       "configureImpactFormula": "Configure impact formula",
       "startDrill": "Start a resilience drill"
     }
+  },
+  "aiQuality": {
+    "title": "Replay and AI quality",
+    "description": "Accuracy, calibration, regressions and approved model routes",
+    "actions": {
+      "more": "More actions",
+      "unavailable": "Model governance actions are not available yet.",
+      "compare": "Compare models or prompts",
+      "approveRoute": "Approve a model route",
+      "startShadowMode": "Start shadow mode",
+      "exportValidationPack": "Export a validation pack",
+      "createReplay": "Create replay",
+      "createReplayUnavailable": "Creating a replay from the console is not available yet. Replays are scheduled with the Relyxus team."
+    },
+    "scorecard": {
+      "sectionName": "Accuracy scorecard",
+      "correctFirst": "Correct first",
+      "topThree": "Top three",
+      "firstHypothesis": "First hypothesis",
+      "misses": "Replay misses",
+      "percent": "{value, number, ::percent}",
+      "change": "{points} pts against the previous {days} days",
+      "median": "median",
+      "lastDays": "last {days} days",
+      "notEnoughData": "Not enough data: {scored} of {minimum} incidents scored"
+    },
+    "calibration": {
+      "title": "Calibration",
+      "description": "Predicted confidence against actual accuracy. On the dashed line, 80% confident means right 8 times in 10.",
+      "empty": "No scored hypotheses yet.",
+      "chartLabel": "Calibration chart: predicted confidence against actual accuracy",
+      "showFigures": "Show the figures",
+      "tableCaption": "Calibration by confidence band",
+      "predicted": "Predicted confidence",
+      "actual": "Actual accuracy",
+      "perfectCalibration": "Perfect calibration",
+      "measured": "Measured",
+      "sampleSize": "Hypotheses",
+      "percent": "{value, number, ::percent}"
+    },
+    "misses": {
+      "title": "Misses",
+      "description": "Sorted by frequency",
+      "dimensionsLabel": "Group misses by",
+      "dimensions": {
+        "type": "Type",
+        "service": "Service",
+        "model": "Model"
+      },
+      "empty": "No misses in this period."
+    },
+    "routes": {
+      "title": "Model routes",
+      "description": "Approved primary and fallback routes, and why each was approved",
+      "empty": "No model routes are configured.",
+      "columns": {
+        "route": "Route",
+        "region": "Region",
+        "residency": "Residency",
+        "status": "Status",
+        "lastReplay": "Last replay",
+        "accuracy": "Accuracy"
+      },
+      "routeName": "{role} · {name}",
+      "roles": {
+        "primary": "Primary",
+        "fallback": "Fallback",
+        "shadow": "Shadow",
+        "legacy": "Legacy"
+      },
+      "pinned": "Pinned version",
+      "approvedBy": "Approved by {name} on {time}.",
+      "viewEvidence": "Replay evidence for {name}",
+      "breaksResidency": "Breaks residency",
+      "retires": "Retires {time}",
+      "statuses": {
+        "approved": "Approved",
+        "shadow": "Shadow",
+        "pending-approval": "Waiting for approval",
+        "deprecated": "Deprecated",
+        "unavailable": "Unavailable"
+      },
+      "never": "Never",
+      "noAccuracy": "Not measured",
+      "percent": "{value, number, ::percent}",
+      "tableLabel": "Model routes table"
+    },
+    "runs": {
+      "title": "Replay runs",
+      "empty": "No replays have run yet.",
+      "scope": "{route} · {incidents, plural, one {# incident} other {# incidents}}",
+      "progress": "{progress, number, ::percent} replayed · expected by {time}",
+      "noEstimate": "no estimate yet",
+      "progressLabel": "Progress of {name}",
+      "results": "Correct first {correctFirst, number, ::percent} · top three {topThree, number, ::percent} · {minutesSaved} minutes saved per incident",
+      "statuses": {
+        "queued": "Queued",
+        "running": "Running",
+        "completed": "Completed",
+        "failed": "Failed"
+      }
+    },
+    "notices": {
+      "unavailableTitle": "Model route unavailable: {name}",
+      "unavailableDescription": "AI reasoning is paused. Evidence gathering continues, and responders see raw evidence and runbooks until the route recovers.",
+      "residencyTitle": "Fallback would break residency: {name}",
+      "residencyDescription": "This workspace allows {residency}. Relyxus will not fall back to this route; choose a compatible fallback.",
+      "regressionTitle": "Regression in {metric} on {route}",
+      "regressionDescription": "Dropped {drop} points against an agreed tolerance of {tolerance} points. Changes to this route are held until it passes Replay again.",
+      "retiringTitle": "Pinned version {version} is being retired",
+      "retiringDescription": "The provider retires the version pinned for {name} on {time}. Plan and replay a replacement before then.",
+      "metrics": {
+        "correct-first": "correct-first rate",
+        "top-three": "top-three rate",
+        "calibration": "calibration"
+      }
+    },
+    "run": {
+      "sectionName": "Replay run",
+      "description": "Past incidents re-run with only the data that existed at the time",
+      "reproduce": "What was tested",
+      "reproduceDescription": "Everything needed to reproduce this evaluation: the route and versions, the incident set and each incident's time fence.",
+      "route": "Model route",
+      "modelVersion": "Model version",
+      "promptVersion": "Prompt version",
+      "incidentsTested": "Incidents tested",
+      "started": "Started",
+      "results": "Results",
+      "incidents": "Incidents",
+      "filterLabel": "Show incidents",
+      "filters": {
+        "all": "All",
+        "missed": "Misses"
+      },
+      "empty": {
+        "all": "No incidents have been scored yet.",
+        "missed": "No misses in this run."
+      },
+      "outcomes": {
+        "correct-first": "Correct first",
+        "top-three": "In top three",
+        "missed": "Missed"
+      },
+      "actualCause": "Actual cause",
+      "topHypothesis": "AI's first hypothesis",
+      "hypothesisWithConfidence": "{hypothesis} ({confidence, number, ::percent} confident)",
+      "missReason": "Why it missed",
+      "timeFence": "Time fence",
+      "evidenceCutoff": "Evidence up to {time}",
+      "decisionTrace": "Decision trace ({count, plural, one {# step} other {# steps}})"
+    }
   }
 }

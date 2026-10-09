@@ -87,6 +87,19 @@ describe('WarRoomPage', () => {
     ).toBeInTheDocument();
   });
 
+  it('links each affected service to its dependency evidence in one interaction', async () => {
+    stubApi(warRoomRoutes('INC-2041'));
+    renderWarRoom('INC-2041');
+
+    const affectedServices = await screen.findByRole('navigation', { name: 'Affected services' });
+    expect(
+      within(affectedServices).getByRole('link', { name: 'Dependencies of payments-api' }),
+    ).toHaveAttribute('href', '/w/payments-uk/services?service=payments-api&tab=dependencies');
+    expect(
+      within(affectedServices).getByRole('link', { name: 'Dependencies of card-router' }),
+    ).toBeInTheDocument();
+  });
+
   it('presents the AI assessment, ranked hypotheses and what was checked', async () => {
     stubApi(warRoomRoutes('INC-2041'));
     renderWarRoom('INC-2041');

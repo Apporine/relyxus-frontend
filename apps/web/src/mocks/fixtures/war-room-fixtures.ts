@@ -10,6 +10,7 @@ import type {
 
 import { commandCentreFixturesFor } from './command-centre-fixtures';
 import { incidentRecordsFor } from './incident-fixtures';
+import { affectedServicesFor } from './service-fixtures';
 
 /*
  * DEVELOPMENT FIXTURE. War room data for the Payments / UK demo workspace. INC-2041 follows
@@ -290,6 +291,7 @@ export function warRoomFixtureFor(workspaceSlug: string, reference: string): War
   const incident: IncidentDetail = {
     ...incidentSummary,
     commanderName: null,
+    affectedServices: affectedServicesFor(reference),
     acknowledgement: recordedAcknowledgements.get(reference) ?? null,
   };
   if (reference !== FIGMA_INCIDENT_REFERENCE) {

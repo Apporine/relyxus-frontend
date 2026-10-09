@@ -11,10 +11,13 @@ import {
   VisibilityBadge,
   type ClockPhase,
 } from '@relyxus/ui';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import type { RegulatorClock } from '@/features/compliance/model';
+import { serviceDependenciesHref } from '@/features/services/service-params';
 import { useRelyxusFormat } from '@/lib/format/use-relyxus-format';
+import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
 import type { IncidentDetail } from './model';
 import type { AcknowledgeIncidentAction } from './use-acknowledge-incident-action';
@@ -28,6 +31,33 @@ export function nearestRunningClock(
   return clocks
     ?.filter((clock) => !clock.isSubmitted)
     .toSorted((first, second) => Date.parse(first.deadlineAt) - Date.parse(second.deadlineAt))[0];
+}
+
+/** One interaction from the incident to each affected service's dependency evidence. */
+function AffectedServiceLinks({ services }: { services: IncidentDetail['affectedServices'] }) {
+  const translateHeader = useTranslations('warRoom.header');
+  const { workspace } = useCurrentWorkspace();
+  if (services.length === 0) {
+    return null;
+  }
+  return (
+    <nav
+      aria-label={translateHeader('affectedServices')}
+      className="flex flex-wrap items-center gap-2 text-meta"
+    >
+      <span className="text-fg-tertiary">{translateHeader('affectedServices')}</span>
+      {services.map((service) => (
+        <Link
+          key={service.id}
+          href={serviceDependenciesHref(workspace.slug, service.id)}
+          aria-label={translateHeader('viewServiceDependencies', { service: service.name })}
+          className="inline-flex h-6 items-center rounded-full border border-control px-2.5 font-semibold text-fg-primary hover:bg-surface-2"
+        >
+          {service.name}
+        </Link>
+      ))}
+    </nav>
+  );
 }
 
 function HeaderFigure({ value, label }: { value: string; label: string }) {
@@ -88,6 +118,7 @@ export function WarRoomHeader({ incident, clocks, acknowledgeAction }: WarRoomHe
               : translateHeader('commander', { name: incident.commanderName })}
           </span>
         </div>
+        <AffectedServiceLinks services={incident.affectedServices} />
       </div>
 
       <div className="flex flex-wrap items-start gap-6">

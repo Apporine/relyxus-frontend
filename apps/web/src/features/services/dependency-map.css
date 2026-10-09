@@ -1,0 +1,11 @@
+/* React Flow's own variables mapped to Obsidian tokens, so the map follows the theme. */
+.relyxus-dependency-map {
+  --xy-edge-stroke: var(--color-strong);
+  --xy-edge-stroke-width: 1.5;
+  --xy-background-color: transparent;
+  --xy-attribution-background-color: var(--color-surface-1);
+}
+
+.relyxus-dependency-map .react-flow__attribution a {
+  color: var(--color-fg-secondary);
+}

@@ -8,6 +8,7 @@ import { incidentListHandlers } from './incident-list-handlers';
 import { platformStatusFixture } from './fixtures/platform-status-fixture';
 import { sessionFixture } from './fixtures/session-fixture';
 import { onCallHandlers } from './on-call-handlers';
+import { serviceHandlers } from './service-handlers';
 import { warRoomHandlers } from './war-room-handlers';
 
 /*
@@ -28,6 +29,7 @@ export const handlers = [
   ...evidenceHandlers,
   ...warRoomHandlers,
   ...onCallHandlers,
+  ...serviceHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),
 ];

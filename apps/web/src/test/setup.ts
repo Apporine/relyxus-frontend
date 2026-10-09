@@ -21,3 +21,13 @@ if (typeof window !== 'undefined' && window.matchMedia === undefined) {
       dispatchEvent: () => false,
     }) satisfies MediaQueryList;
 }
+
+// React Flow measures nodes with ResizeObserver, which jsdom lacks. Without layout every
+// size is zero, so map nodes stay hidden in component tests; end-to-end tests cover the map.
+if (typeof window !== 'undefined' && window.ResizeObserver === undefined) {
+  window.ResizeObserver = class {
+    observe(): void {}
+    unobserve(): void {}
+    disconnect(): void {}
+  };
+}

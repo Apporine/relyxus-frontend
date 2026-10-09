@@ -500,7 +500,9 @@
       "acknowledgedToast": "تم تأكيد استلام الحادثة",
       "acknowledgeFailed": "لم يُسجَّل تأكيد الاستلام",
       "acknowledgeFailedDetail": "المرجع {reference}. حاول مرة أخرى.",
-      "noClock": "لا يوجد مؤقت تنظيمي قيد التشغيل"
+      "noClock": "لا يوجد مؤقت تنظيمي قيد التشغيل",
+      "affectedServices": "الخدمات المتأثرة",
+      "viewServiceDependencies": "اعتماديات {service}"
     },
     "panels": {
       "tabsLabel": "لوحات غرفة العمليات",
@@ -678,6 +680,188 @@
         "note": "ملاحظة",
         "task": "مهمة"
       }
+    }
+  },
+  "services": {
+    "title": "الخدمات وخريطة الاعتماديات",
+    "description": "انتقل من الحادثة إلى أدلة الاعتماديات",
+    "addService": "إضافة خدمة",
+    "addServiceUnavailable": "تنضم الخدمات إلى الكتالوج حاليًا عبر الاكتشاف والاستيراد.",
+    "noSelectionTitle": "لم تُحدَّد خدمة",
+    "noSelectionDescription": "غيّر البحث أو اختر خدمة لعرض اعتمادياتها.",
+    "detailSectionName": "تفاصيل الخدمة",
+    "health": {
+      "healthy": "سليمة",
+      "degraded": "متدهورة",
+      "at-risk": "معرّضة للخطر",
+      "outage": "انقطاع",
+      "unknown": "غير معروفة"
+    },
+    "markers": {
+      "unconfirmed": "غير مؤكَّدة",
+      "conflicting-sources": "المصادر متعارضة",
+      "no-owner": "بلا مالك",
+      "stale-owner": "الملكية غير مؤكَّدة",
+      "stale": "قديمة",
+      "deprecated": "متقادمة",
+      "retired": "متقاعدة"
+    },
+    "tiers": {
+      "tier-0": "المستوى 0",
+      "tier-1": "المستوى 1",
+      "tier-2": "المستوى 2",
+      "tier-3": "المستوى 3"
+    },
+    "lifecycle": {
+      "active": "نشطة",
+      "deprecated": "متقادمة",
+      "retired": "متقاعدة"
+    },
+    "sources": {
+      "relyxus-edit": "تعديل في Relyxus",
+      "cmdb": "ServiceNow CMDB",
+      "catalogue": "استيراد كتالوج الخدمات",
+      "discovery": "الاكتشاف التلقائي"
+    },
+    "conflictFields": {
+      "owner": "المالك",
+      "tier": "المستوى",
+      "business-service": "خدمة الأعمال",
+      "repository": "المستودع",
+      "runtime-location": "موقع التشغيل"
+    },
+    "dependencyKinds": {
+      "service": "خدمة",
+      "vendor": "مزوّد",
+      "cloud-region": "منطقة سحابية"
+    },
+    "dependencyTypes": {
+      "calls": "تستدعي",
+      "stores-data-in": "تخزّن البيانات في",
+      "hosted-in": "مستضافة في",
+      "provided-by": "مقدَّمة من"
+    },
+    "list": {
+      "title": "الخدمات",
+      "description": "جرد تقني قابل للبحث",
+      "searchLabel": "البحث في الخدمات",
+      "searchPlaceholder": "ابحث بالاسم أو الفريق أو الوسم",
+      "emptyTitle": "لا توجد خدمات في الكتالوج بعد",
+      "emptyDescription": "اربط Kubernetes أو حسابًا سحابيًا أو كتالوج خدمات لاكتشاف الخدمات.",
+      "noMatchesTitle": "لا توجد خدمات تطابق «{searchText}»",
+      "noMatchesDescription": "تحقّق من الكتابة أو ابحث باسم فريق أو وسم.",
+      "clearSearch": "مسح البحث",
+      "resultsLabel": "{count, plural, zero {لا خدمات} one {خدمة واحدة} two {خدمتان} few {# خدمات} many {# خدمة} other {# خدمة}}",
+      "tierAndOwner": "{tier} · {owner}",
+      "noOwner": "بلا مالك"
+    },
+    "map": {
+      "title": "خريطة الاعتماديات",
+      "focusDescription": "التركيز على {service}: ما يعتمد عليها وما تعتمد عليه. يعرض تبويب الاعتماديات المحتوى نفسه نصًا.",
+      "canvasLabel": "خريطة اعتماديات {service}",
+      "nodeDescription": "كل خدمة على الخريطة رابط ينقل التركيز إليها.",
+      "edgeDescription": "يشير السهم من الخدمة إلى ما تعتمد عليه.",
+      "zoomIn": "تكبير",
+      "zoomOut": "تصغير",
+      "fitView": "ملاءمة الخريطة للوحة",
+      "moreDependents": "{count, plural, zero {لا مزيد} one {خدمة أخرى تعتمد عليها} two {خدمتان أخريان تعتمدان عليها} few {# خدمات أخرى تعتمد عليها} many {# خدمة أخرى تعتمد عليها} other {# خدمة أخرى تعتمد عليها}}",
+      "moreDependencies": "{count, plural, zero {لا مزيد} one {اعتمادية أخرى} two {اعتماديتان أخريان} few {# اعتماديات أخرى} many {# اعتمادية أخرى} other {# اعتمادية أخرى}}",
+      "vendorOutageTitle": "انقطاع لدى المزوّد: {vendor}",
+      "vendorOutageDescription": "تعتمد {service} على {vendor} الذي يبلّغ عن انقطاع.",
+      "neighbourCounts": "تعتمد على {dependencies, plural, zero {لا شيء} one {خدمة أو مزوّد واحد} two {خدمتين أو مزوّدين} few {# خدمات أو مزوّدين} many {# خدمة أو مزوّدًا} other {# خدمة أو مزوّد}} · {dependents, plural, zero {لا خدمات تعتمد} one {خدمة واحدة تعتمد} two {خدمتان تعتمدان} few {# خدمات تعتمد} many {# خدمة تعتمد} other {# خدمة تعتمد}} عليها",
+      "noDependencies": "لا توجد اعتماديات مسجّلة لـ {service}."
+    },
+    "tabs": {
+      "label": "تفاصيل الخدمة",
+      "overview": "نظرة عامة",
+      "dependencies": "الاعتماديات",
+      "slos": "أهداف مستوى الخدمة",
+      "incidents": "الحوادث",
+      "changes": "التغييرات",
+      "policies": "السياسات",
+      "owners": "المالكون",
+      "vendors-and-regions": "المزوّدون والمناطق",
+      "history": "السجل"
+    },
+    "overview": {
+      "tier": "المستوى",
+      "lifecycle": "دورة الحياة",
+      "environments": "البيئات",
+      "businessServices": "خدمات الأعمال",
+      "noBusinessServices": "غير مرتبطة بخدمة أعمال",
+      "owner": "المالك",
+      "noOwner": "بلا مالك",
+      "conflicts": "المصادر متعارضة",
+      "conflictsDescription": "تطبّق Relyxus المصدر الأعلى أولوية: التعديل في Relyxus، ثم CMDB، ثم استيراد الكتالوج، ثم الاكتشاف التلقائي.",
+      "applied": "مطبَّق",
+      "sourceRecords": "المصادر",
+      "noSourceRecords": "لم يبلّغ أي مصدر عن هذه الخدمة.",
+      "lastSynced": "آخر مزامنة {time}"
+    },
+    "owners": {
+      "noOwner": "لا مالك لهذه الخدمة. يُحال عملها إلى {team} حتى يُعيَّن مالك.",
+      "confirmationOverdue": "لم يؤكّد {team} الملكية في هذا الربع.",
+      "team": "الفريق المالك",
+      "confirmed": "تأكيد الملكية",
+      "neverConfirmed": "لم تُؤكَّد قط",
+      "onCallSchedule": "جدول المناوبة",
+      "noOnCallSchedule": "لا يوجد جدول مناوبة"
+    },
+    "dependencies": {
+      "sectionName": "الاعتماديات",
+      "dependsOn": "تعتمد على",
+      "dependedOnBy": "يعتمد عليها",
+      "noDependencies": "لا تعتمد هذه الخدمة على أي شيء مسجّل.",
+      "noDependents": "لا شيء مسجّل يعتمد على هذه الخدمة.",
+      "neighbourDetail": "{kind} · {type}"
+    },
+    "slos": {
+      "empty": "لا توجد أهداف مستوى خدمة لهذه الخدمة.",
+      "belowObjective": "دون الهدف",
+      "figures": "الهدف {objective, number, ::percent .##} · المُحقَّق {attainment, number, ::percent .##} · المتبقي من ميزانية الأخطاء {errorBudget, number, ::percent} · نافذة {days} يومًا"
+    },
+    "incidents": {
+      "empty": "لا توجد حوادث حديثة تخص هذه الخدمة.",
+      "declared": "أُعلنت {time}"
+    },
+    "changes": {
+      "empty": "لا توجد تغييرات حديثة مسجّلة لهذه الخدمة.",
+      "detail": "{source} · {time}"
+    },
+    "policies": {
+      "empty": "لا توجد سياسات خاصة بهذه الخدمة."
+    },
+    "vendorsAndRegions": {
+      "empty": "لا يوجد مزوّدون أو مناطق سحابية مسجّلة لهذه الخدمة."
+    },
+    "history": {
+      "empty": "لا توجد تغييرات كتالوج مسجّلة لهذه الخدمة.",
+      "detail": "{actor} · {time}"
+    },
+    "catalogueActions": {
+      "menu": "إدارة الخدمة",
+      "unavailable": "تعديل الكتالوج غير متاح بعد.",
+      "editMappings": "تعديل الربط",
+      "mergeDuplicates": "دمج المكرّرات",
+      "assignOwner": "تعيين مالك",
+      "linkBusinessService": "ربط خدمة أعمال",
+      "setTierAndSlo": "تحديد المستوى وهدف مستوى الخدمة",
+      "retire": "إحالة الخدمة إلى التقاعد"
+    },
+    "states": {
+      "unconfirmedTitle": "خدمة مكتشفة بانتظار التأكيد",
+      "unconfirmedDescription": "اكتشفها {sources}. يؤكّد شخصٌ الخدمة المكتشفة قبل دخولها الكتالوج.",
+      "confirmService": "تأكيد الخدمة",
+      "confirmWhileReconnecting": "التأكيد متوقف مؤقتًا أثناء إعادة اتصال Relyxus.",
+      "confirmedToast": "تم تأكيد {service} في الكتالوج",
+      "confirmFailed": "لم يتم تأكيد {service}",
+      "confirmFailedDetail": "المرجع {reference}. حاول مرة أخرى.",
+      "deprecatedTitle": "خدمة متقادمة",
+      "deprecatedDescription": "يجري إيقاف هذه الخدمة تدريجيًا. خطّط لنقل ما يعتمد عليها.",
+      "retiredTitle": "خدمة متقاعدة",
+      "retiredDescription": "يُحتفظ بسجل حوادثها كاملًا. تُميَّز التنبيهات التي ما زالت تصل إليها.",
+      "staleTitle": "قديمة: لا قياسات ولا تحديث من المصادر منذ 30 يومًا",
+      "staleDescription": "راجع ما إذا كانت هذه الخدمة لا تزال تعمل، ثم أكّدها أو أحِلها إلى التقاعد."
     }
   }
 }

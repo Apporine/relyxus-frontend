@@ -500,7 +500,9 @@
       "acknowledgedToast": "Incident acknowledged",
       "acknowledgeFailed": "Acknowledgement was not recorded",
       "acknowledgeFailedDetail": "Reference {reference}. Try again.",
-      "noClock": "No regulator clock running"
+      "noClock": "No regulator clock running",
+      "affectedServices": "Affected services",
+      "viewServiceDependencies": "Dependencies of {service}"
     },
     "panels": {
       "tabsLabel": "War room panels",
@@ -678,6 +680,188 @@
         "note": "Note",
         "task": "Task"
       }
+    }
+  },
+  "services": {
+    "title": "Services and dependency map",
+    "description": "Move from an incident to dependency evidence",
+    "addService": "Add service",
+    "addServiceUnavailable": "Services join the catalogue through discovery and imports for now.",
+    "noSelectionTitle": "No service selected",
+    "noSelectionDescription": "Change the search or choose a service to see its dependencies.",
+    "detailSectionName": "Service detail",
+    "health": {
+      "healthy": "Healthy",
+      "degraded": "Degraded",
+      "at-risk": "At risk",
+      "outage": "Outage",
+      "unknown": "Unknown"
+    },
+    "markers": {
+      "unconfirmed": "Unconfirmed",
+      "conflicting-sources": "Sources disagree",
+      "no-owner": "No owner",
+      "stale-owner": "Owner not confirmed",
+      "stale": "Stale",
+      "deprecated": "Deprecated",
+      "retired": "Retired"
+    },
+    "tiers": {
+      "tier-0": "Tier 0",
+      "tier-1": "Tier 1",
+      "tier-2": "Tier 2",
+      "tier-3": "Tier 3"
+    },
+    "lifecycle": {
+      "active": "Active",
+      "deprecated": "Deprecated",
+      "retired": "Retired"
+    },
+    "sources": {
+      "relyxus-edit": "Edited in Relyxus",
+      "cmdb": "ServiceNow CMDB",
+      "catalogue": "Service catalogue import",
+      "discovery": "Auto-discovery"
+    },
+    "conflictFields": {
+      "owner": "Owner",
+      "tier": "Tier",
+      "business-service": "Business service",
+      "repository": "Repository",
+      "runtime-location": "Runtime location"
+    },
+    "dependencyKinds": {
+      "service": "Service",
+      "vendor": "Vendor",
+      "cloud-region": "Cloud region"
+    },
+    "dependencyTypes": {
+      "calls": "Calls",
+      "stores-data-in": "Stores data in",
+      "hosted-in": "Hosted in",
+      "provided-by": "Provided by"
+    },
+    "list": {
+      "title": "Services",
+      "description": "Searchable technical inventory",
+      "searchLabel": "Search services",
+      "searchPlaceholder": "Search by name, team or label",
+      "emptyTitle": "No services in the catalogue yet",
+      "emptyDescription": "Connect Kubernetes, a cloud account or a service catalogue to discover services.",
+      "noMatchesTitle": "No services match “{searchText}”",
+      "noMatchesDescription": "Check the spelling or search for a team or label instead.",
+      "clearSearch": "Clear search",
+      "resultsLabel": "{count, plural, one {# service} other {# services}}",
+      "tierAndOwner": "{tier} · {owner}",
+      "noOwner": "No owner"
+    },
+    "map": {
+      "title": "Dependency map",
+      "focusDescription": "Focused on {service}: what depends on it and what it depends on. The Dependencies tab lists the same as text.",
+      "canvasLabel": "Dependency map of {service}",
+      "nodeDescription": "Each service on the map is a link that moves the focus to it.",
+      "edgeDescription": "An arrow points from a service to what it depends on.",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "fitView": "Fit the map to the panel",
+      "moreDependents": "{count, plural, one {# more depends on it} other {# more depend on it}}",
+      "moreDependencies": "{count, plural, one {# more dependency} other {# more dependencies}}",
+      "vendorOutageTitle": "Vendor outage: {vendor}",
+      "vendorOutageDescription": "{service} depends on {vendor}, which is reporting an outage.",
+      "neighbourCounts": "Depends on {dependencies, plural, one {# service or provider} other {# services or providers}} · {dependents, plural, one {# service depends} other {# services depend}} on it",
+      "noDependencies": "No dependencies are recorded for {service}."
+    },
+    "tabs": {
+      "label": "Service detail",
+      "overview": "Overview",
+      "dependencies": "Dependencies",
+      "slos": "SLOs",
+      "incidents": "Incidents",
+      "changes": "Changes",
+      "policies": "Policies",
+      "owners": "Owners",
+      "vendors-and-regions": "Vendors and regions",
+      "history": "History"
+    },
+    "overview": {
+      "tier": "Tier",
+      "lifecycle": "Lifecycle",
+      "environments": "Environments",
+      "businessServices": "Business services",
+      "noBusinessServices": "Not linked to a business service",
+      "owner": "Owner",
+      "noOwner": "No owner",
+      "conflicts": "Sources disagree",
+      "conflictsDescription": "Relyxus applies the highest-priority source: an edit in Relyxus, then the CMDB, then catalogue imports, then auto-discovery.",
+      "applied": "Applied",
+      "sourceRecords": "Sources",
+      "noSourceRecords": "No source has reported this service.",
+      "lastSynced": "Last synced {time}"
+    },
+    "owners": {
+      "noOwner": "This service has no owner. Its work routes to {team} until an owner is assigned.",
+      "confirmationOverdue": "{team} has not confirmed ownership this quarter.",
+      "team": "Owner team",
+      "confirmed": "Ownership confirmed",
+      "neverConfirmed": "Never confirmed",
+      "onCallSchedule": "On-call schedule",
+      "noOnCallSchedule": "No on-call schedule"
+    },
+    "dependencies": {
+      "sectionName": "Dependencies",
+      "dependsOn": "Depends on",
+      "dependedOnBy": "Depended on by",
+      "noDependencies": "This service depends on nothing recorded.",
+      "noDependents": "Nothing recorded depends on this service.",
+      "neighbourDetail": "{kind} · {type}"
+    },
+    "slos": {
+      "empty": "No SLOs are set for this service.",
+      "belowObjective": "Below objective",
+      "figures": "Objective {objective, number, ::percent .##} · attained {attainment, number, ::percent .##} · error budget left {errorBudget, number, ::percent} · {days}-day window"
+    },
+    "incidents": {
+      "empty": "No recent incidents involve this service.",
+      "declared": "Declared {time}"
+    },
+    "changes": {
+      "empty": "No recent changes are recorded for this service.",
+      "detail": "{source} · {time}"
+    },
+    "policies": {
+      "empty": "No policies apply specifically to this service."
+    },
+    "vendorsAndRegions": {
+      "empty": "No vendors or cloud regions are recorded for this service."
+    },
+    "history": {
+      "empty": "No catalogue changes are recorded for this service.",
+      "detail": "{actor} · {time}"
+    },
+    "catalogueActions": {
+      "menu": "Manage service",
+      "unavailable": "Catalogue editing is not available yet.",
+      "editMappings": "Edit mappings",
+      "mergeDuplicates": "Merge duplicates",
+      "assignOwner": "Assign owner",
+      "linkBusinessService": "Link a business service",
+      "setTierAndSlo": "Set tier and SLO",
+      "retire": "Retire service"
+    },
+    "states": {
+      "unconfirmedTitle": "Discovered service waiting for confirmation",
+      "unconfirmedDescription": "Found by {sources}. A person confirms a discovered service before it enters the catalogue.",
+      "confirmService": "Confirm service",
+      "confirmWhileReconnecting": "Confirming is paused while Relyxus reconnects.",
+      "confirmedToast": "{service} confirmed in the catalogue",
+      "confirmFailed": "{service} was not confirmed",
+      "confirmFailedDetail": "Reference {reference}. Try again.",
+      "deprecatedTitle": "Deprecated service",
+      "deprecatedDescription": "This service is being phased out. Plan to move what depends on it.",
+      "retiredTitle": "Retired service",
+      "retiredDescription": "Its full incident history is kept. Alerts still arriving for it are flagged.",
+      "staleTitle": "Stale: no telemetry or source update for 30 days",
+      "staleDescription": "Review whether this service still runs, then confirm or retire it."
     }
   }
 }

@@ -12,6 +12,8 @@ import { environmentSchema, isoDateTimeSchema, paginatedListSchema } from '@/lib
 
 export const incidentDetailSchema = incidentSummarySchema.extend({
   commanderName: z.string().nullable(),
+  /** Technical services in the impact, each linked to its dependency evidence (UI/UX s. 13.2). */
+  affectedServices: z.array(z.object({ id: z.string().min(1), name: z.string().min(1) })),
   /** Null until someone acknowledges; acknowledging stops the escalation chase. */
   acknowledgement: z
     .object({

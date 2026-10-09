@@ -249,8 +249,9 @@ in [briefs](briefs) before coding.
 | 15    | Evidence Explorer                        | Merged                                                           | #17           |
 | 16    | Incident Tasks and Timeline (full views) | Merged                                                           | #18           |
 | 17    | Approval Governance Inbox                | Merged                                                           | #20           |
-| 18    | On-call and Escalation                   | Next; in progress on `feat/on-call-schedules`                    | —             |
-| 19–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 18    | On-call and Escalation                   | Merged                                                           | #22           |
+| 19    | Services and Dependency Map              | Merged, see [brief](briefs/services-dependency-map.md)           | #25           |
+| 20–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

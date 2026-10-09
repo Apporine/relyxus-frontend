@@ -1296,5 +1296,122 @@
       "status": "{completeness, number, ::percent} · {missing, plural, =0 {مكتملة} zero {مكتملة} one {مصدر واحد مفقود} two {مصدران مفقودان} few {# مصادر مفقودة} many {# مصدرًا مفقودًا} other {# مصدر مفقود}}",
       "progressLabel": "اكتمال حزمة الأدلة لـ {incident}"
     }
+  },
+  "policies": {
+    "title": "السياسات والاستقلالية",
+    "description": "تحكّم فيما يمكن لـ Relyxus اقتراحه أو طلبه أو تنفيذه",
+    "newPolicy": "سياسة جديدة",
+    "newPolicyUnavailable": "تتوفر كتابة السياسات مع محرر السياسات ومسار اعتمادها.",
+    "listTitle": "السياسات",
+    "empty": "لا توجد سياسات معرّفة بعد.",
+    "detailSectionName": "السياسة",
+    "listMeta": "{autonomy} · {state}",
+    "autonomy": {
+      "deny": "رفض",
+      "l0": "L0 مراقبة",
+      "l1": "L1 اقتراح",
+      "l2": "L2 موافقة بنقرة واحدة",
+      "l3": "L3 أربع أعين",
+      "l4": "L4 تلقائي ضمن الحدود"
+    },
+    "states": {
+      "draft": "مسودة",
+      "published": "منشورة",
+      "active": "نشطة"
+    },
+    "facts": {
+      "action": "الإجراء",
+      "scope": "النطاق",
+      "environment": "البيئة",
+      "autonomy": "الاستقلالية",
+      "approvers": "الموافقون",
+      "freezeCalendar": "تقويم التجميد"
+    },
+    "noFreeze": "لا يوجد تجميد",
+    "none": "لا يوجد",
+    "required": "مطلوب",
+    "notRequired": "غير مطلوب",
+    "effective": {
+      "title": "السياسة السارية",
+      "result": "النتيجة",
+      "inheritedDeny": "رفض موروث",
+      "rollback": "التراجع",
+      "verification": "التحقق",
+      "simulation": "المحاكاة",
+      "simulationResult": "{allowed} مسموح · {needingApproval} تحتاج موافقة · {denied} مرفوض"
+    }
+  },
+  "runbooks": {
+    "title": "أدلة التشغيل والإجراءات",
+    "description": "إجراءات ذات إصدارات مع خطوات مشروطة",
+    "importRunbook": "استيراد دليل تشغيل",
+    "importRunbookUnavailable": "يتوفر استيراد أدلة التشغيل مع مُجمِّع أدلة التشغيل.",
+    "listTitle": "مكتبة أدلة التشغيل",
+    "empty": "لا توجد أدلة تشغيل بعد.",
+    "detailSectionName": "دليل التشغيل",
+    "listMeta": "{source} · الإصدار {version} · اختُبر {tested}",
+    "listMetaReviewDue": "{source} · المراجعة مستحقة",
+    "neverTested": "أبدًا",
+    "versionLine": "{source} · الإصدار {version}",
+    "sources": {
+      "git": "Git",
+      "manual": "يدوي"
+    },
+    "stepLabel": "الخطوة {number} · {kind}",
+    "stepKinds": {
+      "read": "قراءة",
+      "gate": "بوابة",
+      "action": "إجراء",
+      "verify": "تحقق",
+      "manual": "يدوي"
+    },
+    "history": {
+      "title": "سجل التنفيذ",
+      "empty": "لم يُنفَّذ دليل التشغيل هذا في أي حادثة بعد.",
+      "latestRun": "آخر تنفيذ",
+      "result": "النتيجة",
+      "version": "الإصدار",
+      "pinnedVersion": "الإصدار {version}، مثبّت",
+      "unpinnedVersion": "الإصدار {version}",
+      "recovery": "الاسترداد"
+    },
+    "results": {
+      "succeeded": "نجح",
+      "failed": "فشل",
+      "partially-failed": "فشل جزئيًا"
+    }
+  },
+  "incidentTypes": {
+    "title": "أنواع الحوادث والحقول والنماذج",
+    "description": "إعدادات الإعلان ودورة الحياة ذات الإصدارات",
+    "newType": "نوع جديد",
+    "newTypeUnavailable": "يتوفر إنشاء الأنواع مع منشئ النماذج.",
+    "listTitle": "أنواع الحوادث",
+    "empty": "لا توجد أنواع حوادث بعد.",
+    "detailSectionName": "نوع الحادثة",
+    "listMeta": "الإصدار {version} · {state}",
+    "states": {
+      "draft": "مسودة",
+      "published": "منشور",
+      "archived": "مؤرشف"
+    },
+    "facts": {
+      "declarationForm": "نموذج الإعلان",
+      "visibilityDefault": "الرؤية الافتراضية",
+      "lifecycle": "دورة الحياة",
+      "automations": "الأتمتة",
+      "regulatorMappings": "الارتباطات التنظيمية",
+      "versionBehaviour": "سلوك الإصدار"
+    },
+    "lifecycleArrow": "←",
+    "versionBehaviour": "تبقى الحوادث السابقة مثبّتة على الإصدار الذي أُعلنت به",
+    "none": "لا يوجد",
+    "preview": {
+      "title": "معاينة مباشرة",
+      "responderView": "عرض المستجيب",
+      "requiredFields": "الحقول المطلوبة",
+      "conditionalField": "حقل شرطي",
+      "condition": "{field} عند {condition}"
+    }
   }
 }

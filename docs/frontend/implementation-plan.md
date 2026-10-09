@@ -257,7 +257,10 @@ in [briefs](briefs) before coding.
 | 27    | Compliance Centre                        | Merged                                                           | #28           |
 | 32    | Audit Log                                | Merged                                                           | #28           |
 | 33    | Integrations Hub and Connector Wizard    | Hub merged; connector wizard pending                             | #28           |
-| 23–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 23    | Policies and Autonomy                    | Merged: policy and effective-policy view (editor pending)        | #29           |
+| 26    | Runbooks and Playbooks                   | Merged: library, steps and execution history                     | #29           |
+| 34    | Incident Types, Fields and Forms         | Merged: type configuration and responder preview                 | #29           |
+| 24–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

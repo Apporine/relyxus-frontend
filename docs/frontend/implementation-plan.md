@@ -265,7 +265,13 @@ in [briefs](briefs) before coding.
 | 28    | Regulator Report Editor                  | Merged: sourced fields and review gate (editing pending)         | #30           |
 | 29    | Regulatory Rule Library                  | Merged                                                           | #30           |
 | 30    | Post-Incident Review                     | Merged: document, authorship and sign-off gate                   | #30           |
-| 31–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
+| 31    | Status Pages                             | Merged: pages, draft update and live preview (editor pending)    | #31           |
+| 35    | Configuration Promotion                  | Merged: difference tree and validation                           | #31           |
+| 36    | Platform Operations                      | Merged: health, system checks and available update               | #31           |
+| 37    | Support Access                           | Merged: sessions and live control (revoke pending)               | #31           |
+| 38    | Users, Teams and Roles                   | Merged: identity and access controls                             | #31           |
+| 39    | Security and Data Controls               | Merged: sections and data flow preview                           | #31           |
+| 40–44 | Remaining capabilities                   | Planned in the order of section 5                                | —             |
 
 ## 6. Cross-cutting requirements applied to every screen
 

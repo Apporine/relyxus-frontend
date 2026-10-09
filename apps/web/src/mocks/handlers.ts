@@ -1,5 +1,6 @@
 import { http, HttpResponse, ws } from 'msw';
 
+import { adminHandlers } from './admin-handlers';
 import { aiQualityHandlers } from './ai-quality-handlers';
 import { approvalHandlers } from './approval-handlers';
 import { businessServiceHandlers } from './business-service-handlers';
@@ -41,6 +42,7 @@ export const handlers = [
   ...aiQualityHandlers,
   ...insightHandlers,
   ...configurationHandlers,
+  ...adminHandlers,
   // Accepts the live connection; capabilities publish their own fixture events through it.
   workspaceLiveUpdates.addEventListener('connection', () => undefined),
 ];

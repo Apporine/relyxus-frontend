@@ -1597,7 +1597,8 @@
       "security": "Security and data",
       "support-access": "Support access",
       "platform": "Platform operations",
-      "promotion": "Configuration promotion"
+      "promotion": "Configuration promotion",
+      "trust-centre": "Trust Centre"
     },
     "statusPages": {
       "title": "Status pages",
@@ -1838,7 +1839,8 @@
         "security": "Sign-in, keys, data residency, model routes and SIEM streaming",
         "support-access": "Vendor support sessions you approve, watch and revoke",
         "platform": "Self-hosted cluster health, backups, certificates and upgrades",
-        "promotion": "Move configuration from staging to production after review"
+        "promotion": "Move configuration from staging to production after review",
+        "trust-centre": "Assurance documents buyers can download or request"
       }
     }
   },
@@ -1990,5 +1992,82 @@
     "acknowledge": "Acknowledge",
     "acknowledgedBy": "Acknowledged by {name} at {time}",
     "openWarRoom": "Open the full war room"
+  },
+  "signIn": {
+    "title": "Sign in to Relyxus",
+    "description": "Use your organisation's sign-in. Relyxus never asks for a password.",
+    "continue": "Continue with your organisation",
+    "notConfigured": "Sign-in is not configured in this environment yet.",
+    "sessionExpiredTitle": "Your session ended",
+    "sessionExpiredDescription": "Sign in again to continue where you were.",
+    "returnTo": "After signing in you return to",
+    "openDemo": "Open the demo workspace"
+  },
+  "trustCentre": {
+    "title": "Trust Centre",
+    "description": "Customer-facing assurance library",
+    "publicTitle": "Relyxus Trust Centre",
+    "publicDescription": "Current certifications, test results, policies and architecture, ready to download or request.",
+    "publishDocument": "Publish document",
+    "publishDocumentUnavailable": "Publishing arrives with the document workflow and its legal review.",
+    "documents": "Assurance documents",
+    "documentsDescription": "Certifications, architecture, policies, insurance and continuity",
+    "viewPublicPage": "View the public page",
+    "empty": "No documents yet.",
+    "columns": {
+      "document": "Document",
+      "version": "Version",
+      "status": "Status",
+      "audience": "Audience",
+      "updated": "Updated",
+      "buyerAction": "What buyers can do"
+    },
+    "categories": {
+      "certifications": "Certifications",
+      "penetration-tests": "Penetration tests",
+      "policies": "Policies",
+      "subprocessors": "Sub-processors",
+      "architecture": "Architecture and data flows",
+      "continuity": "Continuity"
+    },
+    "statuses": {
+      "current": "Current",
+      "superseded": "Superseded",
+      "expired": "Expired"
+    },
+    "audiences": {
+      "public": "Public",
+      "nda": "NDA required",
+      "internal": "Internal"
+    },
+    "documentMeta": "{version} · {audience} · updated {updated}",
+    "actions": {
+      "download": "Download",
+      "request-access": "Request access"
+    },
+    "downloadDocument": "Download {title}",
+    "requestDocument": "Request access to {title}",
+    "subscribeUnavailable": "Update subscriptions are coming soon",
+    "historyOnly": "Kept for the record",
+    "internalOnly": "Never shown to buyers",
+    "requestAccess": {
+      "title": "Request access to {title}",
+      "description": "We share this document after you accept the non-disclosure agreement and your request is approved.",
+      "fullName": "Full name",
+      "fullNameMissing": "Enter your full name.",
+      "workEmail": "Work email",
+      "workEmailInvalid": "Enter a valid work email address.",
+      "company": "Company",
+      "companyMissing": "Enter your company.",
+      "acceptNda": "I accept the non-disclosure agreement for this document.",
+      "ndaRequired": "Accept the non-disclosure agreement to request this document.",
+      "submit": "Send request",
+      "cancel": "Cancel",
+      "close": "Close",
+      "done": "Done",
+      "failed": "The request was not sent. Reference {reference}. Try again.",
+      "receivedTitle": "Request received",
+      "receivedDescription": "We will email you when access to {title} is approved."
+    }
   }
 }

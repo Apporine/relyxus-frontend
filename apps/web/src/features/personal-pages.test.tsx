@@ -54,7 +54,7 @@ describe('AdminOverviewPage', () => {
     const organisationGroup = screen
       .getByRole('heading', { name: 'Organisation' })
       .closest('section') as HTMLElement;
-    expect(within(organisationGroup).getAllByRole('link')).toHaveLength(5);
+    expect(within(organisationGroup).getAllByRole('link')).toHaveLength(6);
   });
 });
 

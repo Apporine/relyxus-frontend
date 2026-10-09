@@ -176,7 +176,9 @@
     "businessServiceHealth": {
       "at-risk": "معرّضة للخطر",
       "degraded": "متدهورة",
-      "monitoring": "قيد المراقبة"
+      "monitoring": "قيد المراقبة",
+      "breached": "تم التجاوز",
+      "healthy": "سليمة"
     },
     "clockPhases": {
       "normal": "ضمن الموعد",
@@ -862,6 +864,113 @@
       "retiredDescription": "يُحتفظ بسجل حوادثها كاملًا. تُميَّز التنبيهات التي ما زالت تصل إليها.",
       "staleTitle": "قديمة: لا قياسات ولا تحديث من المصادر منذ 30 يومًا",
       "staleDescription": "راجع ما إذا كانت هذه الخدمة لا تزال تعمل، ثم أكّدها أو أحِلها إلى التقاعد."
+    },
+    "areaNavigation": {
+      "label": "عروض الخدمات",
+      "technical": "الخدمات التقنية",
+      "business": "خدمات الأعمال"
+    }
+  },
+  "businessServices": {
+    "title": "خدمات الأعمال وحدود التحمّل",
+    "description": "عرض المرونة التشغيلية",
+    "newService": "خدمة جديدة",
+    "newServiceUnavailable": "تتطلب إضافة خدمات الأعمال موافقة مالك السياسة، وهي غير متاحة بعد.",
+    "detailSectionName": "خدمة الأعمال",
+    "list": {
+      "title": "خدمات الأعمال",
+      "emptyTitle": "لا توجد خدمات أعمال مهمة بعد",
+      "emptyDescription": "يحدّد مالك المرونة خدمات الأعمال ويربط الخدمات التقنية بها."
+    },
+    "tolerance": {
+      "timeToBreach": "{time} حتى التجاوز",
+      "outsideTolerance": "خارج حد التحمّل منذ {time}",
+      "notDisrupted": "لا يوجد انقطاع. حد التحمّل {tolerance}.",
+      "clockTitle": "الوقت حتى تجاوز حد التحمّل لـ {service}",
+      "breachAt": "التجاوز عند {time} · حد التحمّل {tolerance}",
+      "disruptedSince": "منقطعة منذ {time}"
+    },
+    "tolerancePhases": {
+      "normal": "ضمن حد التحمّل",
+      "past-half": "تجاوزت 50% من حد التحمّل",
+      "past-three-quarters": "تجاوزت 75% من حد التحمّل",
+      "past-ninety-percent": "تجاوزت 90% من حد التحمّل",
+      "breached": "تم تجاوز حد التحمّل",
+      "submitted": "انتهى الانقطاع"
+    },
+    "detail": {
+      "timeToBreach": "الوقت حتى التجاوز",
+      "downtimeBudget": "ميزانية التوقف",
+      "currentImpact": "الأثر الحالي",
+      "technicalDependencies": "الاعتماديات التقنية",
+      "noTechnicalServices": "لا توجد خدمات تقنية مرتبطة بخدمة الأعمال هذه.",
+      "regulators": "الجهات التنظيمية",
+      "noRegulators": "لا توجد ارتباطات تنظيمية",
+      "owner": "المالك",
+      "noOwner": "بلا مالك"
+    },
+    "downtimeBudget": {
+      "remaining": "يتبقى {remaining, number, ::percent} من ميزانية {period, select, month {الشهر} quarter {الربع} year {السنة} other {الفترة}}",
+      "used": "استُخدم {used} من {allowed}"
+    },
+    "impact": {
+      "overridden": "معدَّلة يدويًا",
+      "overrideDetail": "عدّلها {name} في {time}: {reason}",
+      "noValue": "لا توجد قيمة: لم يتمكن أي مصدر أو افتراض بديل من حسابها.",
+      "provenance": "المعادلة الإصدار {version} · {confidence} · {source} · {time}",
+      "sourceMissingTitle": "مصدر الأثر مفقود",
+      "sourceMissingDescription": "لا يُرجع {source} بيانات. تستخدم الأموال المعرّضة للخطر الافتراض البديل: {fallback}.",
+      "sourceStaleTitle": "بيانات الأثر قديمة",
+      "sourceStaleDescription": "بيانات {source} أقدم من حد الحداثة البالغ {minutes} دقيقة. تعامل مع القيمة على أنها تقدير.",
+      "ruleChangedTitle": "تغيّرت معادلة الأثر من الإصدار {previous} إلى الإصدار {current}",
+      "ruleChangedDescription": "حُسبت القيم قبل {time} بالإصدار {previous}."
+    },
+    "formula": {
+      "title": "معادلة الأثر الإصدار {version}",
+      "metric": "تقيس",
+      "expression": "المعادلة",
+      "source": "المصدر",
+      "currency": "العملة",
+      "freshnessLimit": "حد الحداثة",
+      "freshnessMinutes": "{minutes, plural, zero {# دقيقة} one {دقيقة واحدة} two {دقيقتان} few {# دقائق} many {# دقيقة} other {# دقيقة}}",
+      "fallback": "الافتراض البديل",
+      "thresholds": "عتبات الخطورة"
+    },
+    "breachHistory": {
+      "title": "سجل التجاوزات",
+      "empty": "لا توجد تجاوزات مسجّلة لحد التحمّل.",
+      "entry": "{time} · {outside} خارج حد التحمّل",
+      "lastDrill": "آخر تمرين مرونة {time}",
+      "noDrill": "لا يوجد تمرين مرونة مسجّل"
+    },
+    "posture": {
+      "title": "الوضع الحالي",
+      "health": "الحالة",
+      "impactSource": "مصدر الأثر",
+      "impactSourceStates": {
+        "fresh": "حديث",
+        "stale": "قديم",
+        "missing": "مفقود"
+      },
+      "tolerance": "حد التحمّل",
+      "notDisrupted": "لا يوجد انقطاع",
+      "consumed": "استُهلك {consumed, number, ::percent}",
+      "toleranceStates": {
+        "within": "ضمن حد التحمّل",
+        "near-breach": "قريب من التجاوز",
+        "breached": "تم التجاوز"
+      },
+      "override": "التعديل اليدوي",
+      "noOverride": "لا يوجد",
+      "overriddenBy": "عدّلها {name}"
+    },
+    "actions": {
+      "menu": "إدارة",
+      "unavailable": "تتطلب التغييرات موافقة مالك السياسة، وهي غير متاحة بعد.",
+      "editMapping": "تعديل الربط",
+      "editTolerance": "تعديل حد التحمّل",
+      "configureImpactFormula": "ضبط معادلة الأثر",
+      "startDrill": "بدء تمرين مرونة"
     }
   }
 }

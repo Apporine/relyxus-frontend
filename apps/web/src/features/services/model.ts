@@ -2,8 +2,10 @@ import { z } from 'zod';
 
 import {
   environmentSchema,
+  impactConfidenceSchema,
   incidentStateSchema,
   isoDateTimeSchema,
+  moneySchema,
   paginatedListSchema,
   severitySchema,
 } from '@/lib/domain/schemas';
@@ -12,7 +14,13 @@ import {
  * Important business services whose impact tolerance is threatened (Product s. 12; UI/UX
  * s. 12.5). Provisional contract (ADR 0004).
  */
-export const businessServiceHealthStates = ['at-risk', 'degraded', 'monitoring'] as const;
+export const businessServiceHealthStates = [
+  'breached',
+  'at-risk',
+  'degraded',
+  'monitoring',
+  'healthy',
+] as const;
 export type BusinessServiceHealth = (typeof businessServiceHealthStates)[number];
 
 export const businessServiceAtRiskSchema = z.object({
@@ -182,3 +190,100 @@ export const serviceConfirmationResponseSchema = z.object({
   serviceId: z.string().min(1),
   discovery: z.literal('confirmed'),
 });
+
+/*
+ * Business services and tolerances (UI/UX s. 12.5; Product s. 8, 12 and 20). Provisional
+ * contract (ADR 0004). Whether a service is near breach is decided by the server; the
+ * client counts down to the deadline the server's figures imply.
+ */
+export const toleranceStates = ['within', 'near-breach', 'breached'] as const;
+export type ToleranceState = (typeof toleranceStates)[number];
+
+const toleranceSchema = z.object({
+  /** Maximum tolerable disruption, for example 45 minutes for card payments. */
+  toleranceMinutes: z.number().int().positive(),
+  /** When the current disruption began; null while the service is not disrupted. */
+  disruptionStartedAt: isoDateTimeSchema.nullable(),
+  state: z.enum(toleranceStates),
+});
+export type Tolerance = z.infer<typeof toleranceSchema>;
+
+export const businessServiceSummarySchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  health: z.enum(businessServiceHealthStates),
+  tolerance: toleranceSchema,
+});
+export type BusinessServiceSummary = z.infer<typeof businessServiceSummarySchema>;
+
+export const businessServiceListSchema = paginatedListSchema(businessServiceSummarySchema);
+
+export const downtimeBudgetPeriods = ['month', 'quarter', 'year'] as const;
+
+export const impactSourceStates = ['fresh', 'stale', 'missing'] as const;
+export type ImpactSourceState = (typeof impactSourceStates)[number];
+
+const impactFormulaSchema = z.object({
+  version: z.number().int().positive(),
+  /** How harm becomes money, for example "Failed authorisations × average ticket × fee margin". */
+  expression: z.string().min(1),
+  /** The connector query that measures harm, for example "Failed card authorisations per minute". */
+  metricName: z.string().min(1),
+  sourceName: z.string().min(1),
+  currencyCode: z.string().length(3),
+  freshnessLimitMinutes: z.number().int().positive(),
+  /** Used when live data is missing, for example "Same hour last 4 weeks". */
+  fallbackAssumption: z.string().min(1),
+});
+
+export const businessServiceDetailSchema = businessServiceSummarySchema.extend({
+  ownerTeamName: z.string().nullable(),
+  regulators: z.array(z.string().min(1)),
+  technicalServices: z.array(
+    z.object({
+      id: z.string().min(1),
+      name: z.string().min(1),
+      health: z.enum(serviceHealthStates),
+    }),
+  ),
+  downtimeBudget: z.object({
+    period: z.enum(downtimeBudgetPeriods),
+    allowedMinutes: z.number().int().positive(),
+    usedMinutes: z.number().int().nonnegative(),
+  }),
+  impact: z.object({
+    /** The money at risk now; null when no source or fallback can produce a value. */
+    current: moneySchema
+      .extend({ confidence: impactConfidenceSchema, calculatedAt: isoDateTimeSchema })
+      .nullable(),
+    sourceState: z.enum(impactSourceStates),
+    formula: impactFormulaSchema,
+    /** A responder's audited override of the calculated value (Product s. 8). */
+    override: z
+      .object({
+        amount: moneySchema,
+        reason: z.string().min(1),
+        overriddenByName: z.string().min(1),
+        overriddenAt: isoDateTimeSchema,
+      })
+      .nullable(),
+    /** Set when the formula changed during the current disruption. */
+    ruleVersionChange: z
+      .object({ previousVersion: z.number().int().positive(), changedAt: isoDateTimeSchema })
+      .nullable(),
+    severityThresholds: z.array(
+      z.object({ severity: severitySchema, condition: z.string().min(1) }),
+    ),
+  }),
+  breachHistory: z.array(
+    z.object({
+      id: z.string().min(1),
+      /** Null when the incident is restricted from the viewer or was not recorded as one. */
+      incidentReference: z.string().nullable(),
+      startedAt: isoDateTimeSchema,
+      minutesOutsideTolerance: z.number().int().positive(),
+    }),
+  ),
+  lastDrillAt: isoDateTimeSchema.nullable(),
+});
+export type BusinessServiceDetail = z.infer<typeof businessServiceDetailSchema>;

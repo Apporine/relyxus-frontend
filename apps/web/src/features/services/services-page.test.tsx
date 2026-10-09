@@ -115,7 +115,7 @@ describe('ServicesPage', () => {
         'payments-api depends on Northwind Acquiring, which is reporting an outage.',
       ),
     ).toBeInTheDocument();
-    expect(screen.getByText('Card payments UK')).toBeInTheDocument();
+    expect(screen.getByText('Card payments')).toBeInTheDocument();
   });
 
   it('lists the same dependencies as text in the Dependencies tab', async () => {

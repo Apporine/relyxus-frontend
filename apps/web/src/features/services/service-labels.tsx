@@ -3,7 +3,7 @@
 import { cn } from '@relyxus/ui';
 import { useTranslations } from 'next-intl';
 
-import type { ServiceHealth, ServiceSummary } from './model';
+import type { BusinessServiceHealth, ServiceHealth, ServiceSummary } from './model';
 
 const serviceHealthClassNames = {
   healthy: { dot: 'bg-healthy', text: 'text-healthy' },
@@ -12,6 +12,15 @@ const serviceHealthClassNames = {
   outage: { dot: 'bg-critical', text: 'text-critical' },
   unknown: { dot: 'bg-neutral', text: 'text-fg-secondary' },
 } satisfies Record<ServiceHealth, { dot: string; text: string }>;
+
+/** Dot and text colours of each business service health, shared with the Command Centre. */
+export const businessServiceHealthClassNames = {
+  breached: { dot: 'bg-critical', text: 'text-critical' },
+  'at-risk': { dot: 'bg-critical', text: 'text-critical' },
+  degraded: { dot: 'bg-warning', text: 'text-warning' },
+  monitoring: { dot: 'bg-warning', text: 'text-warning' },
+  healthy: { dot: 'bg-healthy', text: 'text-healthy' },
+} satisfies Record<BusinessServiceHealth, { dot: string; text: string }>;
 
 /** Border colour of a map node, paired with the written health word on the node. */
 export const serviceHealthBorderClassNames = {
@@ -32,6 +41,29 @@ export function ServiceHealthLabel({
 }) {
   const translateHealth = useTranslations('services.health');
   const classNames = serviceHealthClassNames[health];
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center gap-1.5 text-meta font-semibold',
+        classNames.text,
+        className,
+      )}
+    >
+      <span aria-hidden className={cn('size-2 shrink-0 rounded-full', classNames.dot)} />
+      {translateHealth(health)}
+    </span>
+  );
+}
+
+export function BusinessServiceHealthLabel({
+  health,
+  className,
+}: {
+  health: BusinessServiceHealth;
+  className?: string;
+}) {
+  const translateHealth = useTranslations('domain.businessServiceHealth');
+  const classNames = businessServiceHealthClassNames[health];
   return (
     <span
       className={cn(

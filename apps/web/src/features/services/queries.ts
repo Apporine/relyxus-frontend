@@ -6,6 +6,8 @@ import { requestApi } from '@/lib/api/http-client';
 
 import {
   businessServiceAtRiskListSchema,
+  businessServiceDetailSchema,
+  businessServiceListSchema,
   serviceConfirmationResponseSchema,
   serviceDependenciesSchema,
   serviceDetailSchema,
@@ -20,8 +22,14 @@ export const serviceCatalogueEvents = [
 ] as const;
 
 export const serviceQueryKeys = {
+  businessServices: (workspaceSlug: string) =>
+    ['workspaces', workspaceSlug, 'business-services'] as const,
   businessServicesAtRisk: (workspaceSlug: string) =>
-    ['workspaces', workspaceSlug, 'business-services', 'at-risk'] as const,
+    [...serviceQueryKeys.businessServices(workspaceSlug), 'at-risk'] as const,
+  businessServiceList: (workspaceSlug: string) =>
+    [...serviceQueryKeys.businessServices(workspaceSlug), 'list'] as const,
+  businessServiceDetail: (workspaceSlug: string, businessServiceId: string) =>
+    [...serviceQueryKeys.businessServices(workspaceSlug), 'detail', businessServiceId] as const,
   catalogue: (workspaceSlug: string) => ['workspaces', workspaceSlug, 'services'] as const,
   list: (workspaceSlug: string, searchText: string) =>
     [...serviceQueryKeys.catalogue(workspaceSlug), 'list', searchText] as const,
@@ -30,6 +38,10 @@ export const serviceQueryKeys = {
   dependencies: (workspaceSlug: string, serviceId: string) =>
     [...serviceQueryKeys.catalogue(workspaceSlug), 'dependencies', serviceId] as const,
 };
+
+function businessServicesPath(workspaceSlug: string): string {
+  return `/workspaces/${encodeURIComponent(workspaceSlug)}/business-services`;
+}
 
 function servicesPath(workspaceSlug: string): string {
   return `/workspaces/${encodeURIComponent(workspaceSlug)}/services`;
@@ -46,7 +58,7 @@ export function useBusinessServicesAtRisk(workspaceSlug: string) {
     queryFn: async ({ signal }) =>
       (
         await requestApi({
-          path: `/workspaces/${encodeURIComponent(workspaceSlug)}/business-services`,
+          path: businessServicesPath(workspaceSlug),
           query: { health: 'not-healthy' },
           responseSchema: businessServiceAtRiskListSchema,
           signal,
@@ -118,5 +130,35 @@ export function useConfirmService(workspaceSlug: string, serviceId: string) {
       ).data,
     onSuccess: () =>
       queryClient.invalidateQueries({ queryKey: serviceQueryKeys.catalogue(workspaceSlug) }),
+  });
+}
+
+/** Every important business service with its tolerance, for the resilience view. */
+export function useBusinessServices(workspaceSlug: string) {
+  return useQuery({
+    queryKey: serviceQueryKeys.businessServiceList(workspaceSlug),
+    queryFn: async ({ signal }) =>
+      (
+        await requestApi({
+          path: businessServicesPath(workspaceSlug),
+          responseSchema: businessServiceListSchema,
+          signal,
+        })
+      ).data.items,
+  });
+}
+
+export function useBusinessServiceDetail(workspaceSlug: string, businessServiceId: string | null) {
+  return useQuery({
+    queryKey: serviceQueryKeys.businessServiceDetail(workspaceSlug, businessServiceId ?? ''),
+    enabled: businessServiceId !== null,
+    queryFn: async ({ signal }) =>
+      (
+        await requestApi({
+          path: `${businessServicesPath(workspaceSlug)}/${encodeURIComponent(businessServiceId ?? '')}`,
+          responseSchema: businessServiceDetailSchema,
+          signal,
+        })
+      ).data,
   });
 }

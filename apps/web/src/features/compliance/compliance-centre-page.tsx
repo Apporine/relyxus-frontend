@@ -20,6 +20,7 @@ import { QuerySection } from '@/lib/ui/query-section';
 import { PageHeader } from '@/shell/page-header';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
+import { ComplianceAreaNavigation, regulatorReportHref } from './compliance-area-navigation';
 import type { ComplianceOverview, RegulatorClock } from './model';
 import {
   complianceQueryKeys,
@@ -123,7 +124,17 @@ function AttentionTable({ incidents }: { incidents: readonly ComplianceIncident[
         {
           key: 'report',
           header: translateAttention('columns.report'),
-          render: (incident) => translateAttention(`reportStates.${incident.reportState}`),
+          render: (incident) =>
+            incident.reportId === null ? (
+              translateAttention(`reportStates.${incident.reportState}`)
+            ) : (
+              <Link
+                href={regulatorReportHref(workspace.slug, incident.reportId)}
+                className="font-semibold underline underline-offset-2"
+              >
+                {translateAttention(`reportStates.${incident.reportState}`)}
+              </Link>
+            ),
         },
         {
           key: 'owner',
@@ -228,6 +239,7 @@ export function ComplianceCentrePage() {
         title={translateCompliance('title')}
         description={translateCompliance('description')}
       />
+      <ComplianceAreaNavigation current="overview" />
       <Panel title={translateCompliance('activeClocks')}>
         <QuerySection
           query={clocksQuery}

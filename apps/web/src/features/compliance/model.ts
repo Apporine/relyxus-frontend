@@ -50,6 +50,8 @@ export const complianceOverviewSchema = z.object({
       classification: z.enum(complianceClassifications),
       clock: z.object({ deadlineAt: isoDateTimeSchema, isSubmitted: z.boolean() }).nullable(),
       reportState: z.enum(complianceReportStates),
+      /** The regulator report for this incident, when one exists. */
+      reportId: z.string().nullable(),
       ownerName: z.string().nullable(),
     }),
   ),

@@ -13,6 +13,7 @@ import { PageHeader } from '@/shell/page-header';
 import { useCurrentWorkspace } from '@/shell/workspace/current-workspace';
 
 import type { PolicyDetail } from './model';
+import { PoliciesAreaNavigation } from './policies-area-navigation';
 import { policyQueries } from './queries';
 
 function PolicyDetailPanel({ policy }: { policy: PolicyDetail }) {
@@ -106,6 +107,7 @@ export function PoliciesPage() {
           />
         }
       />
+      <PoliciesAreaNavigation current="policies" />
       <ListDetailContent
         listQuery={listQuery}
         detailQuery={detailQuery}

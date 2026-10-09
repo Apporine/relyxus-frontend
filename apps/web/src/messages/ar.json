@@ -1295,6 +1295,11 @@
       "empty": "لا توجد حزم أدلة بعد.",
       "status": "{completeness, number, ::percent} · {missing, plural, =0 {مكتملة} zero {مكتملة} one {مصدر واحد مفقود} two {مصدران مفقودان} few {# مصادر مفقودة} many {# مصدرًا مفقودًا} other {# مصدر مفقود}}",
       "progressLabel": "اكتمال حزمة الأدلة لـ {incident}"
+    },
+    "areaNavigation": {
+      "label": "عروض الامتثال",
+      "overview": "نظرة عامة",
+      "rules": "مكتبة القواعد"
     }
   },
   "policies": {
@@ -1339,6 +1344,12 @@
       "verification": "التحقق",
       "simulation": "المحاكاة",
       "simulationResult": "{allowed} مسموح · {needingApproval} تحتاج موافقة · {denied} مرفوض"
+    },
+    "areaNavigation": {
+      "label": "عروض السياسات",
+      "policies": "السياسات",
+      "approval-routing": "توجيه الموافقات",
+      "notification-rules": "قواعد الإشعارات"
     }
   },
   "runbooks": {
@@ -1413,5 +1424,162 @@
       "conditionalField": "حقل شرطي",
       "condition": "{field} عند {condition}"
     }
+  },
+  "approvalRouting": {
+    "title": "توجيه الموافقات",
+    "description": "اعرف بدقة من سيُطلب منه ولماذا",
+    "newRoute": "مسار جديد",
+    "newRouteUnavailable": "يتوفر إنشاء المسارات مع محرر التوجيه ومسار اعتماده.",
+    "listTitle": "المسارات",
+    "empty": "لا توجد مسارات موافقة معرّفة بعد.",
+    "detailSectionName": "مسار الموافقة",
+    "listMeta": "{mode} · {stages, plural, zero {لا مراحل} one {مرحلة واحدة} two {مرحلتان} few {# مراحل} many {# مرحلة} other {# مرحلة}} · النصاب {quorum}",
+    "modes": {
+      "staged": "على مراحل",
+      "sequential": "متتابع",
+      "parallel": "متوازٍ"
+    },
+    "stageResolver": "محدِّد المرحلة {number}",
+    "resolverWithQuorum": "{resolver} · النصاب {quorum}",
+    "proposerExclusion": "استبعاد مقدّم الطلب",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+    "fallback": "البديل",
+    "noFallback": "لا يوجد موافقون بدلاء",
+    "fallbackAfter": "بعد {minutes} دقيقة",
+    "delegation": "التفويض",
+    "allowed": "مسموح",
+    "notAllowed": "غير مسموح",
+    "mfa": {
+      "always": "مطلوب دائمًا",
+      "production": "مطلوب في الإنتاج",
+      "never": "غير مطلوب"
+    },
+    "exactApprovers": "الموافقون بالتحديد",
+    "stage": "المرحلة {number}",
+    "approverWithReason": "{name} · {reason}",
+    "eligibility": "الأهلية",
+    "allEligible": "جميع الموافقين نشطون ومؤهلون",
+    "notAllEligible": "موافق واحد على الأقل غير مؤهل",
+    "absence": "الغياب",
+    "neverAutoApproves": "لا يوافق تلقائيًا أبدًا",
+    "mfaLabel": "المصادقة متعددة العوامل"
+  },
+  "notificationRules": {
+    "title": "قواعد الإشعارات",
+    "description": "توقّع من سيتم التواصل معه قبل النشر",
+    "newRule": "قاعدة جديدة",
+    "newRuleUnavailable": "تتوفر كتابة القواعد مع منشئ القواعد.",
+    "listTitle": "القواعد",
+    "empty": "لا توجد قواعد إشعارات بعد.",
+    "detailSectionName": "قاعدة الإشعار",
+    "enabledWith": "مفعّلة · {channels}",
+    "disabled": "معطّلة",
+    "trigger": "المُحفِّز",
+    "conditions": "الشروط",
+    "recipients": "المستلمون",
+    "channels": "القنوات",
+    "renotify": "إعادة الإشعار",
+    "noRenotify": "لا تتكرر",
+    "renotifyEvery": "كل {minutes} دقيقة",
+    "escalation": "التصعيد",
+    "noEscalation": "لا يوجد تصعيد",
+    "escalateTo": "{target} بعد {afterMinutes} دقيقة",
+    "preview": "معاينة التسليم",
+    "afterMinutes": "{channels} بعد {minutes} دقيقة",
+    "restrictedSafety": "سلامة العناصر المقيّدة",
+    "noDetailsLeak": "لا تُرسل أي تفاصيل مقيّدة",
+    "detailsMayLeak": "قد تتضمن الرسائل تفاصيل مقيّدة"
+  },
+  "ruleLibrary": {
+    "title": "مكتبة القواعد التنظيمية",
+    "description": "الإصدارات السارية والاعتماد القانوني",
+    "importVersion": "استيراد إصدار",
+    "importVersionUnavailable": "تنشر Relyxus حزم القواعد بعد التحقق القانوني.",
+    "jurisdictions": "الولايات القضائية",
+    "empty": "لا تتوفر حزم قواعد.",
+    "detailSectionName": "حزمة القواعد",
+    "effectiveFrom": "سارية من",
+    "validation": "التحقق",
+    "signedOffBy": "اعتمدها {names}",
+    "notSignedOff": "لم تُعتمد بعد؛ لا تعتمد عليها",
+    "clockRules": "قواعد المؤقتات",
+    "clockRuleSummary": "{count} قاعدة · {conflicts, plural, =0 {لا تعارضات} zero {لا تعارضات} one {تعارض واحد} two {تعارضان} few {# تعارضات} many {# تعارضًا} other {# تعارض}}",
+    "templates": "القوالب",
+    "activatedWorkspaces": "مساحات العمل المفعّلة",
+    "reviewDue": "موعد المراجعة",
+    "versionHistory": "سجل الإصدارات",
+    "version": "الإصدار {version}",
+    "versionStates": {
+      "active": "نشط",
+      "superseded": "مستبدل",
+      "draft": "مسودة"
+    },
+    "conflicts": "التعارضات",
+    "noConflicts": "لا يوجد"
+  },
+  "regulatorReport": {
+    "sectionName": "التقرير التنظيمي",
+    "subtitle": "{incident} · {jurisdiction} · حزمة القواعد {rulePackage}",
+    "requestReview": "طلب مراجعة",
+    "requestReviewBlocked": "أكمل {count, plural, zero {الحقول المطلوبة} one {حقلًا مطلوبًا واحدًا} two {حقلين مطلوبين} few {# حقول مطلوبة} many {# حقلًا مطلوبًا} other {# حقل مطلوب}} قبل طلب المراجعة.",
+    "requestReviewUnavailable": "تتوفر طلبات المراجعة مع سير عمل التقارير.",
+    "fields": "حقول التقرير",
+    "noFields": "لا يحتوي هذا التقرير على حقول.",
+    "fieldStatuses": {
+      "complete": "مكتمل",
+      "ai-suggested": "اقتراح الذكاء الاصطناعي",
+      "needs-input": "يحتاج إدخالًا"
+    },
+    "selectedField": "الحقل المحدد: {name}",
+    "value": "القيمة",
+    "noValue": "غير مملوء. لا تخمّن Relyxus أي حقل تنظيمي أبدًا.",
+    "source": "المصدر {number}",
+    "sourceDetail": "{name} · {detail}",
+    "authorship": "التأليف",
+    "authorships": {
+      "human": "كتبه شخص",
+      "ai-suggested-pending-review": "اقتراح الذكاء الاصطناعي · بانتظار مراجعة بشرية",
+      "ai-accepted": "اقتراح الذكاء الاصطناعي · قبله شخص"
+    },
+    "validation": "التحقق",
+    "validations": {
+      "verified": "تم التحقق من سلسلة المصادر",
+      "unverified": "لم يتم التحقق"
+    },
+    "status": "حالة التقرير",
+    "stage": "المرحلة",
+    "stages": {
+      "draft": "مسودة",
+      "in-review": "قيد المراجعة",
+      "approved": "معتمد",
+      "submitted": "مُقدَّم"
+    },
+    "deadline": "الموعد النهائي",
+    "missing": "الناقص",
+    "missingCount": "{count, plural, =0 {لا شيء ناقص} zero {لا شيء ناقص} one {حقل مطلوب واحد} two {حقلان مطلوبان} few {# حقول مطلوبة} many {# حقلًا مطلوبًا} other {# حقل مطلوب}}",
+    "guessedText": "نص مخمَّن",
+    "guessedTextCount": "{count, plural, =0 {لا يوجد نص مخمَّن} zero {لا يوجد نص مخمَّن} one {جملة واحدة بلا مصدر} two {جملتان بلا مصدر} few {# جمل بلا مصدر} many {# جملة بلا مصدر} other {# جملة بلا مصدر}}"
+  },
+  "postIncidentReview": {
+    "title": "مراجعة ما بعد الحادثة",
+    "documentTitle": "مراجعة {reference}",
+    "subtitle": "{incident} · {title} · {severity} · مستحقة {due}",
+    "completeReview": "إكمال المراجعة",
+    "completeBlocked": "{count, plural, zero {لم يوقّع المراجعون المطلوبون بعد.} one {لم يوقّع مراجع مطلوب واحد بعد.} two {لم يوقّع مراجعان مطلوبان بعد.} few {لم يوقّع # مراجعين مطلوبين بعد.} many {لم يوقّع # مراجعًا مطلوبًا بعد.} other {لم يوقّع # مراجع مطلوب بعد.}}",
+    "completeUnavailable": "يتوفر إكمال المراجعات مع سير عمل المراجعة.",
+    "sections": "الأقسام",
+    "authorships": {
+      "ai-generated": "أنشأها الذكاء الاصطناعي",
+      "human-edited": "حرّرها شخص",
+      "mixed": "ذكاء اصطناعي وبشري",
+      "pending": "لم تُكتب بعد"
+    },
+    "document": "وثيقة المراجعة",
+    "notWritten": "لم يُكتب هذا القسم بعد.",
+    "reviewers": "المراجعون المطلوبون",
+    "reviewerLabel": "{name} · {role}",
+    "pending": "لم يوقّع",
+    "signedAt": "وقّع {time}"
   }
 }

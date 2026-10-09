@@ -43,7 +43,8 @@
       },
       "collapse": "طيّ قائمة التنقل",
       "expand": "توسيع قائمة التنقل",
-      "mobileLabel": "الرئيسية"
+      "mobileLabel": "الرئيسية",
+      "me": "أنا"
     },
     "workspace": {
       "label": "مساحة العمل",
@@ -344,6 +345,9 @@
       "decisionFailed": "لم يُسجَّل قرارك",
       "decisionFailedDetail": "لم يتغير شيء. المرجع {reference}.",
       "closeDialog": "إغلاق"
+    },
+    "page": {
+      "approvalNeeded": "موافقة مطلوبة"
     }
   },
   "onCall": {
@@ -1968,5 +1972,23 @@
     "resumeText": "غادر عند أي خطوة وأكمل لاحقًا",
     "sampleData": "بيانات تجريبية",
     "sampleDataText": "معلَّمة دائمًا بأنها تجريبية"
+  },
+  "mobileSummary": {
+    "title": "ملخص الحادثة",
+    "documentTitle": "ملخص {reference}",
+    "impact": "الأثر",
+    "impactUnknown": "لم يُقَس الأثر بعد",
+    "moneyAtRisk": "{amount} معرّضة للخطر",
+    "failed": "{count} فاشلة",
+    "topHypothesis": "أبرز فرضية",
+    "noHypothesis": "لا توجد فرضية بعد؛ ما زال جمع الأدلة جاريًا.",
+    "confidence": "{percent, number, ::percent} {band}",
+    "evidenceCounts": "{supporting, plural, zero {لا أدلة داعمة} one {دليل داعم واحد} two {دليلان داعمان} few {# أدلة داعمة} many {# دليلًا داعمًا} other {# دليل داعم}} · {refuting, plural, zero {لا أدلة نافية} one {دليل نافٍ واحد} two {دليلان نافيان} few {# أدلة نافية} many {# دليلًا نافيًا} other {# دليل نافٍ}}",
+    "pendingDecision": "قرار معلّق",
+    "actionWithEnvironment": "{title} · {environment}",
+    "openApproval": "فتح الموافقة",
+    "acknowledge": "تأكيد الاستلام",
+    "acknowledgedBy": "أكّد الاستلام {name} في {time}",
+    "openWarRoom": "فتح غرفة العمليات كاملة"
   }
 }

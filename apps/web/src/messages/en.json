@@ -43,7 +43,8 @@
       },
       "collapse": "Collapse navigation",
       "expand": "Expand navigation",
-      "mobileLabel": "Main"
+      "mobileLabel": "Main",
+      "me": "Me"
     },
     "workspace": {
       "label": "Workspace",
@@ -344,6 +345,9 @@
       "decisionFailed": "Your decision was not recorded",
       "decisionFailedDetail": "Nothing changed. Reference {reference}.",
       "closeDialog": "Close"
+    },
+    "page": {
+      "approvalNeeded": "Approval needed"
     }
   },
   "onCall": {
@@ -1968,5 +1972,23 @@
     "resumeText": "Leave at any step and continue later",
     "sampleData": "Sample data",
     "sampleDataText": "Always labelled as sample"
+  },
+  "mobileSummary": {
+    "title": "Incident summary",
+    "documentTitle": "Summary of {reference}",
+    "impact": "Impact",
+    "impactUnknown": "Impact not yet measured",
+    "moneyAtRisk": "{amount} at risk",
+    "failed": "{count} failed",
+    "topHypothesis": "Top hypothesis",
+    "noHypothesis": "No hypothesis yet; evidence is still being gathered.",
+    "confidence": "{percent, number, ::percent} {band}",
+    "evidenceCounts": "{supporting, plural, one {# supporting} other {# supporting}} · {refuting, plural, one {# refuting} other {# refuting}}",
+    "pendingDecision": "Pending decision",
+    "actionWithEnvironment": "{title} · {environment}",
+    "openApproval": "Open approval",
+    "acknowledge": "Acknowledge",
+    "acknowledgedBy": "Acknowledged by {name} at {time}",
+    "openWarRoom": "Open the full war room"
   }
 }
